@@ -8,9 +8,42 @@ namespace Protótipo_Projeto.Controllers
 {
     public class ProdutosController : Controller
     {
+        public void categorias()
+        {
+            Listas.categorias.Clear();
+
+            string conexao = Conexao.Conecta();
+            MySqlConnection con = new();
+            con.ConnectionString = conexao;
+
+            con.Open();
+
+            MySqlCommand cn = new();
+
+            cn.CommandText = $"select * from tb_categorias";
+
+            cn.Connection = con;
+
+            MySqlDataReader dr;
+            dr = cn.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Categoria categoria = new();
+
+                categoria.Id = Convert.ToInt32(dr["IdCategoria"]);
+                categoria.Nome = Convert.ToString(dr["NomeCategoria"]);
+
+                Listas.categorias.Add(categoria);
+            }
+
+            con.Close();
+        }
         public IActionResult Produtos()
         {
             Listas.produtos.Clear();
+
+            categorias();
 
             string conexao = Conexao.Conecta();
             MySqlConnection con = new();
@@ -35,11 +68,17 @@ namespace Protótipo_Projeto.Controllers
                 produto.Nome = Convert.ToString(dr["Nome"]);
                 produto.ValorUnitario = Convert.ToDecimal(dr["ValorUnitario"]);
                 produto.Estoque = Convert.ToInt32(dr["Estoque"]);
-                produto.Categoria.Id = Convert.ToInt32(dr["CategoriaId"]);
-                produto.Categoria.Nome = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Categoria.Id).Nome;
+                produto.Category.Id = Convert.ToInt32(dr["CategoriaId"]);
+
+                Console.WriteLine(produto.Category.Id);
+
+                Console.WriteLine(Listas.categorias[0].Nome);
+
+                produto.Category.Nome = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id).Nome;
 
                 Listas.produtos.Add(produto);
             }
+
             return View(Listas.produtos);
         }
 
@@ -47,6 +86,33 @@ namespace Protótipo_Projeto.Controllers
         public IActionResult Adicionar()
         {
             List<SelectListItem> Categoria = new List<SelectListItem>();
+
+            Listas.categorias.Clear();
+
+            string conexao = Conexao.Conecta();
+            MySqlConnection con = new();
+            con.ConnectionString = conexao;
+
+            con.Open();
+
+            MySqlCommand cn = new();
+
+            cn.CommandText = $"select * from tb_categorias";
+
+            cn.Connection = con;
+
+            MySqlDataReader dr;
+            dr = cn.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Categoria categoria = new();
+
+                categoria.Id = Convert.ToInt32(dr["IdCategoria"]);
+                categoria.Nome = Convert.ToString(dr["NomeCategoria"]);
+
+                Listas.categorias.Add(categoria);
+            }
 
             Categoria = Listas.categorias.Select(c => new SelectListItem() { Text = c.Nome, Value = c.Id.ToString() }).ToList();
 
@@ -62,6 +128,8 @@ namespace Protótipo_Projeto.Controllers
             MySqlConnection con = new();
             con.ConnectionString = conexao;
 
+            con.Open();
+
             MySqlCommand cn = con.CreateCommand();
 
             cn.CommandText = $"insert into tb_produtos(Nome, ValorUnitario, Estoque, CategoriaId)values(@Nome, @Val, @Estoque, @Cat)";
@@ -69,9 +137,10 @@ namespace Protótipo_Projeto.Controllers
             cn.Parameters.Add("Nome", MySqlDbType.VarChar).Value = produto.Nome;
             cn.Parameters.Add("Val", MySqlDbType.Decimal).Value = produto.ValorUnitario;
             cn.Parameters.Add("Estoque", MySqlDbType.Int32).Value = produto.Estoque;
-            cn.Parameters.Add("Cat", MySqlDbType.Int32).Value = Convert.ToInt32(produto.Categoria.Id);
 
-            con.Open();
+            Console.WriteLine(Convert.ToInt32(Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id)));
+
+            cn.Parameters.Add("Cat", MySqlDbType.Int32).Value = Convert.ToInt32(Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id)) + 1;
 
             cn.Connection = con;
 

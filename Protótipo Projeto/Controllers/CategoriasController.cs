@@ -30,8 +30,8 @@ namespace Protótipo_Projeto.Controllers
             {
                 Categoria categoria = new();
 
-                categoria.Id = Convert.ToInt32(dr["Id"]);
-                categoria.Nome = Convert.ToString(dr["Nome"]);
+                categoria.Id = Convert.ToInt32(dr["IdCategoria"]);
+                categoria.Nome = Convert.ToString(dr["NomeCategoria"]);
 
                 Listas.categorias.Add(categoria);
             }
@@ -54,7 +54,7 @@ namespace Protótipo_Projeto.Controllers
 
             MySqlCommand cn = con.CreateCommand();
 
-            cn.CommandText = $"insert into tb_categorias(Nome)values(@Nome)";
+            cn.CommandText = $"insert into tb_categorias(NomeCategoria)values(@Nome)";
 
             cn.Parameters.Add("Nome", MySqlDbType.VarChar).Value = categoria.Nome;
 
@@ -100,7 +100,7 @@ namespace Protótipo_Projeto.Controllers
 
             MySqlCommand cn = con.CreateCommand();
 
-            cn.CommandText = @"delete from tb_categorias where Id = @id";
+            cn.CommandText = @"delete from tb_categorias where IdCategoria = @id";
 
             cn.Parameters.Add("id", MySqlDbType.Int32).Value = categ.Id;
 
@@ -136,7 +136,7 @@ namespace Protótipo_Projeto.Controllers
 
             MySqlCommand cn = con.CreateCommand();
 
-            cn.CommandText = @"update tb_categorias set Nome = @nome where id = @id";
+            cn.CommandText = @"update tb_categorias set NomeCategoria = @nome where id = @id";
 
             cn.Parameters.Add("nome", MySqlDbType.VarChar).Value = categoria.Nome;
             cn.Parameters.Add("id", MySqlDbType.Int32).Value = categoria.Id;

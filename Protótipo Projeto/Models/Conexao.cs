@@ -7,7 +7,7 @@
             //A string de conexão pode precisar de mudanças dependendo do nome do server,
             //usuário e senha do banco de dados local.
 
-            string conexao = @"server=localhost;uid=root;pwd=123456;database=projeto";
+            string conexao = @"server=localhost;uid=root;pwd=1234561;database=projeto";
 
             return conexao;
         }

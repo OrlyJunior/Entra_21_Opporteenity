@@ -13,8 +13,8 @@
         <label asp-for="Estoque">Insira o estoque do produto:</label>
         <input asp-for="Estoque"></input>
 
-        <label asp-for="Categoria.Id">Insira a categoria do produto:</label>
-        <select asp-for="Categoria.Id" asp-items="@ViewBag.categorias"></select>
+        <label asp-for="Category.Id">Insira a categoria do produto:</label>
+        <select asp-for="Category.Id" asp-items="@ViewBag.categorias"></select>
 
         <button asp-action="Adicionar" class="btn btn-primary mt-3">Adicionar</button>
     </form>
