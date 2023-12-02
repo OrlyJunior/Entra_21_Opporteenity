@@ -75,7 +75,7 @@ namespace Protótipo_Projeto.Controllers
 
             cn.Connection = con;
 
-            //Ocorre erro no ExecuteNonQuery
+            //Ocorre erro no ExecuteNonQuery quando tem mais de um produto na tabela
             cn.ExecuteNonQuery();
 
             return RedirectToAction("Produtos");
