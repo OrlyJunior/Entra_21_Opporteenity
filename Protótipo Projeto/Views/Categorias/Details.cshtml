@@ -1,0 +1,9 @@
+﻿@model Protótipo_Projeto.Models.Categoria
+
+<h1>Detalhes</h1>
+<h3>ID: @Html.DisplayFor(model => model.Id)</h3>
+<h3>Nome: @Html.DisplayFor(model => model.Nome)</h3>
+
+<form asp-action="Details">
+    <button asp-action="Details" class="btn btn-primary mt-3">Voltar</button>
+</form>

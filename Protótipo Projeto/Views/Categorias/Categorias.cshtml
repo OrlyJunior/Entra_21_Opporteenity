@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Protótipo_Projeto.Models.Categoria>
+
+<div class="text-center">
+    <h1>Categorias</h1>
+</div>
+
+<a asp-action="Adicionar">Adicionar categoria</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => i.Id)</td>
+                <td>@Html.DisplayFor(model => i.Nome)</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new {Id = i.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {Id = i.Id}) |
+                    @Html.ActionLink("Edit", "Edit", new {Id = i.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\appsettings.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.staticwebassets.runtime.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.exe
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.deps.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.runtimeconfig.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Protótipo Projeto.pdb
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.csproj.AssemblyReference.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.AssemblyInfoInputs.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.AssemblyInfo.cs
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.csproj.CoreCompileInputs.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.RazorAssemblyInfo.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.RazorAssemblyInfo.cs
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets\msbuild.Protótipo Projeto.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets\msbuild.build.Protótipo Projeto.props
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Protótipo Projeto.props
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Protótipo Projeto.props
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\scopedcss\bundle\Protótipo Projeto.styles.css
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\scopedcss\projectbundle\Protótipo Projeto.bundle.scp.css
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.csproj.CopyComplete
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\refint\Protótipo Projeto.dll
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.pdb
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\Protótipo Projeto.genruntimeconfig.cache
+C:\Users\Orly\Documents\Protótipo Projeto\Protótipo Projeto\obj\Debug\net6.0\ref\Protótipo Projeto.dll

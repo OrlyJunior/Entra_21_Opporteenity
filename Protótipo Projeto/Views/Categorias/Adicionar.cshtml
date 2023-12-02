@@ -1,0 +1,12 @@
+﻿@model Protótipo_Projeto.Models.Categoria
+
+<h1>Adicionar categoria</h1>
+
+<div>
+    <form asp-action="Adicionar">
+        <label asp-for="Nome">Insira o nome da categoria:</label>
+        <input asp-for="Nome"></input>
+
+        <button asp-action="Adicionar" class="btn btn-primary mt-3">Adicionar</button>
+    </form>
+</div>
