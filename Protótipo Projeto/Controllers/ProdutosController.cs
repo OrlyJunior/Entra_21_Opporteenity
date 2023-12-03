@@ -8,6 +8,42 @@ namespace Protótipo_Projeto.Controllers
 {
     public class ProdutosController : Controller
     {
+        public void produtosAdd()
+        {
+            Listas.produtos.Clear();
+
+            string conexao = Conexao.Conecta();
+            MySqlConnection con = new();
+            con.ConnectionString = conexao;
+
+            con.Open();
+
+            MySqlCommand cn = new();
+
+            cn.CommandText = $"select * from tb_produtos";
+
+            cn.Connection = con;
+
+            MySqlDataReader dr;
+            dr = cn.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Produto produto = new();
+
+                produto.Id = Convert.ToInt32(dr["Id"]);
+                produto.Nome = Convert.ToString(dr["Nome"]);
+                produto.ValorUnitario = Convert.ToDecimal(dr["ValorUnitario"]);
+                produto.Estoque = Convert.ToInt32(dr["Estoque"]);
+                produto.IdCateg = Convert.ToInt32(dr["CategoriaId"]);
+
+                Console.WriteLine(produto.IdCateg);
+
+                produto.NomeCateg = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.IdCateg).Nome;
+
+                Listas.produtos.Add(produto);
+            }
+        }
         public void categorias()
         {
             Listas.categorias.Clear();
@@ -41,41 +77,8 @@ namespace Protótipo_Projeto.Controllers
         }
         public IActionResult Produtos()
         {
-            Listas.produtos.Clear();
-
             categorias();
-
-            string conexao = Conexao.Conecta();
-            MySqlConnection con = new();
-            con.ConnectionString = conexao;
-
-            con.Open();
-
-            MySqlCommand cn = new();
-
-            cn.CommandText = $"select * from tb_produtos";
-
-            cn.Connection = con;
-
-            MySqlDataReader dr;
-            dr = cn.ExecuteReader();
-
-            while (dr.Read())
-            {
-                Produto produto = new();
-
-                produto.Id = Convert.ToInt32(dr["Id"]);
-                produto.Nome = Convert.ToString(dr["Nome"]);
-                produto.ValorUnitario = Convert.ToDecimal(dr["ValorUnitario"]);
-                produto.Estoque = Convert.ToInt32(dr["Estoque"]);
-                produto.IdCateg = Convert.ToInt32(dr["CategoriaId"]);
-
-                Console.WriteLine(produto.IdCateg);
-
-                produto.NomeCateg = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.IdCateg).Nome;
-
-                Listas.produtos.Add(produto);
-            }
+            produtosAdd();
 
             return View(Listas.produtos);
         }
@@ -149,6 +152,39 @@ namespace Protótipo_Projeto.Controllers
             cn.Connection = con;
 
             cn.ExecuteNonQuery();
+
+            return RedirectToAction("Produtos");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Produto produto = Listas.produtos.FirstOrDefault(pr => pr.Id == id);
+
+            return View(produto);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Produto produto)
+        {
+            Produto prod = Listas.produtos.FirstOrDefault(pr => pr.Id == produto.Id);
+
+            string conexao = Conexao.Conecta();
+            MySqlConnection con = new();
+            con.ConnectionString = conexao;
+
+            con.Open();
+
+            MySqlCommand cn = con.CreateCommand();
+
+            cn.CommandText = $"delete from tb_produtos where Id = @id";
+
+            cn.Parameters.Add("id", MySqlDbType.Int32).Value = prod.Id;
+
+            cn.Connection = con;
+
+            MySqlDataReader dr;
+            dr = cn.ExecuteReader();
 
             return RedirectToAction("Produtos");
         }

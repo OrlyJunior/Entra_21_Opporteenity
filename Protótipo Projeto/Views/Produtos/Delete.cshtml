@@ -1,0 +1,13 @@
+﻿@model Protótipo_Projeto.Models.Produto
+
+<h1>Deletar produto</h1>
+<p>Tem certeza que deseja deletar esse produto?</p>
+
+<div class="d-flex">
+    <form asp-action="Delete" class="d-flex">
+        <button asp-action="Delete" class="btn btn-danger">Sim</button>
+    </form>
+    <form asp-action="Categorias" class="d-flex ms-3">
+        <button asp-action="Categorias" class="btn btn-success">Não</button>
+    </form>
+</div>
