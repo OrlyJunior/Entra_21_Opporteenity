@@ -11,7 +11,7 @@
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id)</th>
             <th>@Html.DisplayNameFor(model => model.Nome)</th>
-            <th>@Html.DisplayNameFor(model => model.ValorUnitario)</th>
+            <th>@Html.DisplayNameFor(model => model.ValorUnitario) (R$)</th>
             <th>@Html.DisplayNameFor(model => model.Estoque)</th>
             <th>Categoria</th>
             <th></th>
@@ -23,7 +23,7 @@
             <tr>
                 <td>@Html.DisplayFor(model => i.Id)</td>
                 <td>@Html.DisplayFor(model => i.Nome)</td>
-                <td>@Html.DisplayFor(model => i.ValorUnitario)</td>
+                <td>R$@Html.DisplayFor(model => i.ValorUnitario)</td>
                 <td>@Html.DisplayFor(model => i.Estoque)</td>
                 <td>@Html.DisplayFor(model => i.NomeCateg)</td>
                 <td>
