@@ -68,13 +68,11 @@ namespace Protótipo_Projeto.Controllers
                 produto.Nome = Convert.ToString(dr["Nome"]);
                 produto.ValorUnitario = Convert.ToDecimal(dr["ValorUnitario"]);
                 produto.Estoque = Convert.ToInt32(dr["Estoque"]);
-                produto.Category.Id = Convert.ToInt32(dr["CategoriaId"]);
+                produto.IdCateg = Convert.ToInt32(dr["CategoriaId"]);
 
-                Console.WriteLine(produto.Category.Id);
+                Console.WriteLine(produto.IdCateg);
 
-                Console.WriteLine(Listas.categorias[0].Nome);
-
-                produto.Category.Nome = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id).Nome;
+                produto.NomeCateg = Listas.categorias.FirstOrDefault(ct => ct.Id == produto.IdCateg).Nome;
 
                 Listas.produtos.Add(produto);
             }
@@ -85,8 +83,6 @@ namespace Protótipo_Projeto.Controllers
         [HttpGet]
         public IActionResult Adicionar()
         {
-            List<SelectListItem> Categoria = new List<SelectListItem>();
-
             Listas.categorias.Clear();
 
             string conexao = Conexao.Conecta();
@@ -114,9 +110,18 @@ namespace Protótipo_Projeto.Controllers
                 Listas.categorias.Add(categoria);
             }
 
+            con.Close();
+
+            List<SelectListItem> Categoria = new List<SelectListItem>();
+
             Categoria = Listas.categorias.Select(c => new SelectListItem() { Text = c.Nome, Value = c.Id.ToString() }).ToList();
 
-            ViewBag.categorias = Categoria;
+            ViewBag.cat = Categoria;
+
+            foreach (var i in Categoria)
+            {
+                Console.WriteLine("\n" + Convert.ToInt32(i.Value));
+            }
 
             return View();
         }
@@ -137,14 +142,12 @@ namespace Protótipo_Projeto.Controllers
             cn.Parameters.Add("Nome", MySqlDbType.VarChar).Value = produto.Nome;
             cn.Parameters.Add("Val", MySqlDbType.Decimal).Value = produto.ValorUnitario;
             cn.Parameters.Add("Estoque", MySqlDbType.Int32).Value = produto.Estoque;
+            cn.Parameters.Add("Cat", MySqlDbType.Int32).Value = produto.IdCateg;
 
-            Console.WriteLine(Convert.ToInt32(Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id)));
-
-            cn.Parameters.Add("Cat", MySqlDbType.Int32).Value = Convert.ToInt32(Listas.categorias.FirstOrDefault(ct => ct.Id == produto.Category.Id)) + 1;
+            Console.WriteLine(produto.IdCateg);
 
             cn.Connection = con;
 
-            //Ocorre erro no ExecuteNonQuery quando tem mais de um produto na tabela
             cn.ExecuteNonQuery();
 
             return RedirectToAction("Produtos");

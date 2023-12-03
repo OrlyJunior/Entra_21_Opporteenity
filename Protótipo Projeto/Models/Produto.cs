@@ -6,6 +6,7 @@
         public string Nome { get; set; }
         public decimal ValorUnitario { get; set; }
         public int Estoque { get; set; }
-        public Categoria Category = new();
+        public int IdCateg { get; set; }
+        public string NomeCateg { get; set; }
     }
 }
