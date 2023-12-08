@@ -1,0 +1,20 @@
+﻿@model ProjetoE21.Models.Servico
+
+<h1>Adicionar serviço</h1>
+
+<form asp-action="Adicionar">
+    <div>
+        <label asp-for="Descricao">Insira a descrição do serviço:</label>
+        <input asp-for="Descricao"></input>
+    </div>
+    <div>
+        <label asp-for="Pagamento">Insira o valor a ser pago pelo serviço:</label>
+        <input asp-for="Pagamento"></input>
+    </div>
+    <div>
+        <label asp-for="Horario">Insira o dia e hora do serviço:</label>
+        <input asp-for="Horario"></input>
+    </div>
+
+    <button asp-action="Adicionar">Adicionar</button>
+</form>
