@@ -15,6 +15,7 @@
                 <th>Pagamento</th>
                 <th>Dia</th>
                 <th>Hora</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,11 @@
                     <td>@Html.DisplayFor(model => i.Pagamento)</td>
                     <td>@Html.DisplayFor(model => i.Dia)</td>
                     <td>@Html.DisplayFor(model => i.Hora)</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
+                        @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
+                        @Html.ActionLink("Delete", "Delete",  new {Id = i.Id})
+                    </td>
                 </tr>
             }
         </tbody>

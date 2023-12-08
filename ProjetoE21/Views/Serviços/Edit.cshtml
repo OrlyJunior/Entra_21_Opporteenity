@@ -1,0 +1,20 @@
+﻿@model ProjetoE21.Models.Servico
+
+<h1>Editar serviço</h1>
+
+<form asp-action="Edit">
+    <div>
+        <label asp-for="Descricao">Insira a nova descrição do serviço:</label>
+        <input asp-for="Descricao"></input>
+    </div>
+    <div>
+        <label asp-for="Pagamento">Insira o novo valor a ser pago pelo serviço:</label>
+        <input asp-for="Pagamento"></input>
+    </div>
+    <div>
+        <label asp-for="Horario">Insira o novo dia e hora do serviço:</label>
+        <input asp-for="Horario"></input>
+    </div>
+
+    <button asp-action="Edit">Adicionar</button>
+</form>

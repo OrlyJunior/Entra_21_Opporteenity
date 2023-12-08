@@ -13,4 +13,8 @@
     <None Remove="Views\NovaPasta\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+  </ItemGroup>
+
 </Project>

@@ -1,14 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoE21.Models;
+using ProjetoE21.Dados;
+using ProjetoE21.Dao;
 
 namespace ProjetoE21.Controllers
 {
+    
     public class ServiçosController : Controller
     {
-        static List<Servico> servicos = new();
+        DaoServico DaoS = new();
         public IActionResult Index()
         {
-            return View(servicos);
+            Listas.servicos = DaoS.consultar();
+
+            return View(Listas.servicos);
         }
 
         [HttpGet]
@@ -19,6 +24,45 @@ namespace ProjetoE21.Controllers
 
         [HttpPost]
         public IActionResult Adicionar(Servico servico)
+        {
+            servico.EmpresaS = new();
+
+            servico.EmpresaS.Nome = "Empresa inventada";
+
+            servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
+            servico.Hora = $"{servico.Horario.TimeOfDay}";
+
+            DaoS.adicionar(servico);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Servico servico = Listas.servicos.FirstOrDefault(sc => sc.Id == id);
+
+            return View(servico);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Servico servico)
+        {
+            Listas.servicos.RemoveAt(servico.Id - 1);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Servico servico = Listas.servicos.FirstOrDefault(sc => sc.Id == id);
+
+            return View(servico);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Servico servico)
         {
             Empresa empresa = new();
             empresa.Nome = "Empresa inventada";
@@ -32,9 +76,7 @@ namespace ProjetoE21.Controllers
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
 
-            servico.Id = servicos.Count + 1;
-
-            servicos.Add(servico);
+            servico.Id = Listas.servicos.Count + 1;
 
             return RedirectToAction("Index");
         }
