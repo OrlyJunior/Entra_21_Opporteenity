@@ -1,6 +1,7 @@
-﻿using ProjetoE21.Models;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using ProjetoE21.Dados;
+using ProjetoE21.Interfaces;
+using ProjetoE21.Models;
 
 namespace ProjetoE21.Dao
 {
@@ -90,14 +91,70 @@ namespace ProjetoE21.Dao
             return servicos;
         }
 
-        public void deletar(Servico t)
+        public void deletar(Servico servico)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = @"delete from tb_servicos where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = servico.Id;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
         }
 
-        public bool editar(Servico t)
+        public bool editar(Servico servico)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = @"update tb_servicos set descricao = @descricao, contratanteNome = @nome, data = @data, dia = @dia, hora = @hora, valor = @valor where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = servico.Id;
+                cm.Parameters.Add("descricao", MySqlDbType.VarChar).Value = servico.Descricao;
+                cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = servico.EmpresaS.Nome;
+                cm.Parameters.Add("data", MySqlDbType.DateTime).Value = servico.Horario;
+                cm.Parameters.Add("dia", MySqlDbType.VarChar).Value = servico.Dia;
+                cm.Parameters.Add("hora", MySqlDbType.VarChar).Value = servico.Hora;
+                cm.Parameters.Add("valor", MySqlDbType.Decimal).Value = servico.Pagamento;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return true;
         }
     }
 }

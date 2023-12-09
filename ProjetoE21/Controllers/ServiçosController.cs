@@ -48,7 +48,7 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Delete(Servico servico)
         {
-            Listas.servicos.RemoveAt(servico.Id - 1);
+            DaoS.deletar(servico);
 
             return RedirectToAction("Index");
         }
@@ -64,19 +64,15 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Edit(Servico servico)
         {
-            Empresa empresa = new();
-            empresa.Nome = "Empresa inventada";
-            empresa.Id = 1;
-
             servico.EmpresaS = new();
 
-            servico.EmpresaS.Id = empresa.Id;
-            servico.EmpresaS.Nome = empresa.Nome;
+            servico.EmpresaS.Id = 1;
+            servico.EmpresaS.Nome = "Empresa inventada";
 
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
 
-            servico.Id = Listas.servicos.Count + 1;
+            DaoS.editar(servico);
 
             return RedirectToAction("Index");
         }

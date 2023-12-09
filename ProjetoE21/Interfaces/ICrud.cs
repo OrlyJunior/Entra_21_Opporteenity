@@ -1,4 +1,4 @@
-﻿namespace ProjetoE21
+﻿namespace ProjetoE21.Interfaces
 {
     public interface ICrud<T>
     {
