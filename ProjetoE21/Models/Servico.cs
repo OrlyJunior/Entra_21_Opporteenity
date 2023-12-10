@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string Descricao { get; set; }
         public Empresa EmpresaS { get; set; }
+        public Local Local { get; set; }
         public decimal Pagamento { get; set; }
         public DateTime Horario { get; set; }
         public string Dia { get; set; }

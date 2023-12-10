@@ -27,6 +27,7 @@ namespace ProjetoE21.Controllers
         {
             servico.EmpresaS = new();
 
+            servico.EmpresaS.Id = 1;
             servico.EmpresaS.Nome = "Empresa inventada";
 
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
@@ -75,6 +76,13 @@ namespace ProjetoE21.Controllers
             DaoS.editar(servico);
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Servico servico = Dados.Listas.servicos.FirstOrDefault(s => s.Id == id);
+
+            return View(servico);
         }
     }
 }

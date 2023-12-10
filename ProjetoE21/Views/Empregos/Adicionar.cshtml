@@ -1,0 +1,48 @@
+﻿@model ProjetoE21.Models.Emprego
+
+<h1>Adicionar emprego</h1>
+
+<form asp-action="Adicionar">
+    <div>
+        <label asp-for="Descricao">Insira a descrição do emprego:</label>
+        <input asp-for="Descricao"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Estado">Insira o estado do local emprego:</label>
+        <input asp-for="Local.Estado"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Cidade">Insira a cidade do emprego:</label>
+        <input asp-for="Local.Cidade"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Bairro">Insira o bairro do emprego:</label>
+        <input asp-for="Local.Bairro"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Rua">Insira a rua do emprego:</label>
+        <input asp-for="Local.Rua"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Numero">Insira o número do local do emprego:</label>
+        <input asp-for="Local.Numero"></input>
+    </div>
+    <div>
+        <label asp-for="HoraDeInicio">Insira o horário de início do emprego:</label>
+        <input asp-for="HoraDeInicio" type="time"></input>
+    </div>
+    <div>
+        <label asp-for="HoraDeFim">Insira o horário de término do emprego:</label>
+        <input asp-for="HoraDeFim" type="time"></input>
+    </div>
+    <div>
+        <label asp-for="DiasTrabalhados">Insira os dias trabalhados por semana no emprego:</label>
+        <input asp-for="DiasTrabalhados"></input>
+    </div>
+    <div>
+        <label asp-for="Salario">Insira o salário mensal do emprego:</label>
+        <input asp-for="Salario"></input>
+    </div>
+
+    <button asp-action="Adicionar">Adicionar</button>
+</form>

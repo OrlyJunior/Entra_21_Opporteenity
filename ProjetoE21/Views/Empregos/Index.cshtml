@@ -1,22 +1,23 @@
 ﻿
-@model IEnumerable<ProjetoE21.Models.Servico>
+@model IEnumerable<ProjetoE21.Models.Emprego>
 <div>
-    <h1>Meus serviços</h1>
+    <h1>Meus empregos</h1>
 
     <p>
-        <a asp-action="Adicionar">Adicionar serviço</a>
+        <a asp-action="Adicionar">Adicionar emprego</a>
     </p>
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Descrição</th>
+                <th>Empresa</th>
                 <th>Cidade</th>
                 <th>Rua</th>
-                <th>Empresa</th>
-                <th>Pagamento</th>
-                <th>Dia</th>
-                <th>Hora</th>
+                <th>Horário de início</th>
+                <th>Horário de término</th>
+                <th>Dias trabalhados</th>
+                <th>Salario</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,12 +27,14 @@
                 <tr>
                     <td>@Html.DisplayFor(model => i.Id)</td>
                     <td>@Html.DisplayFor(model => i.Descricao)</td>
+                    <td>@Html.DisplayFor(model => i.Empresa.Nome)</td>
                     <td>@Html.DisplayFor(model => i.Local.Cidade)</td>
                     <td>@Html.DisplayFor(model => i.Local.Rua)</td>
-                    <td>@Html.DisplayFor(model => i.EmpresaS.Nome)</td>
-                    <td>R$@Html.DisplayFor(model => i.Pagamento)</td>
-                    <td>@Html.DisplayFor(model => i.Dia)</td>
-                    <td>@Html.DisplayFor(model => i.Hora)</td>
+                    <td>@Html.DisplayFor(model => i.Empresa.Nome)</td>
+                    <td>@Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay)</td>
+                    <td>@Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)</td>
+                    <td>@Html.DisplayFor(model => i.DiasTrabalhados)</td>
+                    <td>R$@Html.DisplayFor(model => i.Salario)</td>
                     <td>
                         @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
                         @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
