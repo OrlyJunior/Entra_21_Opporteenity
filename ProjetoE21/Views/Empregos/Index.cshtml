@@ -1,47 +1,59 @@
 ﻿
 @model IEnumerable<ProjetoE21.Models.Emprego>
+
 <div>
     <h1>Meus empregos</h1>
 
     <p>
-        <a asp-action="Adicionar">Adicionar emprego</a>
+        <a asp-action="Adicionar">Adicionar empregos</a>
     </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Descrição</th>
-                <th>Empresa</th>
-                <th>Cidade</th>
-                <th>Rua</th>
-                <th>Horário de início</th>
-                <th>Horário de término</th>
-                <th>Dias trabalhados</th>
-                <th>Salario</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var i in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(model => i.Id)</td>
-                    <td>@Html.DisplayFor(model => i.Descricao)</td>
-                    <td>@Html.DisplayFor(model => i.Empresa.Nome)</td>
-                    <td>@Html.DisplayFor(model => i.Local.Cidade)</td>
-                    <td>@Html.DisplayFor(model => i.Local.Rua)</td>
-                    <td>@Html.DisplayFor(model => i.Empresa.Nome)</td>
-                    <td>@Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay)</td>
-                    <td>@Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)</td>
-                    <td>@Html.DisplayFor(model => i.DiasTrabalhados)</td>
-                    <td>R$@Html.DisplayFor(model => i.Salario)</td>
-                    <td>
-                        @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
-                        @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
-                        @Html.ActionLink("Delete", "Delete",  new {Id = i.Id})
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    @foreach (var i in Model)
+    {
+        <div class="d-flex" style="background-color:rgba(128, 128, 128, 0.5);">
+            <div class="card mb-5" style="max-width: 85vh; min-width: 85vh">
+                <div class="row g-0">
+                    <div class="row flex-column">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(model => i.Empresa.Nome)</h5>
+                            <p class="card-text">
+                                @Html.DisplayFor(model => i.Descricao)
+                            </p>
+                            <p class="card-text">
+                                @Html.DisplayFor(model => i.Local.Rua)  @Html.DisplayFor(model => i.Local.Cidade)
+                                <br>
+                                @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
+                                <br>
+                                <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <span>R$: @Html.DisplayFor(model => i.Salario)</span>
+                                <span> Data da postagem: 10/12</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div class="card-body">
+                            <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
+                            <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:blue;">Salvar</a>
+                            <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+                        </div>
+                        <div class="card-body">                        
+                            @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
+                            @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
+                            @Html.ActionLink("Delete", "Delete",  new {Id = i.Id})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
 </div>
+
+    
+                                                               
+                                                                   
+                     
+          
