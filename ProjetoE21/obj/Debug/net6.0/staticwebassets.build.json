@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zjZGHScFFp0DSUPyDLUbRskzZz+M7O0gV1ZMQC1Sd6U=",
+  "Hash": "TL56qYe2/jvQ/1GNms62NR4epEHb6HeeQz7xLycUnhU=",
   "Source": "ProjetoE21",
   "BasePath": "_content/ProjetoE21",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Aside.css"
+    },
+    {
+      "Identity": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\wwwroot\\css\\DarkMode.css",
+      "SourceId": "ProjetoE21",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\wwwroot\\",
+      "BasePath": "_content/ProjetoE21",
+      "RelativePath": "css/DarkMode.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DarkMode.css"
     },
     {
       "Identity": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\wwwroot\\css\\keyframe.css",
