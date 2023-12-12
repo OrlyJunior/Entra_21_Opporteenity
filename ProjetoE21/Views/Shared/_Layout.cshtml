@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoE21.styles.css" asp-append-version="true" />
+
+    <style>
+        .asd {
+            display: none;
+        }
+    </style>
     
 </head>
 <body>
@@ -40,8 +46,18 @@
                         </li>
 
                     </ul>
-                    <div class="d-flex">
-                        <button class="btn btn-outline-secondary ms-2">Configuração</button>
+                    <div class="d-flex me-5 mt-0">
+                        <button onclick="aside()" class="btn btn-secondary dropdown-toggle w-100 mt-0" type="button" id="config" data-bs-toggle="dropdown" aria-expanded="false">
+                            Configurações
+                        </button>
+                        <aside class="position-absolute end-0 bg-danger asd w-25 rounded p-2 mt-0" style="height: 100vh" id="aside">
+                            <div>X</div>
+                            <div class="w-100"> Dark mode</div>
+                            <div class="w-100">Minha conta</div>
+                            <div class="w-100"></div>
+                            <div class="w-100">Sair</div>
+                            <div class="w-100"></div>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -62,6 +78,11 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function aside() {
+            document.getElementById("aside").classList.remove("asd");
+        }
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

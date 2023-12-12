@@ -4,7 +4,7 @@
     {
         public static string conecta()
         {
-            string conecta = @"Server=localhost;Database=e21;Uid=root;Pwd=root";
+            string conecta = @"Server=localhost;Database=e21;Uid=root;Pwd=admin";
 
             return conecta;
         }
