@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoE21.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Aside.css" />
 
     <style>
         .asd {
             display: none;
         }
+
+        .asdEnter {
+            animation: AsideEnter 0.25s ease-in;
+        }
+
+        .asd-item {
+        }
+
+            .asd-item:hover {
+                background-color: rgba(0, 0, 0, 0.50);
+                cursor: pointer;
+            }
     </style>
-    
 </head>
 <body>
     <header>
@@ -22,7 +34,7 @@
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjetoE21</a>
                 <div class="d-flex">
                     <input type="text" class="form-control" placeholder="Buscar" />
-                    
+
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +43,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-                       
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -47,22 +59,22 @@
 
                     </ul>
                     <div class="d-flex me-5 mt-0">
-                        <button onclick="aside()" class="btn btn-secondary dropdown-toggle w-100 mt-0" type="button" id="config" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">
                             Configurações
                         </button>
-                        <aside class="position-absolute end-0 bg-danger asd w-25 rounded p-2 mt-0" style="height: 100vh" id="aside">
-                            <div>X</div>
-                            <div class="w-100"> Dark mode</div>
-                            <div class="w-100">Minha conta</div>
-                            <div class="w-100"></div>
-                            <div class="w-100">Sair</div>
-                            <div class="w-100"></div>
+                        <aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                            <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                            <div class="rounded w-100 asd-item p-2"> Dark mode</div>
+                            <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                            <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
                         </aside>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
+
 
     <div class="container d-flex justify-content-center" style="min-height: 100vh;min-width:98vw; padding-top: 56px;">
         <main role="main" class="pb-3">
@@ -78,9 +90,22 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     <script>
+        asideRemove();
+
         function aside() {
-            document.getElementById("aside").classList.remove("asd");
+            document.getElementById("config").insertAdjacentHTML("afterend", `                        <aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                                                        <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                                        <div class="rounded w-100 asd-item p-2"> Dark mode</div>
+                                                                                                                        <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                                        <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                                    </aside>
+                `);
+        }
+
+        function asideRemove() {
+            document.getElementById("aside").remove("asd");
         }
     </script>
 
