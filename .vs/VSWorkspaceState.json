@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CadastroProjeto",
+    "\\CadastroProjeto\\Controllers",
+    "\\CadastroProjeto\\Dados",
+    "\\CadastroProjeto\\Models",
+    "\\CadastroProjeto\\Views",
+    "\\CadastroProjeto\\Views\\Empresa",
+    "\\CadastroProjeto\\Views\\Jovem"
+  ],
+  "SelectedNode": "\\CadastroProjeto\\Views\\Empresa\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

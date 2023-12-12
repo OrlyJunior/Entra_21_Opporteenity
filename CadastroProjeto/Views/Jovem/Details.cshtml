@@ -1,0 +1,63 @@
+﻿@model CadastroProjeto.Models.Jovem
+@{
+    ViewData["Title"] = "Jovem";
+}
+<h1>@ViewData["title"]</h1>
+<div>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Id):</span>
+        @Html.DisplayFor(model => model.Id)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Nome):</span>
+        @Html.DisplayFor(model => model.Nome)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Email):</span>
+        @Html.DisplayFor(model => model.Email)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Telefone):</span>
+        @Html.DisplayFor(model => model.Telefone)
+    </p>
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.DataNascimento):</span>
+        @Html.DisplayFor(model => model.DataNascimento)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.NomeLocal):</span>
+        @Html.DisplayFor(model => model.NomeLocal)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Rua):</span>
+        @Html.DisplayFor(model => model.Rua)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Numero):</span>
+        @Html.DisplayFor(model => model.Numero)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Bairro):</span>
+        @Html.DisplayFor(model => model.Bairro)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Cidade):</span>
+        @Html.DisplayFor(model => model.Cidade)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.CEP):</span>
+        @Html.DisplayFor(model => model.CEP)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.UF):</span>
+        @Html.DisplayFor(model => model.UF)
+    </p>
+    <p>
+        <span class="fw-bold">@Html.DisplayNameFor(model => model.Pais):</span>
+        @Html.DisplayFor(model => model.Pais)
+    </p>
+    @Html.ActionLink("Editar", "Edit", new {id=Model.Id}) |
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    <a asp-action="Index">Voltar</a>
+</div>

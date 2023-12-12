@@ -1,0 +1,120 @@
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.staticwebassets.runtime.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.exe
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.deps.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.runtimeconfig.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfoInputs.cache
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfo.cs
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.csproj.CoreCompileInputs.cache
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cache
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cs
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.CadastroProjeto.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.build.CadastroProjeto.props
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CadastroProjeto.props
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CadastroProjeto.props
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\bundle\CadastroProjeto.styles.css
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\projectbundle\CadastroProjeto.bundle.scp.css
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\refint\CadastroProjeto.dll
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.genruntimeconfig.cache
+C:\Users\analu\source\repos\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\ref\CadastroProjeto.dll
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.staticwebassets.runtime.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.exe
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.deps.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.runtimeconfig.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfoInputs.cache
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfo.cs
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.csproj.CoreCompileInputs.cache
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cache
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cs
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.CadastroProjeto.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.build.CadastroProjeto.props
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CadastroProjeto.props
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CadastroProjeto.props
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\bundle\CadastroProjeto.styles.css
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\projectbundle\CadastroProjeto.bundle.scp.css
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\refint\CadastroProjeto.dll
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.genruntimeconfig.cache
+C:\Users\analu.baade\Desktop\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\ref\CadastroProjeto.dll
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.staticwebassets.runtime.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.exe
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.deps.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.runtimeconfig.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfoInputs.cache
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfo.cs
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.csproj.CoreCompileInputs.cache
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cache
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cs
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.CadastroProjeto.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.build.CadastroProjeto.props
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CadastroProjeto.props
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CadastroProjeto.props
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\bundle\CadastroProjeto.styles.css
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\projectbundle\CadastroProjeto.bundle.scp.css
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\refint\CadastroProjeto.dll
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.genruntimeconfig.cache
+C:\Users\analu\OneDrive\Área de Trabalho\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\ref\CadastroProjeto.dll
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\appsettings.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.staticwebassets.runtime.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.exe
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.deps.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.runtimeconfig.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\bin\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfoInputs.cache
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.AssemblyInfo.cs
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.csproj.CoreCompileInputs.cache
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cache
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.RazorAssemblyInfo.cs
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.CadastroProjeto.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.build.CadastroProjeto.props
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CadastroProjeto.props
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CadastroProjeto.props
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\bundle\CadastroProjeto.styles.css
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\scopedcss\projectbundle\CadastroProjeto.bundle.scp.css
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.dll
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\refint\CadastroProjeto.dll
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.pdb
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\CadastroProjeto.genruntimeconfig.cache
+C:\Users\analu.baade\Downloads\CadastroProjeto\CadastroProjeto\obj\Debug\net6.0\ref\CadastroProjeto.dll
