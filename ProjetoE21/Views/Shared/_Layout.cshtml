@@ -49,7 +49,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div id="control" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -68,12 +68,6 @@
                         <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">
                             Configurações
                         </button>
-                        <aside class="asdEnter position-absolute end-0 rounded p-2 mt-0" style="height: 98vh; z-index: 1; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                            <div class="rounded asd-item p-2 text-center" onclick="asideRemove()">X</div>
-                            <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark Mode</div>
-                            <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                            <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                        </aside>
                     </div>
                 </div>
             </div>
@@ -98,31 +92,43 @@
 
     <script>
         function darkMode() {
-            alert("A");
-           /* document.getElementsByTagName("html")[0].classList.add("dark-mode2");
+            document.getElementsByTagName("html")[0].classList.add("dark-mode2");
             document.getElementById("dm").innerHTML = "Light mode";
-            document.getElementById("dm").onclick = "lightMode()";*/
+            document.getElementById("dm").onclick = "lightMode()";
+            document.getElementById("control").id = "contro";
         }
 
         function lightMode() { 
             document.getElementsByTagName("html")[0].classList.remove("dark-mode2");
             document.getElementById("dm").innerHTML = "Dark mode";
             document.getElementById("dm").onclick = "darkMode()";
+            document.getElementById("contro").id = "control";
         }
 
         function aside() {
-            document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                     <div class="rounded w-100 asd-item p-2"> Dark mode</div>
-                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                                                                              </aside>`);
+            if (document.getElementById("control")){
+                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                             <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
+                                                                                             <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                             <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                      </aside>`);
+            } else { 
+                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
+                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                              </aside>`);
+            }
+            
         }
 
         function asideRemove() {
-            document.getElementById("aside").remove("asd");
+            document.getElementById("aside").remove();
         }
-        asideRemove();
+
+        
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)
