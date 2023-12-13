@@ -8,12 +8,37 @@ namespace ProjetoE21.Controllers
     public class EmpregosController : Controller
     {
         DaoEmprego DaoS = new();
-        public IActionResult Index()
+        public IActionResult Index(string sorter)
         {
             Listas.empregos = DaoS.consultar();
 
+            ViewBag.descSort = "desc_desc";
+            ViewBag.descSort2 = "desc";
+            ViewBag.idSort = "id_desc";
+            ViewBag.idSort2 = "id";
+
+            switch (sorter)
+            {
+                case "desc_desc":
+                    Listas.empregos = Listas.empregos.OrderByDescending(n => n.Descricao).ToList();
+                    break;
+                case "desc":
+                    Listas.empregos = Listas.empregos.OrderBy(n => n.Descricao).ToList();
+                    break;
+                case "id_desc":
+                    Listas.empregos = Listas.empregos.OrderByDescending(n => n.Id).ToList();
+                    break;
+                case "id":
+                    Listas.empregos = Listas.empregos.OrderBy(n => n.Id).ToList();
+                    break;
+                default:
+                    Listas.empregos = Listas.empregos.OrderBy(n => n.Id).ToList();
+                    break;
+            }
+
             return View(Listas.empregos);
         }
+
 
         [HttpGet]
         public IActionResult Adicionar()

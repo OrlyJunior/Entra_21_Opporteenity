@@ -6,6 +6,14 @@
     <p>
         <a asp-action="Adicionar">Adicionar empregos</a>
     </p>
+    <div class="d-flex">
+        <h5 class="me-5">Ordenar por</h5>
+        @Html.ActionLink("Descrição ⬇️ ", "Index", new { sorter = ViewBag.descSort })
+        @Html.ActionLink("Descrição ⬆️ ", "Index", new { sorter = ViewBag.descSort2 })
+        @Html.ActionLink("Id ⬇️ ", "Index", new { sorter = ViewBag.idSort })
+        @Html.ActionLink("Id ⬆️ ", "Index", new { sorter = ViewBag.idSort2 })
+    </div>
+    
     @foreach (var i in Model)
     {
         <div class="d-flex">
