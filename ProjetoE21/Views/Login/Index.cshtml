@@ -1,7 +1,73 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = null;
 }
 
-<h1>teste</h1>
+
+<head>
+    <link rel="stylesheet" href="~/css/keyframe.css"/>
+</head>
+
+
+<div style="font-family: Arial, sans-serif; background-color: #e6e6fa; position: fixed;overflow: auto; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;">
+    <div style="display:flex; justify-content: space-between">
+
+
+        <div style="background-color: #e6e6fa; margin-left:30%; margin-top:20vh">
+
+            <div class="container" style="font-size:3em; font-family: Arial, sans-serif;">
+                <p class="paragrafo">Opport</p>
+                <p class="teen">ee</p>
+                <p class="u">u</p>
+                <p>nity</p>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: end; margin-right: 35px; margin-top: 100px;">
+            <form asp-controller="Home" asp-action="Index">
+
+                <div style="background-color: #fff; border:2px solid black; padding: 20px; border-radius: 8px; width: 300px; height:300px; position: relative; box-shadow: 6px 8px 4px rgba(0, 0, 0, 1);">
+
+
+                    <label for="username" style="display: block; margin-bottom: 12px;">Usuário</label>
+                    <input type="text" id="username" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
+
+                    <label for="password" style="display: block; margin-bottom: 12px;">Senha</label>
+                    <input type="password" id="password" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
+
+                    <button type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Entrar</button>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    
+    <hr />
+
+    <div style="margin:4em 7em 7em 7em; font-family: 'Arial', sans-serif;">
+        
+        <h1>  ** OPPORTEENITY : Seu Caminho para o Primeiro Emprego!** </h1>
+
+        <p>
+            Iniciar sua trajetória profissional não precisa ser uma tarefa difícil. Apresentamos o Oporteenity, um site de vagas de emprego exclusivo para menores aprendizes. Reconhecemos a importância de criar oportunidades acessíveis para jovens talentos entrarem no mercado de trabalho, e é por isso que projetamos uma plataforma que conecta empresas em busca de novos talentos a jovens ávidos por experiência profissional.
+        </p>
+
+        <h3> No Oporteenity, oferecemos:</h3>
+
+        <p>
+            <span style="font-weight: bold;">1. <strong>Vagas Exclusivas para Menores Aprendizes:</strong></span> Nosso foco é proporcionar oportunidades especialmente voltadas para quem está começando a carreira.
+        </p>
+        <p>
+            <span style="font-weight: bold;">2. <strong>Aconselhamento Profissional:</strong></span> Compreendemos as incertezas que cercam os primeiros passos no mundo profissional. Oferecemos suporte e aconselhamento para ajudar os candidatos a se prepararem para entrevistas e desenvolverem habilidades essenciais.
+        </p>
+        <p>
+            <span style="font-weight: bold;">3. <strong>Crescimento Profissional:</strong></span> Encontrar um emprego é apenas o começo. Oferecemos recursos para o desenvolvimento contínuo, permitindo que os jovens aprendizes cresçam em suas carreiras.
+        </p>
+
+        <p>
+            Estamos comprometidos em ser o seu parceiro na busca pelo primeiro emprego. No **Oporteenity**, acreditamos que todos merecem uma chance justa de construir um futuro sólido. Junte-se a nós e transforme seus sonhos profissionais em realidade. Acesse nosso site e descubra as oportunidades que esperam por você!
+        </p>
+
+    </div>
+</div>

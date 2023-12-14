@@ -1,0 +1,60 @@
+
+
+@keyframes abrirEspacoETeen {
+    0% {
+        width: 2em;
+        
+    }
+
+    100% {
+        width: 3em;
+        
+    }
+}
+@keyframes girar {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(180deg) translateY(-0.12em) translateX(-0.55em);
+    }
+    100% {
+        transform: rotate(180deg) translateY(-0.12em) translateX(-0.55em);
+
+    }
+}
+@keyframes opacidade {
+    0% {
+        opacity: 0;
+        transform: translateX(0.3em) scale(-1);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(0.3em) scale(1.2);
+        
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0.3em) scale(1.2);
+        
+    }
+}
+
+.teen {
+    animation: opacidade 2s ease-in-out infinite alternate ;
+}
+.u {
+    animation: girar 2s ease-in-out infinite alternate;
+}
+
+
+.container {
+    display: flex;
+}
+
+.paragrafo {
+    animation: abrirEspacoETeen 2s ease-in-out infinite alternate;
+}
