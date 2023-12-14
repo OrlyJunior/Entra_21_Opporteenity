@@ -21,10 +21,18 @@
         .asd-item {
         }
 
-            .asd-item:hover {
-                background-color: rgba(0, 0, 0, 0.50);
-                cursor: pointer;
-            }
+        .asd-item:hover {
+            background-color: rgba(0, 0, 0, 0.50);
+            cursor: pointer;
+        }
+
+            .dark-mode {
+            filter: invert(100%);
+        }
+
+        .dark-mode2 {
+            filter: invert(85%);
+        }
     </style>
 </head>
 <body>
@@ -61,12 +69,6 @@
                         <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">
                             Configurações
                         </button>
-                        <aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                            <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                            <div class="rounded w-100 asd-item p-2"> Dark mode</div>
-                            <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                            <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                        </aside>
                     </div>
                 </div>
             </div>
@@ -91,16 +93,48 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-        asideRemove();
+        if (localStorage.getItem("dm") == "yes") {
+            document.getElementsByTagName("html")[0].classList.add("dark-mode2");
+        }
+
+        if (!localStorage.getItem("dm")) {
+            localStorage.setItem("dm", "no");
+        }
+
+        function darkMode() {
+            document.getElementsByTagName("html")[0].classList.add("dark-mode2");
+            document.getElementById("dm").innerHTML = "Light mode";
+            document.getElementById("dm").onclick = "lightMode()";
+            localStorage.setItem("dm", "yes");
+
+            asideRemove();
+        }
+
+        function lightMode() {
+            document.getElementsByTagName("html")[0].classList.remove("dark-mode2");
+            document.getElementById("dm").innerHTML = "Dark mode";
+            document.getElementById("dm").onclick = "darkMode()";
+            localStorage.setItem("dm", "no");
+
+            asideRemove();
+        }
 
         function aside() {
-            document.getElementById("config").insertAdjacentHTML("afterend", `                        <aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                                                                                                                        <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                                                        <div class="rounded w-100 asd-item p-2"> Dark mode</div>
-                                                                                                                        <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                                                                                                                        <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                                                                                                                    </aside>
-                `);
+            if (localStorage.getItem("dm") == "no") {
+                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                                             <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
+                                                                                                             <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                             <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                      </aside>`);
+            } else {
+                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
+                                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                              </aside>`);
+            }
         }
 
         function asideRemove() {

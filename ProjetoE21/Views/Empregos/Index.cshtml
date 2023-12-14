@@ -6,6 +6,16 @@
     <p>
         <a asp-action="Adicionar">Adicionar empregos</a>
     </p>
+
+    <div class="d-flex mb-3 w-50">
+        <div>
+            <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.descSort})
+        </div>
+        <div>
+            <img width="10%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.Sort})
+        </div>
+    </div>
+
     @foreach (var i in Model)
     {
         <div class="d-flex">
@@ -48,11 +58,4 @@
             </div>
         </div>
     }
-
-</div>
-
-    
-                                                               
-                                                                   
-                     
-          
+</div>    

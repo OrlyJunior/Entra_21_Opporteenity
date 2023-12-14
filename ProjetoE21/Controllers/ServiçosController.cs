@@ -5,13 +5,28 @@ using ProjetoE21.Dao;
 
 namespace ProjetoE21.Controllers
 {
-    
     public class ServiçosController : Controller
     {
         DaoServico DaoS = new();
-        public IActionResult Index()
+        public IActionResult Index(string sorter)
         {
             Listas.servicos = DaoS.consultar();
+
+            ViewBag.descSort = "nome_desc";
+            ViewBag.Sort = "nome";
+
+            switch (sorter)
+            {
+                case "nome_desc":
+                    Listas.servicos = Listas.servicos.OrderByDescending(n => n.Descricao).ToList();
+                    break;
+                case "nome":
+                    Listas.servicos = Listas.servicos.OrderBy(n => n.Descricao).ToList();
+                    break;
+                default:
+                    Listas.servicos = Listas.servicos.OrderBy(n => n.Id).ToList();
+                    break;
+            }
 
             return View(Listas.servicos);
         }

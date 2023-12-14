@@ -21,4 +21,9 @@
     <Folder Include="NovaPasta\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\Imagens\ordenar Baixo.png" />
+    <None Include="wwwroot\css\Imagens\ordenarCima.png" />
+  </ItemGroup>
+
 </Project>
