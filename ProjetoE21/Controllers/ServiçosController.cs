@@ -2,18 +2,24 @@
 using ProjetoE21.Models;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
+using Org.BouncyCastle.Asn1;
 
 namespace ProjetoE21.Controllers
 {
     public class ServiçosController : Controller
     {
         DaoServico DaoS = new();
-        public IActionResult Index(string sorter)
+        public IActionResult Index(string sorter, string searchString)
         {
             Listas.servicos = DaoS.consultar();
 
             ViewBag.descSort = "nome_desc";
             ViewBag.Sort = "nome";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Listas.servicos = Listas.servicos.Where(s => s.Descricao.Contains(searchString)).ToList();
+            }
 
             switch (sorter)
             {

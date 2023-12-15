@@ -6,6 +6,13 @@
         <a asp-action="Adicionar">Adicionar serviço</a>
     </p>
 
+    <form asp-action="Index">
+        <p>
+            Encontrar pela descrição: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+
     <div class="d-flex mb-3 w-50">
         <div>
             <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.descSort})

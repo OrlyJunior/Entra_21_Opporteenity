@@ -8,12 +8,17 @@ namespace ProjetoE21.Controllers
     public class EmpregosController : Controller
     {
         DaoEmprego DaoS = new();
-        public IActionResult Index(string sorter)
+        public IActionResult Index(string sorter, string searchString)
         {
             Listas.empregos = DaoS.consultar();
 
             ViewBag.descSort = "nome_desc";
             ViewBag.Sort = "nome";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Listas.empregos = Listas.empregos.Where(s => s.Descricao.Contains(searchString)).ToList();
+            }
 
             switch (sorter)
             {
