@@ -1,24 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using X.PagedList;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
 using ProjetoE21.Models;
+
 
 namespace ProjetoE21.Controllers
 {
     public class EmpregosController : Controller
     {
         DaoEmprego DaoS = new();
-        public IActionResult Index(string sorter, string searchString)
+        public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
             Listas.empregos = DaoS.consultar();
 
+            ViewBag.CurrentSort = sorter;
             ViewBag.descSort = "nome_desc";
             ViewBag.Sort = "nome";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 Listas.empregos = Listas.empregos.Where(s => s.Descricao.Contains(searchString)).ToList();
             }
+
+            ViewBag.CurrentFilter = searchString;
 
             switch (sorter)
             {
@@ -33,7 +49,10 @@ namespace ProjetoE21.Controllers
                     break;
             }
 
-            return View(Listas.empregos);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            return View(Listas.empregos.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]

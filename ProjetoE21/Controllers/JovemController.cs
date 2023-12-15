@@ -2,7 +2,7 @@
 
 namespace ProjetoE21.Controllers
 {
-    public class Login : Controller
+    public class JovemController : Controller
     {
         public IActionResult Index()
         {

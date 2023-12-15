@@ -1,4 +1,10 @@
-﻿@model IEnumerable<ProjetoE21.Models.Servico>
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.PagedList<ProjetoE21.Models.Servico>
+
+@{
+    ViewBag.Title = "Serviços";
+}
+
 <div>
     <h1>Meus serviços</h1>
 
@@ -63,6 +69,14 @@
         </div>
     }
 
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+    @if (Model.HasNextPage || Model.HasPreviousPage)
+    {
+        <div style="text-align: center">
+            @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.filtro }))
+        </div>
+    }
 </div>
 
     

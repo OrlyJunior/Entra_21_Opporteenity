@@ -1,4 +1,9 @@
-﻿@model IEnumerable<ProjetoE21.Models.Emprego>
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.PagedList<ProjetoE21.Models.Emprego>
+
+@{
+    ViewBag.Title = "Empregos";
+}
 
 <div>
     <h1>Meus empregos</h1>
@@ -7,19 +12,20 @@
         <a asp-action="Adicionar">Adicionar empregos</a>
     </p>
 
-    <form asp-action="Index">
+    @using (Html.BeginForm("Index", "Empregos", FormMethod.Get))
+    {
         <p>
-            Encontrar pela descrição: @Html.TextBox("SearchString")
-            <input type="submit" value="Search"/>
+            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
         </p>
-    </form>
+    }
 
     <div class="d-flex mb-3 w-50">
         <div>
             <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.descSort})
         </div>
         <div>
-            <img width="10%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.Sort})
+            <img width="15%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.Sort})
         </div>
     </div>
 
@@ -55,7 +61,7 @@
                             <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:blue;">Salvar</a>
                             <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
                         </div>
-                        <div class="card-body">                        
+                        <div class="card-body">
                             @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
                             @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
                             @Html.ActionLink("Delete", "Delete",  new {Id = i.Id})
@@ -65,4 +71,13 @@
             </div>
         </div>
     }
-</div>    
+
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+    @if (Model.HasNextPage || Model.HasPreviousPage)
+    {
+        <div style="text-align: center">
+            @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.filtro }))
+        </div>
+    }
+</div>

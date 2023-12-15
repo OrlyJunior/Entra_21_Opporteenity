@@ -8,7 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "ProjetoE21/1.0.0": {
         "dependencies": {
-          "MySql.Data": "8.2.0"
+          "Microsoft.AspNet.Mvc": "4.0.20505",
+          "MySql.Data": "8.2.0",
+          "PagedList.Mvc": "4.5.0",
+          "System.Web.Mvc.Extensions": "1.1.1.2",
+          "X.PagedList.Mvc.Core": "9.0.0-prerelease"
         },
         "runtime": {
           "ProjetoE21.dll": {}
@@ -27,6 +31,14 @@
           "lib/net5.0/Google.Protobuf.dll": {
             "assemblyVersion": "3.21.9.0",
             "fileVersion": "3.21.9.0"
+          }
+        }
+      },
+      "JetBrains.Annotations/2022.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2022.3.1.0"
           }
         }
       },
@@ -59,8 +71,60 @@
           }
         }
       },
+      "Microsoft.AspNet.Mvc/4.0.20505": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "2.0.20505",
+          "Microsoft.AspNet.WebPages": "2.0.20505"
+        },
+        "runtime": {
+          "lib/net40/System.Web.Mvc.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.20505.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/2.0.20505": {
+        "runtime": {
+          "lib/net40/System.Web.Razor.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20505.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebPages/2.0.20505": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "2.0.20505",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "lib/net40/System.Web.Helpers.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20505.0"
+          },
+          "lib/net40/System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20505.0"
+          },
+          "lib/net40/System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20505.0"
+          },
+          "lib/net40/System.Web.WebPages.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20505.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20105.407"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
@@ -127,6 +191,25 @@
             "rid": "win-x64",
             "assetType": "native",
             "fileVersion": "4.1.0.0"
+          }
+        }
+      },
+      "PagedList/1.17.0": {
+        "runtime": {
+          "lib/net40/PagedList.dll": {
+            "assemblyVersion": "1.17.0.0",
+            "fileVersion": "1.17.0.0"
+          }
+        }
+      },
+      "PagedList.Mvc/4.5.0": {
+        "dependencies": {
+          "PagedList": "1.17.0"
+        },
+        "runtime": {
+          "lib/net40/PagedList.Mvc.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.0.0"
           }
         }
       },
@@ -312,6 +395,14 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
+      "System.Web.Mvc.Extensions/1.1.1.2": {
+        "runtime": {
+          "lib/net45/System.Web.Mvc.Extensions.dll": {
+            "assemblyVersion": "1.1.0.6",
+            "fileVersion": "1.1.0.6"
+          }
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -328,6 +419,28 @@
             "assetType": "runtime",
             "assemblyVersion": "4.0.1.0",
             "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "X.PagedList/9.0.0-prerelease": {
+        "dependencies": {
+          "JetBrains.Annotations": "2022.3.1"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/9.0.0-prerelease": {
+        "dependencies": {
+          "X.PagedList": "9.0.0-prerelease"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
           }
         }
       },
@@ -361,6 +474,13 @@
       "path": "google.protobuf/3.21.9",
       "hashPath": "google.protobuf.3.21.9.nupkg.sha512"
     },
+    "JetBrains.Annotations/2022.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "path": "jetbrains.annotations/2022.3.1",
+      "hashPath": "jetbrains.annotations.2022.3.1.nupkg.sha512"
+    },
     "K4os.Compression.LZ4/1.3.5": {
       "type": "package",
       "serviceable": true,
@@ -382,6 +502,27 @@
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
     },
+    "Microsoft.AspNet.Mvc/4.0.20505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V6zLs67Ns8wMQ4AkzP2iFn3hh/KkM4r+YxkjV2NgTnlVyo3jgiHDmdi0sM6Bl51sGcwg8BGhgRsLGDOzTqunzg==",
+      "path": "microsoft.aspnet.mvc/4.0.20505",
+      "hashPath": "microsoft.aspnet.mvc.4.0.20505.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/2.0.20505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gk3ZVP/bwGsKx3fQf4EHoIzCApHU9LTIWOjmABa5VMT7axwyPDtUq3wGfW3LiHmlHjkh/SwnZzwCw1LnCTgmBQ==",
+      "path": "microsoft.aspnet.razor/2.0.20505",
+      "hashPath": "microsoft.aspnet.razor.2.0.20505.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/2.0.20505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/eILBjvoH9y3DqTZO3HX0HHyocyQPzdR125lVxSVHJUQq6NosyYS9BdcLlug9c7qYtVkDcUDxQRhHTBnDqC1VA==",
+      "path": "microsoft.aspnet.webpages/2.0.20505",
+      "hashPath": "microsoft.aspnet.webpages.2.0.20505.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -396,6 +537,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -409,6 +557,20 @@
       "sha512": "sha512-p62lWlKvJJ5UnBNvtal3JM9SOyQaaIA4C6E5LO2TOlO8CF5BDX0I8HsihbzP8wOELZhD4I3vpferDRv7uBNkOg==",
       "path": "mysql.data/8.2.0",
       "hashPath": "mysql.data.8.2.0.nupkg.sha512"
+    },
+    "PagedList/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "path": "pagedlist/1.17.0",
+      "hashPath": "pagedlist.1.17.0.nupkg.sha512"
+    },
+    "PagedList.Mvc/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
+      "path": "pagedlist.mvc/4.5.0",
+      "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -557,12 +719,33 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
+    "System.Web.Mvc.Extensions/1.1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A8+X7EW9un/RedIBhpA/LMSvWw8iaEa9mJt0nvcFYQM2F1CoggZp6e7c50CIDfL6g5/105u7Q/QO8m7EUGtL9A==",
+      "path": "system.web.mvc.extensions/1.1.1.2",
+      "hashPath": "system.web.mvc.extensions.1.1.1.2.nupkg.sha512"
+    },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "X.PagedList/9.0.0-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X8g+0H+OvauZSd22qreeiBlGPI5gMw8R+TDacAplt7hnBBmWoqiJho6Hy2ROW8z7KjtAVqxhye/FoB9EX7wgvg==",
+      "path": "x.pagedlist/9.0.0-prerelease",
+      "hashPath": "x.pagedlist.9.0.0-prerelease.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/9.0.0-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ixEd88gKHjHW1UJn9fmxcPr0bGx4iQXKhXyZ1chBpLPAWbcjZxAD0+F2U2hF5dGQGG/+0Ugs1B/C6m/7pzrJZA==",
+      "path": "x.pagedlist.mvc.core/9.0.0-prerelease",
+      "hashPath": "x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512"
     },
     "ZstdSharp.Port/0.7.1": {
       "type": "package",

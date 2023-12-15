@@ -2,24 +2,38 @@
 using ProjetoE21.Models;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
-using Org.BouncyCastle.Asn1;
+using X.PagedList;
 
 namespace ProjetoE21.Controllers
 {
     public class ServiçosController : Controller
     {
         DaoServico DaoS = new();
-        public IActionResult Index(string sorter, string searchString)
+        public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
             Listas.servicos = DaoS.consultar();
 
+            ViewBag.CurrentSort = sorter;
             ViewBag.descSort = "nome_desc";
             ViewBag.Sort = "nome";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 Listas.servicos = Listas.servicos.Where(s => s.Descricao.Contains(searchString)).ToList();
             }
+
+            ViewBag.CurrentFilter = searchString;
 
             switch (sorter)
             {
@@ -34,7 +48,10 @@ namespace ProjetoE21.Controllers
                     break;
             }
 
-            return View(Listas.servicos);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            return View(Listas.servicos.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]
