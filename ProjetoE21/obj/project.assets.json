@@ -2101,19 +2101,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\orly.junior\\.nuget\\packages\\": {}
+    "C:\\Users\\patrick.kremer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\refactory\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
-      "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\obj\\",
+      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\refactory\\ProjetoE21\\ProjetoE21.csproj",
+      "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\refactory\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2179,7 +2179,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
