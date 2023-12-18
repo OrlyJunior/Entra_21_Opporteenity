@@ -6,6 +6,5 @@ namespace ProjetoE21.Interfaces
     {
         public bool Ordena(string sorter);
         public bool Pesquisa(string searchString);
-        public int? VerificaPg(string currentFilter, int? page);
     }
 }

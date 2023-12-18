@@ -35,10 +35,5 @@ namespace ProjetoE21.Ordenacao
 
             return true;
         }
-
-        public int? VerificaPg(string currentFilter, int? page)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
