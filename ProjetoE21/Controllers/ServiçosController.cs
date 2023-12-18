@@ -3,11 +3,13 @@ using ProjetoE21.Models;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
 using X.PagedList;
+using ProjetoE21.Ordenacao;
 
 namespace ProjetoE21.Controllers
 {
     public class ServiçosController : Controller
     {
+        OrdenarServicos ordenar = new();
         DaoServico DaoS = new();
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
@@ -28,25 +30,11 @@ namespace ProjetoE21.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                Listas.servicos = Listas.servicos.Where(s => s.Descricao.Contains(searchString)).ToList();
-            }
+            ordenar.Pesquisa(searchString);
 
             ViewBag.CurrentFilter = searchString;
 
-            switch (sorter)
-            {
-                case "nome_desc":
-                    Listas.servicos = Listas.servicos.OrderByDescending(n => n.Descricao).ToList();
-                    break;
-                case "nome":
-                    Listas.servicos = Listas.servicos.OrderBy(n => n.Descricao).ToList();
-                    break;
-                default:
-                    Listas.servicos = Listas.servicos.OrderBy(n => n.Id).ToList();
-                    break;
-            }
+            ordenar.Ordena(sorter);
 
             int pageSize = 3;
             int pageNumber = (page ?? 1);
@@ -118,7 +106,7 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Details(int id)
         {
-            Servico servico = Dados.Listas.servicos.FirstOrDefault(s => s.Id == id);
+            Servico servico = Listas.servicos.FirstOrDefault(s => s.Id == id);
 
             return View(servico);
         }

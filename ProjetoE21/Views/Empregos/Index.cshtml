@@ -32,7 +32,7 @@
     @foreach (var i in Model)
     {
         <div class="d-flex">
-            <div class="card mb-5" style="max-width: 85vh; min-width: 85vh">
+            <div class="card mb-5" style="width: 100%">
                 <div class="row g-0">
                     <div class="row flex-column">
                         <div class="card-body">
@@ -61,11 +61,6 @@
                             <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:blue;">Salvar</a>
                             <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
                         </div>
-                        <div class="card-body">
-                            @Html.ActionLink("Details", "Details",  new {Id = i.Id}) |
-                            @Html.ActionLink("Edit", "Edit",  new {Id = i.Id}) |
-                            @Html.ActionLink("Delete", "Delete",  new {Id = i.Id})
-                        </div>
                     </div>
                 </div>
             </div>
@@ -77,7 +72,7 @@
     @if (Model.HasNextPage || Model.HasPreviousPage)
     {
         <div style="text-align: center">
-            @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.filtro }))
+            @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.CurrentFilter }))
         </div>
     }
 </div>

@@ -3,12 +3,13 @@ using X.PagedList;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
 using ProjetoE21.Models;
-
+using ProjetoE21.Ordenacao;
 
 namespace ProjetoE21.Controllers
 {
     public class EmpregosController : Controller
     {
+        OrdenarEmpregos ordena = new();
         DaoEmprego DaoS = new();
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
@@ -29,25 +30,11 @@ namespace ProjetoE21.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                Listas.empregos = Listas.empregos.Where(s => s.Descricao.Contains(searchString)).ToList();
-            }
+            ordena.Pesquisa(searchString);
 
             ViewBag.CurrentFilter = searchString;
 
-            switch (sorter)
-            {
-                case "nome_desc":
-                    Listas.empregos = Listas.empregos.OrderByDescending(n => n.Descricao).ToList();
-                    break;
-                case "nome":
-                    Listas.empregos = Listas.empregos.OrderBy(n => n.Descricao).ToList();
-                    break;
-                default:
-                    Listas.empregos = Listas.empregos.OrderBy(n => n.Id).ToList();
-                    break;
-            }
+            ordena.Ordena(sorter);
 
             int pageSize = 3;
             int pageNumber = (page ?? 1);
