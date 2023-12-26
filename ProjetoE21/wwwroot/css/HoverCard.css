@@ -1,0 +1,19 @@
+﻿@keyframes HoverCard1 {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: #e2dcff;
+    }
+}
+
+@keyframes HoverCard2 {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: #ffdfff;
+    }
+}

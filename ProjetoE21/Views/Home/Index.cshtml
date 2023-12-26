@@ -1,4 +1,22 @@
-﻿<div class="d-flex" style="width: 100%; margin-top: 12px">
+﻿<link rel="stylesheet" href="~/css/HoverCard.css"/>
+
+<style>
+    .hoverCard:hover{
+        animation-name: HoverCard1;
+        animation-duration: 0.50s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    .hoverCard2:hover {
+        animation-name: HoverCard2;
+        animation-duration: 0.50s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+</style>
+
+<div class="d-flex" style="width: 100%; margin-top: 12px">
     <aside style="width: 33.3%" class="m-2 text-center">
         <p>Usuário</p>
     </aside>
@@ -19,7 +37,7 @@
         @foreach (var i in ProjetoE21.Dados.Listas.empregos)
         {
             <div class="d-flex">
-                <div class="card mb-5" style="width: 100%">
+                <div class="card mb-5 hoverCard" style="width: 100%">
                     <div class="row g-0">
                         <div class="row flex-column">
                             <div class="card-body">
@@ -58,7 +76,7 @@
         {
             <div class="d-flex">
                 <div class="card mb-5" style="width: 100%">
-                    <div class="row g-0">
+                    <div class="row g-0 hoverCard2">
                         <div class="row flex-column">
                             <div class="card-body">
                                 <h5 class="card-title">@Html.DisplayFor(model => i.EmpresaS.Nome)</h5>

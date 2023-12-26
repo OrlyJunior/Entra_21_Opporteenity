@@ -616,3 +616,17 @@ C:\Users\patrick.kremer\Desktop\refactory\ProjetoE21\obj\Debug\net6.0\refint\Pro
 C:\Users\patrick.kremer\Desktop\refactory\ProjetoE21\obj\Debug\net6.0\ProjetoE21.pdb
 C:\Users\patrick.kremer\Desktop\refactory\ProjetoE21\obj\Debug\net6.0\ProjetoE21.genruntimeconfig.cache
 C:\Users\patrick.kremer\Desktop\refactory\ProjetoE21\obj\Debug\net6.0\ref\ProjetoE21.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\PagedList.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\System.Web.Mvc.Extensions.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\obj\Debug\net6.0\ProjetoE21.MvcApplicationPartsAssemblyInfo.cs
