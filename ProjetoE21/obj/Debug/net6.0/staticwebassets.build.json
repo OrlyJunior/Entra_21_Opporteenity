@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FIIocFy9QuiQ+OL/8mNw2j9tvBDvS+Y22s2xI3QR5ew=",
+  "Hash": "Oz9FULXmA0cD5j2nyHaE5ds4OW7+mCS7cRatmSnwxmY=",
   "Source": "ProjetoE21",
   "BasePath": "_content/ProjetoE21",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Imagens\\ordenarCima.png"
+    },
+    {
+      "Identity": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\wwwroot\\css\\Imagens\\Perfil.png",
+      "SourceId": "ProjetoE21",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\wwwroot\\",
+      "BasePath": "_content/ProjetoE21",
+      "RelativePath": "css/Imagens/Perfil.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Imagens\\Perfil.png"
     },
     {
       "Identity": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\wwwroot\\css\\keyframe.css",
