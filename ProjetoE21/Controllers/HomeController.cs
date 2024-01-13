@@ -10,6 +10,7 @@ namespace ProjetoE21.Controllers
     {
         DaoEmprego DaoE = new();
         DaoServico DaoS = new();
+        DaoCadastro DaoC = new();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -18,12 +19,22 @@ namespace ProjetoE21.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(Jovem jovem)
         {
-            Listas.empregos = DaoE.consultar();
-            Listas.servicos = DaoS.consultar();
+            List<Jovem> jovens = DaoC.consultar();
 
-            return View();
+            foreach(var i in jovens)
+            {
+                if (i.Email == jovem.Email && i.Senha == jovem.Senha)
+                {
+                    Listas.empregos = DaoE.consultar();
+                    Listas.servicos = DaoS.consultar();
+
+                    return View(jovem);
+                }
+            }
+
+            return RedirectToAction("Privacy");
         }
 
         public IActionResult Privacy()

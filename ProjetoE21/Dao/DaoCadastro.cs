@@ -52,7 +52,56 @@ namespace ProjetoE21.Dao
 
         public List<Jovem> consultar()
         {
-            throw new NotImplementedException();
+            List<Jovem> jovens = new();
+
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "select * from tb_cadastros";
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Jovem jovem = new();
+                    jovem.Local = new();
+
+                    jovem.Id = Convert.ToInt32(dr["id"]);
+                    jovem.Nome = Convert.ToString(dr["nome"]);
+                    jovem.Email = Convert.ToString(dr["email"]);
+                    jovem.Telefone = Convert.ToString(dr["fone"]);
+                    jovem.DataNascimento = Convert.ToDateTime(dr["nascimento"]);
+                    jovem.Local.Rua = Convert.ToString(dr["rua"]);
+                    jovem.Local.Numero = Convert.ToInt32(dr["numero"]);
+                    jovem.Local.Bairro = Convert.ToString(dr["bairro"]);
+                    jovem.Local.Cidade = Convert.ToString(dr["cidade"]);
+                    jovem.Local.Estado = Convert.ToString(dr["estado"]);
+                    jovem.Responsavel = Convert.ToString(dr["responsavel"]);
+                    jovem.FoneResponsavel = Convert.ToString(dr["foneResponsavel"]);
+                    jovem.Senha = Convert.ToString(dr["senha"]);
+
+                    jovens.Add(jovem);
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return jovens;
         }
 
         public void deletar(Jovem jovem)

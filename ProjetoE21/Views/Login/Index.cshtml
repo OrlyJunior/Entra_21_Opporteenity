@@ -2,6 +2,7 @@
     Layout = null;
 }
 
+@model ProjetoE21.Models.Jovem
 
 <head>
     <link rel="stylesheet" href="~/css/keyframe.css"/>
@@ -26,20 +27,17 @@
 
         <div style="display: flex; align-items: center; justify-content: end; margin-right: 35px; margin-top: 100px;">
             <form asp-controller="Home" asp-action="Index">
-
                 <div style="background-color: #fff; border:2px solid black; padding: 20px; border-radius: 8px; width: 300px; height:300px; position: relative; box-shadow: 6px 8px 4px rgba(0, 0, 0, 1);">
-                    <label for="username" style="display: block; margin-bottom: 12px;">Usuário</label>
-                    <input type="text" id="username" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
+                    <label asp-for="Email" style="display: block; margin-bottom: 12px;">Usuário</label>
+                    <input asp-for="Email" type="text" id="username" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
 
-                    <label for="password" style="display: block; margin-bottom: 12px;">Senha</label>
-                    <input type="password" id="password" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
+                    <label style="display: block; margin-bottom: 12px;" asp-for="Senha">Senha</label>
+                    <input type="password" id="password" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;" asp-for="Senha">
 
-                    <button type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Entrar</button>
+                    <button asp-controller="Home" asp-action="Index" type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Entrar</button>
                 </div>
-
             </form>
         </div>
-
     </div>
     
     <hr />
