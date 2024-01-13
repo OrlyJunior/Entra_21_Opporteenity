@@ -11,8 +11,6 @@ namespace ProjetoE21.Controllers
         DaoEmprego DaoE = new();
         DaoServico DaoS = new();
 
-
-
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

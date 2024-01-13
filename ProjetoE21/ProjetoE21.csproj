@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="NovaPasta\" />
+    <Folder Include="Views\Cadastro\" />
   </ItemGroup>
 
   <ItemGroup>
