@@ -1,0 +1,22 @@
+﻿@using ProjetoE21.Dados;
+
+<h1>Perfil</h1>
+
+<h3>@Usuario.logado.Nome</h3>
+<p>Data de nascimento: @Usuario.logado.DataNascimento.Day/@Usuario.logado.DataNascimento.Month/@Usuario.logado.DataNascimento.Year</p>
+<p>Telefone: @Usuario.logado.Telefone</p>
+<p>Email: @Usuario.logado.Email</p>
+
+<h1>Responsável</h1>
+
+<p>Nome do responsável: @Usuario.logado.Responsavel</p>
+<p>Telefone do responsável: @Usuario.logado.FoneResponsavel</p>
+
+<div class="d-flex">
+    <form asp-action="Editar">
+        <button asp-action="Editar" class="btn btn-warning me-2">Editar</button>
+    </form>
+    <form asp-action="Deslogar">
+        <button asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</button>
+    </form>
+</div>

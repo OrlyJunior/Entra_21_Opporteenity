@@ -27,6 +27,7 @@ namespace ProjetoE21.Controllers
             {
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {
+                    Usuario.logado = i;
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
 

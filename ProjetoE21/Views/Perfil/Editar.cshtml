@@ -1,0 +1,56 @@
+﻿@model ProjetoE21.Models.Jovem
+
+<h1>Edite seu perfil</h1>
+
+<form asp-action="Editar">
+    <div>
+        <label asp-for="Nome">Edite seu nome completo:</label>
+        <input asp-for="Nome"></input>
+    </div>
+    <div>
+        <label asp-for="Email">Edite seu endereço de email:</label>
+        <input asp-for="Email"></input>
+    </div>
+    <div>
+        <label asp-for="Senha">Edite sua senha:</label>
+        <input asp-for="Senha"></input>
+    </div>
+    <div>
+        <label asp-for="Telefone">Edite seu fone:</label>
+        <input asp-for="Telefone"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Estado">Edite o estado de sua residência:</label>
+        <input asp-for="Local.Estado"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Cidade">Edite a cidade de sua residência:</label>
+        <input asp-for="Local.Cidade"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Bairro">Edite o bairro de sua residência:</label>
+        <input asp-for="Local.Bairro"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Rua">Edite a rua de sua residência:</label>
+        <input asp-for="Local.Rua"></input>
+    </div>
+    <div>
+        <label asp-for="Local.Numero">Edite o número do local de sua residência:</label>
+        <input asp-for="Local.Numero"></input>
+    </div>
+    <div>
+        <label asp-for="DataNascimento">Edite sua data de nascimento:</label>
+        <input asp-for="DataNascimento"></input>
+    </div>
+    <div>
+        <label asp-for="Responsavel">Edite o nome de seu responsável:</label>
+        <input asp-for="Responsavel"></input>
+    </div>
+    <div>
+        <label asp-for="FoneResponsavel">Edite o fone de seu responsável:</label>
+        <input asp-for="FoneResponsavel"></input>
+    </div>
+
+    <button asp-action="Editar" class="btn btn-warning">Editar</button>
+</form>

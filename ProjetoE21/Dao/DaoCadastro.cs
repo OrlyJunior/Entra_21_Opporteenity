@@ -111,7 +111,46 @@ namespace ProjetoE21.Dao
 
         public bool editar(Jovem jovem)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "update tb_cadastros set nome = @nome, email = @email, fone = @fone, nascimento = @nascimento, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado, responsavel = @responsavel, foneResponsavel = @foneResponsavel, senha = @senha where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = jovem.Id;
+                cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = jovem.Nome;
+                cm.Parameters.Add("email", MySqlDbType.VarChar).Value = jovem.Email;
+                cm.Parameters.Add("fone", MySqlDbType.VarChar).Value = jovem.Telefone;
+                cm.Parameters.Add("nascimento", MySqlDbType.DateTime).Value = jovem.DataNascimento;
+                cm.Parameters.Add("estado", MySqlDbType.VarChar).Value = jovem.Local.Estado;
+                cm.Parameters.Add("rua", MySqlDbType.VarChar).Value = jovem.Local.Rua;
+                cm.Parameters.Add("numero", MySqlDbType.Int32).Value = jovem.Local.Numero;
+                cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = jovem.Local.Bairro;
+                cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = jovem.Local.Cidade;
+                cm.Parameters.Add("responsavel", MySqlDbType.VarChar).Value = jovem.Responsavel;
+                cm.Parameters.Add("foneResponsavel", MySqlDbType.VarChar).Value = jovem.FoneResponsavel;
+                cm.Parameters.Add("senha", MySqlDbType.VarChar).Value = jovem.Senha;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return true;
         }
     }
 }

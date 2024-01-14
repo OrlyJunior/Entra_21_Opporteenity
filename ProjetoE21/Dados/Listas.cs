@@ -8,5 +8,7 @@ namespace ProjetoE21.Dados
         public static List<Servico> servicos = new();
 
         public static List<Emprego> empregos = new();
+
+        public static List<Jovem> cadastros = new();
     }
 }
