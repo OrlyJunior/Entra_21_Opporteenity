@@ -13,10 +13,6 @@
 <p>Telefone do responsável: @Usuario.logado.FoneResponsavel</p>
 
 <div class="d-flex">
-    <form asp-action="Editar">
-        <button asp-action="Editar" class="btn btn-warning me-2">Editar</button>
-    </form>
-    <form asp-action="Deslogar">
-        <button asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</button>
-    </form>
+        <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
+        <a asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
 </div>

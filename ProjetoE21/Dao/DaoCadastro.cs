@@ -150,6 +150,10 @@ namespace ProjetoE21.Dao
                 }
             }
 
+            Listas.cadastros = consultar();
+
+            Usuario.logado = jovem;
+
             return true;
         }
     }

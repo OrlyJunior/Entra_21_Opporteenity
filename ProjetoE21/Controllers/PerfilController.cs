@@ -25,6 +25,8 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Editar(Jovem jovem)
         {
+            jovem.Id = Usuario.logado.Id;
+
             DaoC.editar(jovem);
 
             return RedirectToAction("Index");

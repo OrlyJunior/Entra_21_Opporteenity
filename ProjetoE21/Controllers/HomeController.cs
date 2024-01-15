@@ -21,9 +21,9 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Index(Jovem jovem)
         {
-            List<Jovem> jovens = DaoC.consultar();
+            Listas.cadastros = DaoC.consultar();
 
-            foreach(var i in jovens)
+            foreach(var i in Listas.cadastros)
             {
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {

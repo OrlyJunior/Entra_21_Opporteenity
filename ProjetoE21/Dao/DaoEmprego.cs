@@ -10,6 +10,7 @@ namespace ProjetoE21.Dao
         public bool adicionar(Emprego emprego)
         {
             MySqlConnection con = new();
+
             con.ConnectionString = Conexao.conecta();
 
             con.Open();
