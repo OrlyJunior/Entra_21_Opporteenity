@@ -1,5 +1,18 @@
 create database E21;
 
+create table curriculo(
+id int auto_increment primary key,
+nome varchar(40) not null,
+endereço varchar(40) not null,
+telefone varchar(40) not null,
+email varchar(40) not null,
+redesocial varchar(40) not null,
+objetivo varchar(400) not null,
+escola varchar(45) not null,
+idiomas varchar(45) not null,
+cursos varchar(450) ,
+experiencia varchar(400));
+
 create table tb_servicos(
 id int auto_increment primary key,
 descricao varchar(40) not null,
