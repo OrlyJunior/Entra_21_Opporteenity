@@ -85,67 +85,67 @@
           }
         }
       },
-      "Microsoft.AspNet.Mvc/4.0.20505": {
+      "Microsoft.AspNet.Mvc/5.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNet.Razor": "2.0.20505",
-          "Microsoft.AspNet.WebPages": "2.0.20505"
+          "Microsoft.AspNet.Razor": "3.3.0",
+          "Microsoft.AspNet.WebPages": "3.3.0"
         },
         "compile": {
-          "lib/net40/System.Web.Mvc.dll": {
+          "lib/net45/System.Web.Mvc.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Mvc.dll": {
+          "lib/net45/System.Web.Mvc.dll": {
             "related": ".xml"
           }
         }
       },
-      "Microsoft.AspNet.Razor/2.0.20505": {
+      "Microsoft.AspNet.Razor/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net40/System.Web.Razor.dll": {
+          "lib/net45/System.Web.Razor.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Razor.dll": {
+          "lib/net45/System.Web.Razor.dll": {
             "related": ".xml"
           }
         }
       },
-      "Microsoft.AspNet.WebPages/2.0.20505": {
+      "Microsoft.AspNet.WebPages/3.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNet.Razor": "2.0.20505",
+          "Microsoft.AspNet.Razor": "3.3.0",
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "compile": {
-          "lib/net40/System.Web.Helpers.dll": {
+          "lib/net45/System.Web.Helpers.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Deployment.dll": {
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Razor.dll": {
+          "lib/net45/System.Web.WebPages.Razor.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.dll": {
+          "lib/net45/System.Web.WebPages.dll": {
             "related": ".Deployment.xml;.Razor.xml;.xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Helpers.dll": {
+          "lib/net45/System.Web.Helpers.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Deployment.dll": {
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Razor.dll": {
+          "lib/net45/System.Web.WebPages.Razor.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.dll": {
+          "lib/net45/System.Web.WebPages.dll": {
             "related": ".Deployment.xml;.Razor.xml;.xml"
           }
         }
@@ -830,48 +830,58 @@
         "lib/netstandard2.1/K4os.Hash.xxHash.xml"
       ]
     },
-    "Microsoft.AspNet.Mvc/4.0.20505": {
-      "sha512": "V6zLs67Ns8wMQ4AkzP2iFn3hh/KkM4r+YxkjV2NgTnlVyo3jgiHDmdi0sM6Bl51sGcwg8BGhgRsLGDOzTqunzg==",
+    "Microsoft.AspNet.Mvc/5.3.0": {
+      "sha512": "Q1LcXRqTPmbXJAdf45PsxI6JYnCQP4vBfPCgDFd4dYf8ojxFTo4PH333PC4TzbOqRHxrUWGwgBdcR5T2jNwpHQ==",
       "type": "package",
-      "path": "microsoft.aspnet.mvc/4.0.20505",
+      "path": "microsoft.aspnet.mvc/5.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/System.Web.Mvc.dll",
-        "lib/net40/System.Web.Mvc.xml",
-        "microsoft.aspnet.mvc.4.0.20505.nupkg.sha512",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Mvc.dll",
+        "lib/net45/System.Web.Mvc.xml",
+        "microsoft.aspnet.mvc.5.3.0.nupkg.sha512",
         "microsoft.aspnet.mvc.nuspec"
       ]
     },
-    "Microsoft.AspNet.Razor/2.0.20505": {
-      "sha512": "Gk3ZVP/bwGsKx3fQf4EHoIzCApHU9LTIWOjmABa5VMT7axwyPDtUq3wGfW3LiHmlHjkh/SwnZzwCw1LnCTgmBQ==",
+    "Microsoft.AspNet.Razor/3.3.0": {
+      "sha512": "5vJ0UKE/n381qcaKwFHxCwzb/YVuHzrm155iTgQhiv7+xdg2PE+54u+NPqu6C9AeRVOiwbh8/EOZwD16bLvWkg==",
       "type": "package",
-      "path": "microsoft.aspnet.razor/2.0.20505",
+      "path": "microsoft.aspnet.razor/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/System.Web.Razor.dll",
-        "lib/net40/System.Web.Razor.xml",
-        "microsoft.aspnet.razor.2.0.20505.nupkg.sha512",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml",
+        "microsoft.aspnet.razor.3.3.0.nupkg.sha512",
         "microsoft.aspnet.razor.nuspec"
       ]
     },
-    "Microsoft.AspNet.WebPages/2.0.20505": {
-      "sha512": "/eILBjvoH9y3DqTZO3HX0HHyocyQPzdR125lVxSVHJUQq6NosyYS9BdcLlug9c7qYtVkDcUDxQRhHTBnDqC1VA==",
+    "Microsoft.AspNet.WebPages/3.3.0": {
+      "sha512": "2ATJrA8KNx2EpBWNjwy4P+NjQ06cZWjYsTZ5NqGNIHaU/i3NKmtpoaE90NGmVRaKF5rryGfADnvPQ56f61OuWg==",
       "type": "package",
-      "path": "microsoft.aspnet.webpages/2.0.20505",
+      "path": "microsoft.aspnet.webpages/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/System.Web.Helpers.dll",
-        "lib/net40/System.Web.Helpers.xml",
-        "lib/net40/System.Web.WebPages.Deployment.dll",
-        "lib/net40/System.Web.WebPages.Deployment.xml",
-        "lib/net40/System.Web.WebPages.Razor.dll",
-        "lib/net40/System.Web.WebPages.Razor.xml",
-        "lib/net40/System.Web.WebPages.dll",
-        "lib/net40/System.Web.WebPages.xml",
-        "microsoft.aspnet.webpages.2.0.20505.nupkg.sha512",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Helpers.dll",
+        "lib/net45/System.Web.Helpers.xml",
+        "lib/net45/System.Web.WebPages.Deployment.dll",
+        "lib/net45/System.Web.WebPages.Deployment.xml",
+        "lib/net45/System.Web.WebPages.Razor.dll",
+        "lib/net45/System.Web.WebPages.Razor.xml",
+        "lib/net45/System.Web.WebPages.dll",
+        "lib/net45/System.Web.WebPages.xml",
+        "microsoft.aspnet.webpages.3.3.0.nupkg.sha512",
         "microsoft.aspnet.webpages.nuspec"
       ]
     },
@@ -2093,7 +2103,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.AspNet.Mvc >= 4.0.0",
+      "Microsoft.AspNet.Mvc >= 5.3.0",
       "MySql.Data >= 8.2.0",
       "PagedList.Mvc >= 4.5.0",
       "System.Web.Mvc.Extensions >= 1.1.1.2",
@@ -2141,7 +2151,7 @@
         "dependencies": {
           "Microsoft.AspNet.Mvc": {
             "target": "Package",
-            "version": "[4.0.0, )"
+            "version": "[5.3.0, )"
           },
           "MySql.Data": {
             "target": "Package",
@@ -2203,10 +2213,10 @@
   },
   "logs": [
     {
-      "code": "NU1603",
+      "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "ProjetoE21 depende de Microsoft.AspNet.Mvc (>= 4.0.0), mas Microsoft.AspNet.Mvc 4.0.0 não foi encontrado. A melhor correspondência aproximada de Microsoft.AspNet.Mvc 4.0.20505 foi resolvida.",
+      "message": "O pacote 'Microsoft.AspNet.Mvc 5.3.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.Mvc",
       "targetGraphs": [
         "net6.0"
@@ -2216,17 +2226,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Mvc 4.0.20505' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "Microsoft.AspNet.Mvc",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Razor 2.0.20505' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "O pacote 'Microsoft.AspNet.Razor 3.3.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.Razor",
       "targetGraphs": [
         "net6.0"
@@ -2236,7 +2236,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.WebPages 2.0.20505' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "O pacote 'Microsoft.AspNet.WebPages 3.3.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.WebPages",
       "targetGraphs": [
         "net6.0"

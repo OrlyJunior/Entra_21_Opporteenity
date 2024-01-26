@@ -25,6 +25,11 @@ namespace ProjetoE21.Controllers
 
             foreach(var i in Listas.cadastros)
             {
+                if(jovem == null)
+                {
+                    return RedirectToAction("Error");
+                }
+
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {
                     Usuario.logado = i;
@@ -35,7 +40,7 @@ namespace ProjetoE21.Controllers
                 }
             }
 
-            return RedirectToAction("Privacy");
+            return RedirectToAction("Error");
         }
 
         public IActionResult Privacy()

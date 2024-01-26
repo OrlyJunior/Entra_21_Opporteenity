@@ -8,6 +8,7 @@ namespace ProjetoE21.Controllers
     public class PerfilController : Controller
     {
         DaoCadastro DaoC = new();
+        DaoCurriculo DaoCur = new();
 
         public IActionResult Index()
         {
@@ -28,6 +29,28 @@ namespace ProjetoE21.Controllers
             jovem.Id = Usuario.logado.Id;
 
             DaoC.editar(jovem);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Curriculo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Curriculo(Curriculo curriculo)
+        {
+            curriculo.Nome = Usuario.logado.Nome;
+
+            curriculo.Local = new();
+
+            curriculo.Local = Usuario.logado.Local;
+            curriculo.Telefone = Usuario.logado.Telefone;
+            curriculo.Email = Usuario.logado.Email;
+
+            DaoCur.adicionar(curriculo);
 
             return RedirectToAction("Index");
         }

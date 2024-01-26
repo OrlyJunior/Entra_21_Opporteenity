@@ -7,22 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NovaPasta\**" />
     <Compile Remove="Views\NovaPasta\**" />
+    <Content Remove="NovaPasta\**" />
     <Content Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
     <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
     <None Remove="Views\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="MySql.Data" Version="8.2.0" />
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
     <PackageReference Include="System.Web.Mvc.Extensions" Version="1.1.1.2" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="9.0.0-prerelease" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NovaPasta\" />
   </ItemGroup>
 
   <ItemGroup>
