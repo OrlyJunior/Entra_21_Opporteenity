@@ -1,5 +1,7 @@
 ﻿@using ProjetoE21.Dados;
 
+@model ProjetoE21.Models.Curriculo;
+
 <h1>Perfil</h1>
 
 <h3>@Usuario.logado.Nome</h3>
@@ -17,28 +19,26 @@
         <a asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
 </div>
 <div>
-    <h1>curriculo</h1>
+    <h1>Currículo</h1>
 
     <div>
-        <form style="display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
+        <form asp-action="Curriculo" style="display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
             <h2>Dados pessoais</h2>
-            <input id="Curriculo-nome" placeholder="Nome">
-            <input id="Curriculo-endereço" placeholder="endereço">
-            <input id="Curriculo-telefone" placeholder="telefone">
-            <input id="Curriculo-email" placeholder="email">
-            <input id="Curriculo-redesocial" placeholder="rede social">
+
+            <input asp-for="RedeSocial" id="Curriculo-redesocial" placeholder="rede social">
+
             <h2>Objetivo</h2>
-            <input id="Curriculo-objetivo" placeholder="objetivo">
+            <input asp-for="Objetivo" id="Curriculo-objetivo" placeholder="objetivo">
+
             <h2>Escolaridade</h2>
-            <input id="Curriculo-escola" placeholder="escola">
-            <input id="Curriculo-idiomas" placeholder="idiomas">
+            <input asp-for="Escola" id="Curriculo-escola" placeholder="escola">
+            <input asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas">
+            <input asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos">
 
-            <input id="Curriculo-cursos" placeholder="cursos">
             <h2>Experiencias</h2>
-            <input id="Curriculo-experiencia" placeholder="experiencia">
+            <input asp-for="Experiencia" id="Curriculo-experiencia" placeholder="experiencia">
 
-            <input type="submit">
-
+            <input asp-action="Curriculo" type="submit">
         </form>
     </div>
 </div>
