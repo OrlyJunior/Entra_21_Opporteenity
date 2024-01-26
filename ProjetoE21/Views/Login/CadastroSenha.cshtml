@@ -1,0 +1,69 @@
+﻿@model ProjetoE21.Models.Jovem
+@{
+    Layout = null;
+}
+
+ <div style="font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh; margin: auto;"  >
+        <h1 style="margin: 5em;">Cadastre-se</h1>
+    
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+            <div style="display: flex;  justify-content: space-between; width: 40vw;">
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        pessoal
+                    </h3>
+                </button style="width: 10em; height: 8em;">
+                <button style="width: 10em; height: 8em;  background-color:chartreuse;">
+                    <h3 style="padding: auto;">
+                        senha
+                    </h3>
+                </button>
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        responsável
+                    </h3>
+                </button>
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        localização
+                    </h3>
+                </button>
+                   
+            </div>
+            <form asp-action="Adicionar">
+                <div style="font-size: 2em; width: 40vw; justify-items: space-between; text-align: center; " >
+                    <div style="margin: 1em;">
+                        <label asp-for="Email">Insira seu endereço de email:</label>
+                        <input asp-for="Email" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;"></input>
+                    </div>
+                    <div style="margin: 1em;">
+                        <label asp-for="Senha">Insira sua senha:</label>
+                        <input asp-for="Senha" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;"></input>
+                    </div>
+                    <div style="margin: 1em;">
+                        <label asp-for="Senha">Insira sua senha novamente :</label>
+                        <input asp-for="Senha" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;"></input>
+                    </div>
+                </div>
+
+               @*  <button asp-action="Cadastro-pessoal">next</button>
+
+                 <button asp-controller="Login" asp-action="Cadastro-pessoal">next</button> *@
+                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="CadastroResponsavel">Login</a>
+
+                @* separador------------------------------------------------------------------------------------------------- *@
+
+        
+                <button asp-action="Cadastro">Adicionar</button>
+            
+                @* <button asp-action="Cadastro-pessoal">next</button> *@
+
+
+                 
+            </form>
+             
+
+             
+        </div>
+ </div>

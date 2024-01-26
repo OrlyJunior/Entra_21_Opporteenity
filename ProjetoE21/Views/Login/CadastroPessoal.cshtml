@@ -1,0 +1,117 @@
+﻿@model ProjetoE21.Models.Jovem
+@{
+    Layout = null;
+}
+
+<script>
+        function formatarTelefone(telefone) {
+
+            telefone = telefone.replace(/\D/g, '');
+    
+           
+            telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
+    
+            
+            document.getElementById('Telefone').value = telefone;
+        }
+    </script>
+  
+    <div style="font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh; margin: auto;"  >
+        <h1 style="margin: 5em;">Cadastre-se</h1>
+    
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
+            <div style="display: flex;  justify-content: space-between; width: 40vw;">
+                <button style="width: 10em; height: 8em; background-color:chartreuse;">
+                    <h3 style="padding: auto;">
+                        pessoal
+                    </h3>
+                </button style="width: 10em; height: 8em;">
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        senha
+                    </h3>
+                </button>
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        responsável
+                    </h3>
+                </button>
+                <button style="width: 10em; height: 8em;">
+                    <h3 style="padding: auto;">
+                        localização
+                    </h3>
+                </button>
+                   
+            </div>
+            <form asp-action="Adicionar">
+                <div style="font-size: 2em; width: 40vw; justify-items: space-between; text-align: center; " >
+                    <div style="margin: 1em;">
+                        <label asp-for="Nome">Insira seu nome completo</label>
+                        <input asp-for="Nome" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;"></input>
+                    </div>
+                    <div style="margin: 1em;">
+                        <label asp-for="DataNascimento">Insira sua data de nascimento</label>
+                        <input asp-for="DataNascimento" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;"></input>
+                    </div>
+                    <div  style="margin: 1em;">
+                        <label asp-for="Telefone">Insira seu Telefone</label>
+                        <input asp-for="Telefone" id="Telefone" style="width: 30vw; height: -2em; text-align: center;font-size: large; padding: 0; border: 2px solid black;" oninput="formatarTelefone(this.value)">
+                    </div>
+                </div>
+
+                <button asp-action="Cadastro-pessoal">next</button>
+
+                 <button asp-controller="Login" asp-action="Cadastro-pessoal">next</button>
+                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Cadastropessoal">Login</a>
+
+                @* separador------------------------------------------------------------------------------------------------- *@
+
+               @*  <div>
+                    <label asp-for="Email">Insira seu endereço de email:</label>
+                    <input asp-for="Email"></input>
+                </div>
+                <div>
+                    <label asp-for="Senha">Insira sua senha:</label>
+                    <input asp-for="Senha"></input>
+                </div>
+                
+                <div>
+                    <label asp-for="Local.Estado">Insira o estado de sua residência:</label>
+                    <input asp-for="Local.Estado"></input>
+                </div>
+                <div>
+                    <label asp-for="Local.Cidade">Insira a cidade de sua residência:</label>
+                    <input asp-for="Local.Cidade"></input>
+                </div>
+                <div>
+                    <label asp-for="Local.Bairro">Insira o bairro de sua residência:</label>
+                    <input asp-for="Local.Bairro"></input>
+                </div>
+                <div>
+                    <label asp-for="Local.Rua">Insira a rua de sua residência:</label>
+                    <input asp-for="Local.Rua"></input>
+                </div>
+                <div>
+                    <label asp-for="Local.Numero">Insira o número do local de sua residência:</label>
+                    <input asp-for="Local.Numero"></input>
+                </div>
+                
+                <div>
+                    <label asp-for="Responsavel">Insira o nome de seu responsável:</label>
+                    <input asp-for="Responsavel"></input>
+                </div>
+                <div>
+                    <label asp-for="FoneResponsavel">Insira o fone de seu responsável:</label>
+                    <input asp-for="FoneResponsavel"></input>
+                </div> *@
+        
+                <button asp-action="Cadastro">Adicionar</button>
+            </form>
+        </div>
+       
+    </div>
+
+
+
+
