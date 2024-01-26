@@ -8,10 +8,30 @@ namespace ProjetoE21.Controllers
     public class LoginController : Controller
     {
         DaoCadastro DaoC = new();
+        DaoEmpresa DaoEmp = new();
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Confirmar()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Empresa()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Empresa(Empresa empresa)
+        {
+            DaoEmp.adicionar(empresa);
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
