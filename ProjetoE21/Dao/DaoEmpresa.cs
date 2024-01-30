@@ -19,7 +19,7 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = "insert into tb_empresas(nome, email, telefone, estado, rua, numero, bairro, cidade, cnpj, senha)values(@nome, @email, @fone, @estado, @rua, @numero, @bairro, @cidade, @cnpj, @senha)";
+                cm.CommandText = "insert into tb_empresas(nome, email, fone, estado, rua, numero, bairro, cidade, cnpj, senha)values(@nome, @email, @fone, @estado, @rua, @numero, @bairro, @cidade, @cnpj, @senha)";
 
                 cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = empresa.Nome;
                 cm.Parameters.Add("email", MySqlDbType.VarChar).Value = empresa.Email;
@@ -49,7 +49,54 @@ namespace ProjetoE21.Dao
 
         public List<Empresa> consultar()
         {
-            throw new NotImplementedException();
+            List<Empresa> empresas = new();
+
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "select * from tb_empresas";
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Empresa empresa = new();
+                    empresa.Local = new();
+
+                    empresa.Id = Convert.ToInt32(dr["id"]);
+                    empresa.Nome = Convert.ToString(dr["nome"]);
+                    empresa.Email = Convert.ToString(dr["email"]);
+                    empresa.Telefone = Convert.ToString(dr["fone"]);
+                    empresa.Local.Rua = Convert.ToString(dr["rua"]);
+                    empresa.Local.Numero = Convert.ToInt32(dr["numero"]);
+                    empresa.Local.Bairro = Convert.ToString(dr["bairro"]);
+                    empresa.Local.Cidade = Convert.ToString(dr["cidade"]);
+                    empresa.Local.Estado = Convert.ToString(dr["estado"]);
+                    empresa.Cnpj = Convert.ToString(dr["cnpj"]);
+                    empresa.Senha = Convert.ToString(dr["senha"]);
+
+                    empresas.Add(empresa);
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return empresas;
         }
 
         public void deletar(Empresa t)

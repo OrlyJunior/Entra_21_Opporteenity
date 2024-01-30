@@ -4,6 +4,8 @@ namespace ProjetoE21.Dados
 {
     public class Usuario
     {
-        public static Jovem logado = new();
+        public static Jovem LogadoJ = new();
+
+        public static Empresa LogadoE = new();
     }
 }

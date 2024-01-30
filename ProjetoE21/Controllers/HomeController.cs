@@ -11,6 +11,7 @@ namespace ProjetoE21.Controllers
         DaoEmprego DaoE = new();
         DaoServico DaoS = new();
         DaoCadastro DaoC = new();
+        DaoEmpresa DaoEmp = new();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -19,20 +20,63 @@ namespace ProjetoE21.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(Jovem jovem)
+        public IActionResult Index()
         {
-            Listas.cadastros = DaoC.consultar();
+            return View();
+        }
 
-            foreach(var i in Listas.cadastros)
+        [HttpGet]
+        public IActionResult LoginEmpresa()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult LoginEmpresa(Empresa empresa)
+        {
+            if (empresa == null)
             {
-                if(jovem == null)
-                {
-                    return RedirectToAction("Error");
-                }
+                return RedirectToAction("Error");
+            }
 
+            Listas.cadastrosE = DaoEmp.consultar();
+
+            foreach (var i in Listas.cadastrosE)
+            {
+                if (i.Email == empresa.Email && i.Senha == empresa.Senha)
+                {
+                    Usuario.LogadoE = i;
+                    Listas.empregos = DaoE.consultar();
+                    Listas.servicos = DaoS.consultar();
+
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return RedirectToAction("Error");
+        }
+
+        [HttpGet]
+        public IActionResult LoginJovem()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult LoginJovem(Jovem jovem)
+        {
+            if (jovem == null)
+            {
+                return RedirectToAction("Error");
+            }
+
+            Listas.cadastrosJ = DaoC.consultar();
+
+            foreach (var i in Listas.cadastrosJ)
+            {
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {
-                    Usuario.logado = i;
+                    Usuario.LogadoJ = i;
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
 
