@@ -84,8 +84,6 @@ namespace ProjetoE21.Controllers
                     Listas.servicos = DaoS.consultar();
 
                     return RedirectToAction("Index");
-
-
                 }
             }
 
