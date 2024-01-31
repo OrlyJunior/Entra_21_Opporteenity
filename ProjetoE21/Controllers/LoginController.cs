@@ -40,27 +40,42 @@ namespace ProjetoE21.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult CadastroLocalizacao()
+        public IActionResult CadastroLocalizacao(Jovem jovem)
         {
+            UserTemp.LogadoTemp.Nome = jovem.Nome;
+            UserTemp.LogadoTemp.DataNascimento = jovem.DataNascimento;
+            UserTemp.LogadoTemp.Telefone = jovem.Telefone;
+
             return View();
         }
 
         [HttpGet]
-        public IActionResult CadastroResponsavel()
+        public IActionResult CadastroResponsavel(Jovem jovem)
         {
+            UserTemp.LogadoTemp.Local = new();
+
+            UserTemp.LogadoTemp.Local = jovem.Local;
+
             return View();
         }
         [HttpGet]
-        public IActionResult CadastroSenha()
+        public IActionResult CadastroSenha(Jovem jovem)
         {
+            UserTemp.LogadoTemp.Responsavel = jovem.Responsavel;
+            UserTemp.LogadoTemp.FoneResponsavel = jovem.FoneResponsavel;
+
             return View();
         }
 
-
-        [HttpPost]
         public IActionResult Cadastro(Jovem jovem)
         {
-            DaoC.adicionar(jovem);
+            UserTemp.LogadoTemp.Senha = jovem.Senha;
+
+            Usuario.LogadoJ = UserTemp.LogadoTemp;
+
+            DaoC.adicionar(Usuario.LogadoJ);
+
+            DaoC.criaTbJovem(Usuario.LogadoJ);
 
             return RedirectToAction("Index");
         }

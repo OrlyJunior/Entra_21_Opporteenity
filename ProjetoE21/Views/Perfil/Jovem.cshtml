@@ -18,6 +18,32 @@
         <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
         <a asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
 </div>
+
+<div>
+    <h1>Minhas vagas</h1>
+
+    <div>
+        <form asp-action="Curriculo" style="display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
+            <h2>Dados pessoais</h2>
+
+            <input asp-for="RedeSocial" id="Curriculo-redesocial" placeholder="rede social">
+
+            <h2>Objetivo</h2>
+            <input asp-for="Objetivo" id="Curriculo-objetivo" placeholder="objetivo">
+
+            <h2>Escolaridade</h2>
+            <input asp-for="Escola" id="Curriculo-escola" placeholder="escola">
+            <input asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas">
+            <input asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos">
+
+            <h2>Experiencias</h2>
+            <input asp-for="Experiencia" id="Curriculo-experiencia" placeholder="experiencia">
+
+            <input asp-action="Curriculo" type="submit">
+        </form>
+    </div>
+</div>
+
 <div>
     <h1>Currículo</h1>
 

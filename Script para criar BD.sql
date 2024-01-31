@@ -68,5 +68,3 @@ cidade varchar(40) not null,
 estado varchar(40) not null,
 cnpj varchar(20) not null,
 senha varchar(50) not null);
-
-drop table tb_curriculos;

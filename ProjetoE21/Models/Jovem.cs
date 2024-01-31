@@ -7,7 +7,7 @@
         public string Email { get; set; }
         public string Telefone { get; set; }
         public DateTime DataNascimento { get; set; }
-        public Local Local { get; set; }
+        public Local Local { get; set; } = new();
         public string Responsavel { get; set; }
         public string FoneResponsavel { get; set; }
         public string Senha { get; set; }

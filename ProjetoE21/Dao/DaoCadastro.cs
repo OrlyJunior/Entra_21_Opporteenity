@@ -156,5 +156,38 @@ namespace ProjetoE21.Dao
 
             return true;
         }
+
+        public bool criaTbJovem(Jovem jovem)
+        {
+            string nomeTb = $"{jovem.Id}_{jovem.Email}";
+
+            Usuario.NomeTb = nomeTb;
+
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = $"create table tb_{nomeTb}(id int auto_increment primary key,descricao varchar(40) not null,contratanteNome varchar(40) not null,estado varchar(40) not null,cidade varchar(40) not null,numero int not null,bairro varchar(40) not null,rua varchar(40) not null,data datetime not null,dia varchar(20) not null,hora varchar(20) not null,valor decimal not null);";
+
+                cm.Connection = con;
+
+                cm.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return true;
+        }
     }
 }
