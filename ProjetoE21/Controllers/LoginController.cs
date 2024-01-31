@@ -40,6 +40,14 @@ namespace ProjetoE21.Controllers
             return View();
         }
 
+        public IActionResult Deslogar()
+        {
+            Usuario.LogadoJ = null;
+            Usuario.LogadoE = null;
+
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public IActionResult CadastroJovem(Jovem jovem)
         {
