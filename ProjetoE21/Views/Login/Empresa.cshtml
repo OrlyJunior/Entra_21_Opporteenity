@@ -1,50 +1,69 @@
-﻿@model ProjetoE21.Models.Empresa;
+﻿@model ProjetoE21.Models.Empresa
+@{
+    Layout = null;
+}
 
-<div>
-    <h1>Cadastre-se</h1>
+<script>
+    function formatarTelefone(telefone) {
 
-    <form asp-action="Empresa">
-        <div>
-            <label asp-for="Nome">Insira o nome da empresa:</label>
-            <input asp-for="Nome"></input>
-        </div>
-        <div>
-            <label asp-for="Email">Insira o endereço de email da empresa:</label>
-            <input asp-for="Email"></input>
-        </div>
-        <div>
-            <label asp-for="Senha">Insira a senha:</label>
-            <input asp-for="Senha"></input>
-        </div>
-        <div>
-            <label asp-for="Telefone">Insira o fone da empresa:</label>
-            <input asp-for="Telefone"></input>
-        </div>
-        <div>
-            <label asp-for="Local.Estado">Insira o estado da empresa:</label>
-            <input asp-for="Local.Estado"></input>
-        </div>
-        <div>
-            <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
-            <input asp-for="Local.Cidade"></input>
-        </div>
-        <div>
-            <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
-            <input asp-for="Local.Bairro"></input>
-        </div>
-        <div>
-            <label asp-for="Local.Rua">Insira a rua da empresa:</label>
-            <input asp-for="Local.Rua"></input>
-        </div>
-        <div>
-            <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
-            <input asp-for="Local.Numero"></input>
-        </div>
-        <div>
-            <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
-            <input asp-for="Cnpj"></input>
-        </div>
+        telefone = telefone.replace(/\D/g, '');
 
-        <button asp-action="Empresa">Cadastrar</button>
-    </form>
+
+        telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
+
+
+        document.getElementById('Telefone').value = telefone;
+    }
+</script>
+
+<div style="border: 1px solid black; border-radius: 15px; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: auto; width: 80vw;">
+    <h1 style="margin: 5em;">Cadastre-se</h1>
+
+    <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
+        <form asp-action="Empresa">
+            <div>
+                <label asp-for="Nome">Insira o nome da empresa:</label>
+                <input asp-for="Nome"></input>
+            </div>
+            <div>
+                <label asp-for="Email">Insira o endereço de email da empresa:</label>
+                <input asp-for="Email"></input>
+            </div>
+            <div>
+                <label asp-for="Senha">Insira a senha:</label>
+                <input asp-for="Senha"></input>
+            </div>
+            <div>
+                <label asp-for="Telefone">Insira o fone da empresa:</label>
+                <input asp-for="Telefone"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Estado">Insira o estado da empresa:</label>
+                <input asp-for="Local.Estado"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
+                <input asp-for="Local.Cidade"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
+                <input asp-for="Local.Bairro"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Rua">Insira a rua da empresa:</label>
+                <input asp-for="Local.Rua"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
+                <input asp-for="Local.Numero"></input>
+            </div>
+            <div>
+                <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
+                <input asp-for="Cnpj"></input>
+            </div>
+
+            <button asp-action="Empresa">Cadastrar</button>
+        </form>
+    </div>
+
 </div>
