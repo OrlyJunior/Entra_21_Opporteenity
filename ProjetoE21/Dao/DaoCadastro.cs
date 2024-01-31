@@ -46,7 +46,6 @@ namespace ProjetoE21.Dao
                 }
             }
 
-
             return true;
         }
 

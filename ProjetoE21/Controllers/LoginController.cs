@@ -41,7 +41,7 @@ namespace ProjetoE21.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastro(Jovem jovem)
+        public IActionResult CadastroJovem(Jovem jovem)
         {
             DaoC.adicionar(jovem);
 

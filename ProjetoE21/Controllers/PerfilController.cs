@@ -9,10 +9,11 @@ namespace ProjetoE21.Controllers
     {
         DaoCadastro DaoC = new();
         DaoCurriculo DaoCur = new();
+        DaoEmpresa DaoEmp = new();
 
         public IActionResult Index()
         {
-            if(Usuario.LogadoE == null)
+            if (Usuario.LogadoE == null)
             {
                 return RedirectToAction("Jovem");
             }
@@ -46,6 +47,24 @@ namespace ProjetoE21.Controllers
             jovem.Id = Usuario.LogadoJ.Id;
 
             DaoC.editar(jovem);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult EditarEmpresa()
+        {
+            Empresa empresa = Listas.cadastrosE.FirstOrDefault(sc => sc.Id == Usuario.LogadoE.Id);
+
+            return View(empresa);
+        }
+
+        [HttpPost]
+        public IActionResult EditarEmpresa(Empresa empresa)
+        {
+            empresa.Id = Usuario.LogadoE.Id;
+
+            DaoEmp.editar(empresa);
 
             return RedirectToAction("Index");
         }

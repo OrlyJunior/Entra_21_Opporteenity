@@ -4,17 +4,17 @@
 }
 
 <script>
-        function formatarTelefone(telefone) {
+    function formatarTelefone(telefone) {
 
-            telefone = telefone.replace(/\D/g, '');
-    
-           
-            telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
-    
-            
-            document.getElementById('Telefone').value = telefone;
-        }
- </script>
+        telefone = telefone.replace(/\D/g, '');
+
+
+        telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
+
+
+        document.getElementById('Telefone').value = telefone;
+    }
+</script>
 
 <div style="border: 1px solid black; border-radius: 15px; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: auto; width: 80vw;">
     <h1 style="margin: 5em;">Cadastre-se</h1>
@@ -72,12 +72,8 @@
                 <input asp-for="FoneResponsavel"></input>
             </div>
 
-            <button asp-action="Cadastro">Adicionar</button>
+            <button asp-action="CadastroJovem">Adicionar</button>
         </form>
     </div>
 
 </div>
-
-
-
-

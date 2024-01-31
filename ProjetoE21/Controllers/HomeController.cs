@@ -8,10 +8,11 @@ namespace ProjetoE21.Controllers
 {
     public class HomeController : Controller
     {
-        DaoEmprego DaoE = new();
+        
         DaoServico DaoS = new();
         DaoCadastro DaoC = new();
         DaoEmpresa DaoEmp = new();
+        DaoEmprego DaoE = new();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -45,6 +46,7 @@ namespace ProjetoE21.Controllers
             {
                 if (i.Email == empresa.Email && i.Senha == empresa.Senha)
                 {
+                    Usuario.LogadoJ = null;
                     Usuario.LogadoE = i;
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
@@ -76,11 +78,14 @@ namespace ProjetoE21.Controllers
             {
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {
+                    Usuario.LogadoE = null;
                     Usuario.LogadoJ = i;
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
 
-                    return View(jovem);
+                    return RedirectToAction("Index");
+
+
                 }
             }
 

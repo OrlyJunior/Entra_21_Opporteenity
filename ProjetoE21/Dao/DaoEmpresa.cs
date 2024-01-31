@@ -104,9 +104,48 @@ namespace ProjetoE21.Dao
             throw new NotImplementedException();
         }
 
-        public bool editar(Empresa t)
+        public bool editar(Empresa empresa)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "update tb_empresas set nome = @nome, email = @email, fone = @fone, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado, cnpj = @cnpj, senha = @senha where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = empresa.Id;
+                cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = empresa.Nome;
+                cm.Parameters.Add("email", MySqlDbType.VarChar).Value = empresa.Email;
+                cm.Parameters.Add("fone", MySqlDbType.VarChar).Value = empresa.Telefone;
+                cm.Parameters.Add("estado", MySqlDbType.VarChar).Value = empresa.Local.Estado;
+                cm.Parameters.Add("rua", MySqlDbType.VarChar).Value = empresa.Local.Rua;
+                cm.Parameters.Add("numero", MySqlDbType.Int32).Value = empresa.Local.Numero;
+                cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = empresa.Local.Bairro;
+                cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = empresa.Local.Cidade;
+                cm.Parameters.Add("cnpj", MySqlDbType.VarChar).Value = empresa.Cnpj;
+                cm.Parameters.Add("senha", MySqlDbType.VarChar).Value = empresa.Senha;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            Listas.cadastrosE = consultar();
+
+            Usuario.LogadoE = empresa;
+
+            return true;
         }
     }
 }

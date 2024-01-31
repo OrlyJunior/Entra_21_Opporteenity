@@ -2111,19 +2111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\patrick.kremer\\.nuget\\packages\\": {}
+    "C:\\Users\\orly.junior\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\orbt\\opporteenity\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Projeto\\Proj\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\orbt\\opporteenity\\ProjetoE21\\ProjetoE21.csproj",
-      "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\orbt\\opporteenity\\ProjetoE21\\obj\\",
+      "projectPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\Proj\\ProjetoE21\\ProjetoE21.csproj",
+      "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\Proj\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2181,24 +2181,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
