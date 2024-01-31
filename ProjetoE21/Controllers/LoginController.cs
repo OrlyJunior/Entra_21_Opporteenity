@@ -35,27 +35,10 @@ namespace ProjetoE21.Controllers
         }
 
         [HttpGet]
-        public IActionResult CadastroPessoal()
+        public IActionResult CadastroJovem()
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult CadastroLocalizacao()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult CadastroResponsavel()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult CadastroSenha()
-        {
-            return View();
-        }
-
 
         [HttpPost]
         public IActionResult Cadastro(Jovem jovem)
