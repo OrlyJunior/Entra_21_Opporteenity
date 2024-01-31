@@ -12,13 +12,30 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Index()
         {
+            if(Usuario.LogadoE == null)
+            {
+                return RedirectToAction("Jovem");
+            }
+            else
+            {
+                return RedirectToAction("Empresa");
+            }
+        }
+
+        public IActionResult Jovem()
+        {
+            return View();
+        }
+
+        public IActionResult Empresa()
+        {
             return View();
         }
 
         [HttpGet]
         public IActionResult Editar()
         {
-            Jovem jovem = Listas.cadastros.FirstOrDefault(sc => sc.Id == Usuario.logado.Id);
+            Jovem jovem = Listas.cadastrosJ.FirstOrDefault(sc => sc.Id == Usuario.LogadoJ.Id);
 
             return View(jovem);
         }
@@ -26,7 +43,7 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Editar(Jovem jovem)
         {
-            jovem.Id = Usuario.logado.Id;
+            jovem.Id = Usuario.LogadoJ.Id;
 
             DaoC.editar(jovem);
 
@@ -42,13 +59,13 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Curriculo(Curriculo curriculo)
         {
-            curriculo.Nome = Usuario.logado.Nome;
+            curriculo.Nome = Usuario.LogadoJ.Nome;
 
             curriculo.Local = new();
 
-            curriculo.Local = Usuario.logado.Local;
-            curriculo.Telefone = Usuario.logado.Telefone;
-            curriculo.Email = Usuario.logado.Email;
+            curriculo.Local = Usuario.LogadoJ.Local;
+            curriculo.Telefone = Usuario.LogadoJ.Telefone;
+            curriculo.Email = Usuario.LogadoJ.Email;
 
             DaoCur.adicionar(curriculo);
 

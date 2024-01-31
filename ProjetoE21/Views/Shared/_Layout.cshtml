@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoE21.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Aside.css" />
+    <link rel="stylesheet" href="~/css/Login.css" />
 
     <style>
         .asd {
@@ -40,7 +41,16 @@
             <div class="container-fluid" style="height: 3rem">
                 <a style="width: 20%; margin-right: 8px; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
                     <img src="~/css/Imagens/Perfil.png" width="20%" class="m-1"></img>
-                    <p style="margin-top: 1rem">@Usuario.logado.Nome</p>
+                    <p style="margin-top: 1rem">
+                        @if(Usuario.LogadoE == null)
+                        {
+                            @Usuario.LogadoJ.Nome;
+                        }
+                        else
+                        {
+                            @Usuario.LogadoE.Nome;
+                        }
+                    </p>
                 </a>
                 <a class="navbar-brand d-flex" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: 32px; font-family: Arial; margin-top: 4px">
                     <p id="oppor" style="color: #7CDFE5">Oppor</p>

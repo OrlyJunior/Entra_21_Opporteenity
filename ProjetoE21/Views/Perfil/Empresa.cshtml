@@ -1,0 +1,14 @@
+﻿@using ProjetoE21.Dados;
+
+@model ProjetoE21.Models.Curriculo;
+
+<h1>Perfil</h1>
+
+<h3>@Usuario.LogadoE.Nome</h3>
+<p>Telefone: @Usuario.LogadoE.Telefone</p>
+<p>Email: @Usuario.LogadoE.Email</p>
+
+<div class="d-flex">
+        <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
+        <a asp-controller="Perfil" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
+</div>

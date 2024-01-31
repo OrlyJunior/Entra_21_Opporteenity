@@ -25,18 +25,12 @@
             </div>
         </div>
 
-        <div style="display: flex; align-items: center; justify-content: end; margin-right: 35px; margin-top: 100px;">
-            <form asp-controller="Home" asp-action="Index">
+        <div style="display: block; align-items: center; justify-content: center; margin-right: 35px; margin-top: 100px;">
                 <div style="background-color: #fff; border:2px solid black; padding: 20px; border-radius: 8px; width: 300px; height:300px; position: relative; box-shadow: 6px 8px 4px rgba(0, 0, 0, 1);">
-                    <label asp-for="Email" style="display: block; margin-bottom: 12px;">Email</label>
-                    <input asp-for="Email" type="text" id="username" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;">
+                    <a asp-controller="Home" asp-action="LoginJovem" type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Sou aprendiz</a>
 
-                    <label style="display: block; margin-bottom: 12px;" asp-for="Senha">Senha</label>
-                    <input type="password" id="password" style="border:2px solid black; width: 100%; padding: 12px; margin-bottom: 16px; box-sizing: border-box;" asp-for="Senha">
-
-                    <button asp-controller="Home" asp-action="Index" type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Entrar</button>
+                    <a asp-controller="Home" asp-action="LoginEmpresa" type="submit" style="background-color: #4caf50; color: #fff; margin-top:30px; padding: 10px; border:1px solid black; border-radius: 4px; cursor: pointer; width: 100%;">Sou empresa</a>
                 </div>
-            </form>
         </div>
     </div>
     

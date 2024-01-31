@@ -9,6 +9,8 @@ namespace ProjetoE21.Dados
 
         public static List<Emprego> empregos = new();
 
-        public static List<Jovem> cadastros = new();
+        public static List<Jovem> cadastrosJ = new();
+
+        public static List<Empresa> cadastrosE = new();
     }
 }

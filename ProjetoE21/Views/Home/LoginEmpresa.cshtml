@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+
+@model Empresa;
+
+<form asp-action="LoginEmpresa" style="display: flex; align-items: center; justify-content: center; margin-right: 35px; margin-top: 100px;">
+    <div style="background-color: #fff; display:flex; border:2px solid black; padding: 20px; align-items: center; justify-content: center; border-radius: 8px; width: 300px; height:300px; position: relative; box-shadow: 6px 8px 4px rgba(0, 0, 0, 1);">
+        <div>Login <br> Entre os dados de sua empresa para continuar</div>
+
+        <lable>Insira seu email:</lable>
+        <input asp-for="Email" class="input" placeholder="Email" type="text">
+
+        <lable>Insira sua senha:</lable>
+        <input asp-for="Senha" class="input" placeholder="Senha" type="password">
+
+        <button class="button-confirm">Login</button>
+    </div>
+</form>
