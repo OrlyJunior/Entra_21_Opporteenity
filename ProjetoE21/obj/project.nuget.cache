@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CktVXDn7JC0eADnnBMZ++5/e4p1TUm6layTnahFw670jWwh0+fOwTdFOpXraaC37sRzUu2smXxFGYkRG5yv71g==",
+  "dgSpecHash": "9D1Iu2T8cAmR6pLU1qmsi/dxsdkpHGrz1KarIEBC1fjo+atlKUcmyP3TiIKgOQAsE3Guv1hRLWGfgIpmwscQZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\patrick.kremer\\Desktop\\opporteenity\\ProjetoE21\\ProjetoE21.csproj",
+  "projectFilePath": "C:\\Users\\patrick.kremer\\Desktop\\orbt\\opporteenity\\ProjetoE21\\ProjetoE21.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\patrick.kremer\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\patrick.kremer\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
