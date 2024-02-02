@@ -117,8 +117,8 @@
         var distancias = document.getElementsByName("distancia")
 
         for (var i = 0; i < ruas.length; i++) {
-            var emprego = @Listas.favoritos;
-            var url2 =`https://api.opencagedata.com/geocode/v1/json?q=Rua ${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+            var endereco = `${ruas[i] + + cidades[i]}`
+            var url2 =`https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
                       
             var latitude2;
             var longitude2;
