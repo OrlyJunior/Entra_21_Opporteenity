@@ -9,123 +9,123 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoE21
 build_property.RootNamespace = ProjetoE21
-build_property.ProjectDir = C:\Users\Orly\Documents\Projeto\ProjetoE21\
+build_property.ProjectDir = C:\Users\orly.junior\Documents\Pjt\ProjetoE21\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Orly\Documents\Projeto\ProjetoE21
+build_property.MSBuildProjectDirectory = C:\Users\orly.junior\Documents\Pjt\ProjetoE21
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Empregos/Adicionar.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Empregos/Adicionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVnb3NcQWRpY2lvbmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Empregos/Delete.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Empregos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVnb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Empregos/Details.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Empregos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVnb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Empregos/Edit.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Empregos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVnb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Empregos/Index.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Empregos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVnb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Home/Index.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Home/LoginEmpresa.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Home/LoginEmpresa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbkVtcHJlc2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Home/LoginJovem.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Home/LoginJovem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbkpvdmVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Home/Privacy.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Login/CadastroJovem.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Login/CadastroJovem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2FkYXN0cm9Kb3ZlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Login/Confirmar.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Login/Confirmar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29uZmlybWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Login/Empresa.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Login/Empresa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRW1wcmVzYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Login/Index.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Perfil/Curriculo.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Perfil/Curriculo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEN1cnJpY3Vsby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Perfil/Editar.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Perfil/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Perfil/EditarEmpresa.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Perfil/EditarEmpresa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEVkaXRhckVtcHJlc2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Perfil/Empresa.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Perfil/Empresa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEVtcHJlc2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Perfil/Jovem.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Perfil/Jovem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEpvdmVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Serviços/Adicionar.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Serviços/Adicionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmnDp29zXEFkaWNpb25hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Serviços/Delete.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Serviços/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmnDp29zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Serviços/Details.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Serviços/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmnDp29zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Serviços/Edit.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Serviços/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmnDp29zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Serviços/Index.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Serviços/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmnDp29zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Shared/Error.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/_ViewImports.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/_ViewStart.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Orly/Documents/Projeto/ProjetoE21/Views/Shared/_Layout.cshtml]
+[C:/Users/orly.junior/Documents/Pjt/ProjetoE21/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-np7x6kxvnn

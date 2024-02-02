@@ -31,7 +31,9 @@
                                     @Html.DisplayFor(model => i.Descricao)
                                 </p>
                                 <p class="card-text">
-                                    @Html.DisplayFor(model => i.Local.Rua)  @Html.DisplayFor(model => i.Local.Cidade)
+                                <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
+                                    <br>
+                                    <p name="distancia">Distancia</p>
                                     <br>
                                     @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
                                     <br>
@@ -92,3 +94,41 @@
         <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
     </div>
 </div>
+
+<script>
+
+    document.onload(geocoding())
+
+    function geocoding() {         
+
+        var ruas = document.getElementsByName("rua")
+        var cidades = document.getElementsByName("cidade")
+        var distancias = document.getElementsByName("distancia")
+
+        for (let i = 0; i < ruas.length; i++) {
+            var endereco = 'Amazonas + Blumenau'
+            var url =`https://api.opencagedata.com/geocode/v1/json?q=Rua ${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+                       
+            fetch(url)
+                .then(data => data.json())
+                .then(item => {                    
+                    latitude = item.results[0].annotations.DMS.lat
+                    longitude = item.results[0].annotations.DMS.lng
+                    distancias[i].innerHTML = latitude + " " + longitude
+
+                })
+               
+               
+        }
+        
+
+        
+
+        
+    }
+    var x = 1
+    function ola(){
+        
+        alert(x++)
+    }
+</script>

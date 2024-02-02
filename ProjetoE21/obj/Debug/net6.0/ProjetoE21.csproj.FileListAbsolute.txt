@@ -1004,3 +1004,4 @@ C:\Users\orly.junior\Documents\Proj\ProjetoE21\obj\Debug\net6.0\refint\ProjetoE2
 C:\Users\orly.junior\Documents\Proj\ProjetoE21\obj\Debug\net6.0\ProjetoE21.pdb
 C:\Users\orly.junior\Documents\Proj\ProjetoE21\obj\Debug\net6.0\ProjetoE21.genruntimeconfig.cache
 C:\Users\orly.junior\Documents\Proj\ProjetoE21\obj\Debug\net6.0\ref\ProjetoE21.dll
+C:\Users\orly.junior\Documents\Pjt\ProjetoE21\obj\Debug\net6.0\ProjetoE21.sourcelink.json
