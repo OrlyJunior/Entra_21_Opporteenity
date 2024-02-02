@@ -10,6 +10,7 @@ namespace ProjetoE21.Controllers
         DaoCadastro DaoC = new();
         DaoCurriculo DaoCur = new();
         DaoEmpresa DaoEmp = new();
+        DaoFavoritos DaoF = new();
 
         public IActionResult Index()
         {
@@ -25,6 +26,8 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Jovem()
         {
+            Listas.favoritos = DaoF.consultar();
+
             return View();
         }
 

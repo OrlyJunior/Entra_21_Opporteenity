@@ -73,5 +73,3 @@ create table tb_favoritos(
 id int auto_increment primary key,
 idUser int not null,
 idVaga int not null);
-
-select * from tb_favoritos;
