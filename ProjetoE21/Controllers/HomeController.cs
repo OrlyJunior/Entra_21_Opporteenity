@@ -13,6 +13,7 @@ namespace ProjetoE21.Controllers
         DaoCadastro DaoC = new();
         DaoEmpresa DaoEmp = new();
         DaoEmprego DaoE = new();
+        DaoFavoritos DaoF = new();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -88,6 +89,15 @@ namespace ProjetoE21.Controllers
             }
 
             return RedirectToAction("Error");
+        }
+
+        public void Favoritar(int id)
+        {
+            List<Emprego> empregos = DaoE.consultar();
+
+            Emprego emprego = empregos.FirstOrDefault(em => em.Id == id);
+
+            DaoF.adicionar(emprego);
         }
 
         public IActionResult Privacy()
