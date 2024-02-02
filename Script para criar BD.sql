@@ -69,4 +69,9 @@ estado varchar(40) not null,
 cnpj varchar(20) not null,
 senha varchar(50) not null);
 
-drop table tb_curriculos;
+create table tb_favoritos(
+id int auto_increment primary key,
+idUser int not null,
+idVaga int not null);
+
+select * from tb_favoritos;

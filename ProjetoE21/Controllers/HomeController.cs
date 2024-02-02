@@ -91,13 +91,15 @@ namespace ProjetoE21.Controllers
             return RedirectToAction("Error");
         }
 
-        public void Favoritar(int id)
+        public IActionResult Favoritar(int id)
         {
             List<Emprego> empregos = DaoE.consultar();
 
             Emprego emprego = empregos.FirstOrDefault(em => em.Id == id);
 
             DaoF.adicionar(emprego);
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
