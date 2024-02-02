@@ -35,7 +35,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color:rgb(246, 245, 252);">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid" style="height: 3rem">
@@ -45,6 +45,7 @@
                         @if(Usuario.LogadoE == null)
                         {
                             @Usuario.LogadoJ.Nome;
+                            
                         }
                         else
                         {
@@ -67,15 +68,37 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
-                        </li>
+                       
+
+
+
+                        @if (Usuario.LogadoE == null)
+                        {
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                        }
+                        else
+                        {
+                           
+                           
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
+                            </li>
+
+                        }
+                        
                     </ul>
                     <div class="d-flex me-5 mt-0">
                         <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">

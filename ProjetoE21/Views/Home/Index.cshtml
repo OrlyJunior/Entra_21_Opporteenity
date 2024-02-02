@@ -17,22 +17,17 @@
 </style>
 
 <div class="d-flex" style="width: 100%; margin-top: 12px">
-    <aside style="width: 33.3%" class="m-2 text-center">
-        <p>Usuário</p>
-    </aside>
-    <div style="width: 33.3%" class="m-2 text-center">
+    <div style="width: 40%" class="m-2 text-center">
         <p>Empregos</p>
     </div>
-    <aside style="width: 33.3%" class="m-2 text-center">
+    <aside style="width: 40%" class="m-2 text-center">
         <p>Serviços</p>
     </aside>
 </div>
 
 <div class="d-flex" style="width: 100%">
-    <aside style="width: 33.3%" class="m-2">
-        
-    </aside>
-    <div style="width: 33.3%" class="m-2">
+    
+    <div style="border-radius:10px; width: 40%" class="m-2">
         @foreach (var i in ProjetoE21.Dados.Listas.empregos)
         {
             <div class="d-flex">
@@ -70,7 +65,7 @@
             </div>
         }
     </div>
-    <aside style="width: 33.3%" class="m-2">
+    <aside style="border-radius:10px; width: 40%" class="m-2">
         @foreach (var i in ProjetoE21.Dados.Listas.servicos)
         {
             <div class="d-flex">
