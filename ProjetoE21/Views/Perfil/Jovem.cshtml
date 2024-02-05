@@ -96,20 +96,21 @@
 </div>
 
 <script>
-    document.onload(geocoding())
+    document.onload = geocoding()
 
-    function geocoding() {    
-        var local = @Usuario.LogadoJ.Local.Rua + "+" + @Usuario.LogadoJ.Local.Cidade; 
+    async function geocoding() {    
+        var local = "Rua Amazonas" + "+" + "Blumenau"; 
         var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
 
-        var latitude1;
-        var longitude1;
+        var latitude1 = 0
+        var longitude1 = 0;
 
-        fetch(url1)
+        await fetch(url1)
             .then(data => data.json())
             .then(item => {
-                latitude1 = item.results[0].annotations.DMS.lat
-                longitude1 = item.results[0].annotations.DMS.lng
+                latitude1 = parseFloat(item.results[0].geometry.lat)
+
+                longitude1 = parseFloat(item.results[0].geometry.lng)
             })
 
         var ruas = document.getElementsByName("rua")
@@ -117,38 +118,45 @@
         var distancias = document.getElementsByName("distancia")
 
         for (var i = 0; i < ruas.length; i++) {
-            var endereco = `${ruas[i] + + cidades[i]}`
-            var url2 =`https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+            var endereco = `${ruas[i] + cidades[i]}`
+            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=Rua 25 de Agosto+Blumenau&key=de8ec31691d84fada09018809123c939&pretty=1`
                       
             var latitude2;
             var longitude2;
-
-            fetch(url2)
+   
+            await fetch(url2)
                 .then(data => data.json())
-                .then(item => {                    
-                    latitude2 = item.results[0].annotations.DMS.lat
-                    longitude2 = item.results[0].annotations.DMS.lng
+                .then(item => {
+                    console.log(item)
+
+                    latitude2 = parseFloat(item.results[0].geometry.lat)
+
+                    longitude2 = parseFloat(item.results[0].geometry.lng)
             })
 
-            const distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
+            var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
 
-            distancias[i].innerHTML = distancia;
+            distancias[i].innerHTML = `${distancia}km`;
         }
     }
 
-    function formulaDeHaversine(lat1, lon1, lat2, lon2) {
-        const R = 6371;
-        const dLat = toRadians(lat2 - lat1);
-        const dLon = toRadians(lon2 - lon1);
+    function toRadians(degrees) {
+        return degrees * Math.PI / 180;
+    }
 
-        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    function formulaDeHaversine(lat1, lon1, lat2, lon2) {
+        var R = 6371;
+        var dLat = toRadians(lat2 - lat1);
+        var dLon = toRadians(lon2 - lon1);
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
             Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
             Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        const distance = R * c;
+        var distance = R * c;
 
-        return distance;
+        return distance.toFixed(2);
     }
 </script>

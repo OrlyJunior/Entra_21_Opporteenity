@@ -105,10 +105,16 @@
     <script>
         if (localStorage.getItem("dm") == "yes") {
             document.getElementsByTagName("html")[0].classList.add("dark-mode2");
+            document.getElementById("oppor").style.color = "#cda6a3";
+            document.getElementById("teen").style.color = "#becf99";
+            document.getElementById("ity").style.color = "#a5f3ba";
         }
 
         if (!localStorage.getItem("dm")) {
             localStorage.setItem("dm", "no");
+            document.getElementById("oppor").style.color = "#7CDFE5";
+            document.getElementById("teen").style.color = "#A378FF";
+            document.getElementById("ity").style.color = "#E21EAD";
         }
 
         function darkMode() {
