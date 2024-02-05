@@ -24,10 +24,10 @@
         .asd-item {
         }
 
-        .asd-item:hover {
-            background-color: rgba(0, 0, 0, 0.25);
-            cursor: pointer;
-        }
+            .asd-item:hover {
+                background-color: rgba(0, 0, 0, 0.25);
+                cursor: pointer;
+            }
 
         .dark-mode2 {
             filter: invert(80%);
@@ -35,20 +35,23 @@
     </style>
 </head>
 
-<body>
+<body style="background-color:rgb(246, 245, 252);">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid" style="height: 3rem">
                 <a style="width: 20%; margin-right: 8px; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
                     <img src="~/css/Imagens/Perfil.png" width="20%" class="m-1"></img>
                     <p style="margin-top: 1rem">
-                        @if(Usuario.LogadoE == null)
+                        @if (Usuario.LogadoE == null)
                         {
-                            @Usuario.LogadoJ.Nome;
+                            @Usuario.LogadoJ.Nome
+                            ;
+
                         }
                         else
                         {
-                            @Usuario.LogadoE.Nome;
+                            @Usuario.LogadoE.Nome
+                            ;
                         }
                     </p>
                 </a>
@@ -67,15 +70,37 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
-                        </li>
+
+
+
+
+                        @if (Usuario.LogadoE == null)
+                        {
+
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                        }
+                        else
+                        {
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
+                            </li>
+
+                        }
+
                     </ul>
                     <div class="d-flex me-5 mt-0">
                         <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">
@@ -144,18 +169,18 @@
         function aside() {
             if (localStorage.getItem("dm") == "no") {
                 document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
-                                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                                                                                                              </aside>`);
+                                                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
+                                                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                                              </aside>`);
             } else {
                 document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                                                                                                                             <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
-                                                                                                                             <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                                                                                                                             <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                                                                                                                      </aside>`);
+                                                                                                                                             <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
+                                                                                                                                             <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                                                             <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                                                      </aside>`);
             }
         }
 

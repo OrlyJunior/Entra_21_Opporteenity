@@ -1,98 +1,103 @@
 ﻿@using ProjetoE21.Dados;
 
 @model ProjetoE21.Models.Curriculo;
+<div style="width:80vw;">
+    <div style="justify-content:center; text-align:center;">
+        <h1>Perfil</h1>
 
-<h1>Perfil</h1>
+        <h3>@Usuario.LogadoJ.Nome</h3>
+        <p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
+        <p>Telefone: @Usuario.LogadoJ.Telefone</p>
+        <p>Email: @Usuario.LogadoJ.Email</p>
 
-<h3>@Usuario.LogadoJ.Nome</h3>
-<p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
-<p>Telefone: @Usuario.LogadoJ.Telefone</p>
-<p>Email: @Usuario.LogadoJ.Email</p>
+        <h1>Responsável</h1>
 
-<h1>Responsável</h1>
+        <p>Nome do responsável: @Usuario.LogadoJ.Responsavel</p>
+        <p>Telefone do responsável: @Usuario.LogadoJ.FoneResponsavel</p>
+    </div>
 
-<p>Nome do responsável: @Usuario.LogadoJ.Responsavel</p>
-<p>Telefone do responsável: @Usuario.LogadoJ.FoneResponsavel</p>
+    <div style="justify-content:center; text-align:center;">
+        <h1>Currículo</h1>
 
-<div>
-    <h1>Favoritos</h1>
+        <div>
+            <form asp-action="Curriculo" style="margin:auto; width: 60%; display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
+                <h2>Dados pessoais</h2>
+                <input style="text-align:center" asp-for="RedeSocial" id="Curriculo-redesocial" placeholder="rede social">
 
-    @if(Listas.favoritos.Count != 0)
-    {
-        foreach (var i in ProjetoE21.Dados.Listas.favoritos)
+                <h2>Objetivo</h2>
+                <input style="text-align:center" asp-for="Objetivo" id="Curriculo-objetivo" placeholder="objetivo">
+
+                <h2>Escolaridade</h2>
+                <input style="text-align:center" asp-for="Escola" id="Curriculo-escola" placeholder="escola">
+                <input style="text-align:center" asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas">
+                <input style="text-align:center" asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos">
+
+                <h2>Experiencias</h2>
+                <input style="text-align:center" asp-for="Experiencia" id="Curriculo-experiencia" placeholder="experiencia">
+
+                <button type="submit" asp-action="Curriculo">Salvar</button>
+            </form>
+        </div>
+
+        <div style="margin:auto; justify-content:center" class="d-flex">
+            <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
+            <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
+        </div>
+    </div>
+
+    <hr />
+
+    <div style="justify-content:center; text-align:center;">
+        <h1>Favoritos</h1>
+
+        @if(Listas.favoritos.Count != 0)
         {
-            <div class="d-flex">
-                <div class="card mb-5 hoverCard" style="width: 100%">
-                    <div class="row g-0">
-                        <div class="row flex-column">
-                            <div class="card-body">
-                                <h5 class="card-title">@Html.DisplayFor(model => i.Empresa.Nome)</h5>
-                                <p class="card-text">
-                                    @Html.DisplayFor(model => i.Descricao)
-                                </p>
-                                <p class="card-text">
-                                <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
-                                    <br>
-                                    <p name="distancia">Distancia</p>
-                                    <br>
-                                    @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
-                                    <br>
-                                    <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
-                                </p>
-                                <div class="d-flex justify-content-between">
-                                    <span>R$: @Html.DisplayFor(model => i.Salario)</span>
-                                    <span> Data da postagem: 10/12</span>
+            foreach (var i in ProjetoE21.Dados.Listas.favoritos)
+            {
+                <div class="d-flex">
+                    <div class="card mb-5 hoverCard" style="width: 100%">
+                        <div class="row g-0">
+                            <div class="row flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(model => i.Empresa.Nome)</h5>
+                                    <p class="card-text">
+                                        @Html.DisplayFor(model => i.Descricao)
+                                    </p>
+                                    <p class="card-text">
+                                    <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
+                                        <br>
+                                        <p name="distancia">Distancia</p>
+                                        <br>
+                                        @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
+                                        <br>
+                                        <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
+                                    </p>
+                                    <div class="d-flex justify-content-between">
+                                        <span>R$: @Html.DisplayFor(model => i.Salario)</span>
+                                        <span> Data da postagem: 10/12</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="d-flex justify-content-between">
-                            <div class="card-body">
-                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
-                                <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Desfavoritar", "Desfavoritar", new { Id = i.Id })</span>
-                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+                            <div class="d-flex justify-content-between">
+                                <div class="card-body">
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
+                                    <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Desfavoritar", "Desfavoritar", new { Id = i.Id })</span>
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         }
-    }
-    else
-    {
-        <p>Você ainda não tem vagas registradas como favoritas!</p>
-    }
+        else
+        {
+            <p>Você ainda não tem vagas registradas como favoritas!</p>
+        }
 
-</div>
-
-<div>
-    <h1>Currículo</h1>
-
-    <div>
-        <form asp-action="Curriculo" style="display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
-            <h2>Dados pessoais</h2>
-
-            <input asp-for="RedeSocial" id="Curriculo-redesocial" placeholder="rede social">
-
-            <h2>Objetivo</h2>
-            <input asp-for="Objetivo" id="Curriculo-objetivo" placeholder="objetivo">
-
-            <h2>Escolaridade</h2>
-            <input asp-for="Escola" id="Curriculo-escola" placeholder="escola">
-            <input asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas">
-            <input asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos">
-
-            <h2>Experiencias</h2>
-            <input asp-for="Experiencia" id="Curriculo-experiencia" placeholder="experiencia">
-
-            <input asp-action="Curriculo" type="submit">
-        </form>
     </div>
-
-    <div class="d-flex">
-        <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
-        <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
-    </div>
+    
 </div>
 
 <script>
