@@ -11,6 +11,7 @@ namespace ProjetoE21.Controllers
     {
         OrdenarEmpregos ordena = new();
         DaoEmprego DaoS = new();
+        DaoCurriculo DaoCur = new();
 
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
@@ -104,6 +105,15 @@ namespace ProjetoE21.Controllers
             Emprego emprego = Listas.empregos.FirstOrDefault(s => s.Id == id);
 
             return View(emprego);
+        }
+
+        public IActionResult Candidatos(int id)
+        {
+            Emprego emprego = Listas.empregos.FirstOrDefault(s => s.Id == id);
+
+            List<Curriculo> candidatos = DaoCur.consultarCandidatos(id);
+
+            return View(candidatos);
         }
     }
 }

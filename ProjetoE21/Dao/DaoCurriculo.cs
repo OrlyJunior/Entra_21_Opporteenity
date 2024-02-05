@@ -2,6 +2,7 @@
 using ProjetoE21.Dados;
 using ProjetoE21.Interfaces;
 using ProjetoE21.Models;
+using System.Security.Cryptography;
 
 namespace ProjetoE21.Dao
 {
@@ -19,7 +20,7 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = "insert into tb_curriculos(nome, estado, rua, numero, bairro, cidade, telefone, email, redesocial, objetivo, escola, idiomas, cursos, experiencia)values(@nome, @estado, @rua, @numero, @bairro, @cidade, @telefone, @email, @redesocial, @objetivo, @escola, @idiomas, @cursos, @experiencia)";
+                cm.CommandText = "insert into tb_curriculos(nome, estado, rua, numero, bairro, cidade, telefone, email, redesocial, objetivo, escola, idiomas, cursos, experiencia, jovemId)values(@nome, @estado, @rua, @numero, @bairro, @cidade, @telefone, @email, @redesocial, @objetivo, @escola, @idiomas, @cursos, @experiencia, @jovemId)";
 
                 cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = curriculo.Nome;
                 cm.Parameters.Add("email", MySqlDbType.VarChar).Value = curriculo.Email;
@@ -35,6 +36,7 @@ namespace ProjetoE21.Dao
                 cm.Parameters.Add("idiomas", MySqlDbType.VarChar).Value = curriculo.Idiomas;
                 cm.Parameters.Add("cursos", MySqlDbType.VarChar).Value = curriculo.Cursos;
                 cm.Parameters.Add("experiencia", MySqlDbType.VarChar).Value = curriculo.Experiencia;
+                cm.Parameters.Add("jovemId", MySqlDbType.Int32).Value = Usuario.LogadoJ.Id;
 
                 cm.Connection = con;
 
@@ -93,6 +95,7 @@ namespace ProjetoE21.Dao
                     curriculo.Cursos = Convert.ToString(dr["cursos"]);
                     curriculo.Telefone = Convert.ToString(dr["telefone"]);
                     curriculo.Objetivo = Convert.ToString(dr["objetivo"]);
+                    curriculo.JovemId = Convert.ToInt32(dr["jovemId"]);
 
                     curriculos.Add(curriculo);
                 }
@@ -118,9 +121,126 @@ namespace ProjetoE21.Dao
             throw new NotImplementedException();
         }
 
-        public bool candidatar(int idCurriculo, int idEmprego)
+        public bool candidatar(int idEmprego)
         {
-            return true;
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "insert into tb_curriculosEnviados(idCurriculo, idEmprego)values(@idCurriculo, @idEmprego)";
+
+                cm.Parameters.Add("idCurriculo", MySqlDbType.Int32).Value = Usuario.LogadoJ.Curriculo.Id;
+                
+                cm.Parameters.Add("idEmprego", MySqlDbType.Int32).Value = idEmprego;
+
+                cm.Connection = con;
+
+                cm.ExecuteNonQuery();
+
+                return true;
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public List<Curriculo> consultarCandidatos(int id)
+        {
+            List<Curriculo> curriculos = new();
+
+            List<int> curriculosId = new();
+
+            MySqlConnection con = new();
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = @"select idCurriculo from tb_curriculosEnviados where idEmprego = @idEmprego";
+
+                cm.Parameters.Add("idEmprego", MySqlDbType.Int32).Value = id;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    curriculosId.Add(Convert.ToInt32(dr["idCurriculo"]));    
+                }
+
+                dr.Close();
+
+                con.Close();
+
+                con.Open();
+
+                foreach (int i in curriculosId)
+                {
+                    MySqlCommand cn = con.CreateCommand();
+
+                    cn.CommandText = "select * from tb_curriculos where id = @id";
+
+                    cn.Parameters.Add("id", MySqlDbType.Int32).Value = i;
+
+                    cn.Connection = con;
+
+                    MySqlDataReader reader;
+                    reader = cn.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Curriculo curriculo = new();
+
+                        curriculo.Id = Convert.ToInt32(reader["id"]);
+                        curriculo.Nome = Convert.ToString(reader["nome"]);
+
+                        curriculo.Experiencia = Convert.ToString(reader["experiencia"]);
+                        curriculo.Email = Convert.ToString(reader["email"]);
+
+                        curriculo.Local = new();
+
+                        curriculo.Local.Estado = Convert.ToString(reader["estado"]);
+                        curriculo.Local.Cidade = Convert.ToString(reader["cidade"]);
+                        curriculo.Local.Numero = Convert.ToInt32(reader["numero"]);
+                        curriculo.Local.Rua = Convert.ToString(reader["rua"]);
+
+                        curriculo.RedeSocial = Convert.ToString(reader["redesocial"]);
+                        curriculo.Idiomas = Convert.ToString(reader["idiomas"]);
+                        curriculo.Cursos = Convert.ToString(reader["cursos"]);
+                        curriculo.Telefone = Convert.ToString(reader["telefone"]);
+                        curriculo.Objetivo = Convert.ToString(reader["objetivo"]);
+                        curriculo.JovemId = Convert.ToInt32(reader["jovemId"]);
+
+                        curriculos.Add(curriculo);
+                    }
+
+                    reader.Close();
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return curriculos;
         }
     }
 }

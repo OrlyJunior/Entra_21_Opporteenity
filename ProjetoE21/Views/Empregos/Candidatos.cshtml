@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ProjetoE21.Models.Curriculo>;
+
+<div style="width: 80vw;">
+@foreach(var i in Model)
+{
+    <div style="margin:8px; width: 60%; display: flex; flex-direction: column; border: 1px solid black; text-align: center;">
+            <h2>Dados pessoais</h2>
+            <p style="text-align:center">@i.Nome</p>
+
+            <h2>Objetivo</h2>
+            <p style="text-align:center">@i.Objetivo</p>
+
+            <h2>Escolaridade</h2>
+            <p style="text-align:center">@i.Escola</p>
+            <p style="text-align:center">@i.Idiomas</p>
+            <p style="text-align:center">@i.Cursos</p>
+
+            <h2>Experiencias</h2>
+            <p style="text-align:center">@i.Experiencia</p>
+
+            <h2>Localidade</h2>
+            <p style="text-align:center">@i.Local.Rua, @i.Local.Bairro, @i.Local.Cidade, @i.Local.Estado</p>
+    </div>
+}
+</div>

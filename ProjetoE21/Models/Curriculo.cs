@@ -13,5 +13,6 @@
         public string Idiomas { get; set; }
         public string Cursos { get; set; }
         public string Experiencia { get; set; }
+        public int JovemId { get; set; }
     }
 }

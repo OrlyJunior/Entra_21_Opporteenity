@@ -96,6 +96,8 @@ namespace ProjetoE21.Controllers
 
             DaoCur.adicionar(curriculo);
 
+            Usuario.LogadoJ.Curriculo = curriculo;
+
             return RedirectToAction("Index");
         }
     }

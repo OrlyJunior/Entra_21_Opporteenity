@@ -14,6 +14,7 @@ namespace ProjetoE21.Controllers
         DaoEmpresa DaoEmp = new();
         DaoEmprego DaoE = new();
         DaoFavoritos DaoF = new();
+        DaoCurriculo DaoCur = new();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -79,8 +80,11 @@ namespace ProjetoE21.Controllers
             {
                 if (i.Email == jovem.Email && i.Senha == jovem.Senha)
                 {
+                    List<Curriculo> curriculos = DaoCur.consultar();
                     Usuario.LogadoE = null;
                     Usuario.LogadoJ = i;
+                    Usuario.LogadoJ.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
+
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
 
@@ -104,12 +108,11 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Candidatar(int id)
         {
-            List<Emprego> empregos = DaoE.consultar();
-
-            Emprego emprego = empregos.FirstOrDefault(em => em.Id == id);
-
-            DaoF.adicionar(emprego);
-
+            if (Usuario.LogadoJ.Curriculo != null)
+            {
+                DaoCur.candidatar(id);
+            }
+            
             return RedirectToAction("Index");
         }
 
