@@ -102,6 +102,17 @@ namespace ProjetoE21.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Candidatar(int id)
+        {
+            List<Emprego> empregos = DaoE.consultar();
+
+            Emprego emprego = empregos.FirstOrDefault(em => em.Id == id);
+
+            DaoF.adicionar(emprego);
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();

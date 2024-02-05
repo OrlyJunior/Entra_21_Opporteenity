@@ -19,10 +19,11 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = @"insert into tb_empregos(descricao, empresaNome, estado, cidade, bairro, rua, numero, horaInicio, horaTermino, salario, diasTrabalhados)values(@descricao, @contratante, @estado, @cidade, @bairro, @rua, @numero, @inicio, @fim, @salario, @diasT)";
+                cm.CommandText = @"insert into tb_empregos(descricao, empresaNome, empresaId, estado, cidade, bairro, rua, numero, horaInicio, horaTermino, salario, diasTrabalhados)values(@descricao, @contratante, @empresaId, @estado, @cidade, @bairro, @rua, @numero, @inicio, @fim, @salario, @diasT)";
 
                 cm.Parameters.Add("descricao", MySqlDbType.VarChar).Value = emprego.Descricao;
                 cm.Parameters.Add("contratante", MySqlDbType.VarChar).Value = emprego.Empresa.Nome;
+                cm.Parameters.Add("empresaId", MySqlDbType.Int32).Value = emprego.Empresa.Id;
                 cm.Parameters.Add("estado", MySqlDbType.VarChar).Value = emprego.Local.Estado;
                 cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = emprego.Local.Cidade;
                 cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = emprego.Local.Bairro;
@@ -79,6 +80,7 @@ namespace ProjetoE21.Dao
                     empre.Local = new();
 
                     empre.Empresa.Nome = Convert.ToString(dr["empresaNome"]);
+                    empre.Empresa.Id = Convert.ToInt32(dr["empresaId"]);
                     empre.HoraDeInicio = Convert.ToDateTime(dr["horaInicio"]);
                     empre.HoraDeFim = Convert.ToDateTime(dr["horaTermino"]);
                     empre.Salario = Convert.ToDecimal(dr["salario"]);

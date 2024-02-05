@@ -53,7 +53,59 @@ namespace ProjetoE21.Dao
 
         public List<Curriculo> consultar()
         {
-            throw new NotImplementedException();
+            List<Curriculo> curriculos = new();
+
+            MySqlConnection con = new();
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = @"select * from tb_curriculos";
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Curriculo curriculo = new();
+
+                    curriculo.Id = Convert.ToInt32(dr["id"]);
+                    curriculo.Nome = Convert.ToString(dr["nome"]);
+                    
+                    curriculo.Experiencia = Convert.ToString(dr["experiencia"]);
+                    curriculo.Email = Convert.ToString(dr["email"]);
+
+                    curriculo.Local = new();
+
+                    curriculo.Local.Estado = Convert.ToString(dr["estado"]);
+                    curriculo.Local.Cidade = Convert.ToString(dr["cidade"]);
+                    curriculo.Local.Numero = Convert.ToInt32(dr["numero"]);
+                    curriculo.Local.Rua = Convert.ToString(dr["rua"]);
+
+                    curriculo.RedeSocial = Convert.ToString(dr["redesocial"]);
+                    curriculo.Idiomas = Convert.ToString(dr["idiomas"]);
+                    curriculo.Cursos = Convert.ToString(dr["cursos"]);
+                    curriculo.Telefone = Convert.ToString(dr["telefone"]);
+                    curriculo.Objetivo = Convert.ToString(dr["objetivo"]);
+
+                    curriculos.Add(curriculo);
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return curriculos;
         }
 
         public void deletar(Curriculo t)
@@ -64,6 +116,11 @@ namespace ProjetoE21.Dao
         public bool editar(Curriculo t)
         {
             throw new NotImplementedException();
+        }
+
+        public bool candidatar(int idCurriculo, int idEmprego)
+        {
+            return true;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ProjetoE21.Controllers
     {
         OrdenarEmpregos ordena = new();
         DaoEmprego DaoS = new();
+
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
             Listas.empregos = DaoS.consultar();
@@ -53,8 +54,8 @@ namespace ProjetoE21.Controllers
         {
             emprego.Empresa = new();
 
-            emprego.Empresa.Id = 1;
-            emprego.Empresa.Nome = "Empresa inventada";
+            emprego.Empresa.Id = Usuario.LogadoE.Id;
+            emprego.Empresa.Nome = Usuario.LogadoE.Nome;
 
             DaoS.adicionar(emprego);
 

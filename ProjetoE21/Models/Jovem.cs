@@ -11,6 +11,7 @@
         public string Responsavel { get; set; }
         public string FoneResponsavel { get; set; }
         public string Senha { get; set; }
+        public Curriculo curriculo { get; set; }
     }
 }
 

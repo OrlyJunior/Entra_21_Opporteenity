@@ -84,13 +84,6 @@ namespace ProjetoE21.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult Curriculo()
-        {
-            return View();
-        }
-
-        [HttpPost]
         public IActionResult Curriculo(Curriculo curriculo)
         {
             curriculo.Nome = Usuario.LogadoJ.Nome;

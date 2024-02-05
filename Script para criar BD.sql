@@ -3,11 +3,15 @@ create database E21;
 create table tb_curriculos(
 id int auto_increment primary key,
 nome varchar(40) not null,
-endereço varchar(40) not null,
 telefone varchar(40) not null,
 email varchar(40) not null,
 redesocial varchar(40) not null,
 objetivo varchar(400) not null,
+rua varchar(50) not null,
+numero int not null,
+bairro varchar(40) not null,
+cidade varchar(40) not null,
+estado varchar(40) not null,
 escola varchar(45) not null,
 idiomas varchar(45) not null,
 cursos varchar(450) ,
@@ -73,3 +77,5 @@ create table tb_favoritos(
 id int auto_increment primary key,
 idUser int not null,
 idVaga int not null);
+
+select * from tb_curriculos;
