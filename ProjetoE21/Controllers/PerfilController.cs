@@ -11,6 +11,7 @@ namespace ProjetoE21.Controllers
         DaoCurriculo DaoCur = new();
         DaoEmpresa DaoEmp = new();
         DaoFavoritos DaoF = new();
+        DaoEmprego DaoE = new();
 
         public IActionResult Index()
         {
@@ -22,6 +23,17 @@ namespace ProjetoE21.Controllers
             {
                 return RedirectToAction("Empresa");
             }
+        }
+
+        public IActionResult Desfavoritar(int id)
+        {
+            List<Emprego> empregos = DaoE.consultar();
+
+            Emprego emprego = empregos.FirstOrDefault(em => em.Id == id);
+
+            DaoF.deletar(emprego);
+
+            return RedirectToAction("Jovem");
         }
 
         public IActionResult Jovem()

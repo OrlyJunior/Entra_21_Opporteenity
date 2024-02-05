@@ -128,9 +128,36 @@ namespace ProjetoE21.Dao
             return favoritos;
         }
 
-        public void deletar(Emprego t)
+        public void deletar(Emprego emprego)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "delete from tb_favoritos where idUser = @idUser and idVaga = @idVaga";
+
+                cm.Parameters.Add("idUser", MySqlDbType.Int32).Value = Usuario.LogadoJ.Id;
+                cm.Parameters.Add("idVaga", MySqlDbType.Int32).Value = emprego.Id;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+
+            }
         }
 
         public bool editar(Emprego t)
