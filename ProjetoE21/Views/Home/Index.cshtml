@@ -1,4 +1,5 @@
-﻿<link rel="stylesheet" href="~/css/HoverCard.css" />
+﻿@using ProjetoE21.Dados
+<link rel="stylesheet" href="~/css/HoverCard.css" />
 
 <style>
     .hoverCard:hover {
@@ -55,10 +56,27 @@
 
                         <div class="d-flex justify-content-between">
                             <div class="card-body">
-                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
-                                <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Salvar", "Favoritar", new { Id = i.Id })</span>
-                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+
+
+                                @if (Usuario.LogadoE == null)
+                                {
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
+                                    <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Salvar", "Favoritar", new { Id = i.Id })</span>
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+
+                                }
+                                else
+                                {
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
+                                    <span class="card-link" style="cursor:pointer; text-decoration:none; font-size:1em; color:blue;">Salvar</span>
+                                    <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+                                }
+                               
+                            
+                            
+                            
                             </div>
+
                         </div>
                     </div>
                 </div>

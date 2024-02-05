@@ -2116,11 +2116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\merge manual\\merge\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\merge\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\merge manual\\merge\\ProjetoE21\\ProjetoE21.csproj",
+      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\merge\\ProjetoE21\\ProjetoE21.csproj",
       "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\merge manual\\merge\\ProjetoE21\\obj\\",
+      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\merge\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -103,8 +103,14 @@
 <script>
     document.onload = geocoding()
 
-    async function geocoding() {    
-        var local = "Rua Amazonas" + "+" + "Blumenau"; 
+    async function geocoding() {
+    @{
+        var ruaJovem = Usuario.LogadoJ.Local.Rua;
+
+        var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
+    }
+
+            var local = "@ruaJovem" + "+" + "@cidadeJovem";
         var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
 
         var latitude1 = 0
@@ -123,12 +129,12 @@
         var distancias = document.getElementsByName("distancia")
 
         for (var i = 0; i < ruas.length; i++) {
-            var endereco = `${ruas[i] + cidades[i]}`
-            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=Rua 25 de Agosto+Blumenau&key=de8ec31691d84fada09018809123c939&pretty=1`
-                      
+            var endereco = `${ruas[i].innerHTML} + ${cidades[i].innerHTML}`
+            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+
             var latitude2;
             var longitude2;
-   
+
             await fetch(url2)
                 .then(data => data.json())
                 .then(item => {
@@ -137,7 +143,7 @@
                     latitude2 = parseFloat(item.results[0].geometry.lat)
 
                     longitude2 = parseFloat(item.results[0].geometry.lng)
-            })
+                })
 
             var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
 
