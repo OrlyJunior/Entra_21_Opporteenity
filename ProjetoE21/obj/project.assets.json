@@ -2116,11 +2116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
+      "projectPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
       "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\obj\\",
+      "outputPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2181,24 +2181,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RAsIU6bBAOop5KhXBbRrVAKiXjzc+/zMInyI7x7HcLJr/7Ag7e0APWjLiUveQOth3mAVIcAVY3A5lDvxiKP2Gw==",
+  "dgSpecHash": "AnvXh0f1p7xv5z3d77BLn/e4TwOKhbT+s0EJAQEH8DbmEws7sQDZ1RTcQNvk1oqZ+Xh9zqwkppTXJReCSeWqNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
+  "projectFilePath": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\orly.junior\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
@@ -45,11 +45,7 @@
     "C:\\Users\\orly.junior\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\x.pagedlist\\9.0.0-prerelease\\x.pagedlist.9.0.0-prerelease.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\x.pagedlist.mvc.core\\9.0.0-prerelease\\x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512",
-    "C:\\Users\\orly.junior\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
-    "C:\\Users\\orly.junior\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\orly.junior\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\orly.junior\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\orly.junior\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
+    "C:\\Users\\orly.junior\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512"
   ],
   "logs": [
     {

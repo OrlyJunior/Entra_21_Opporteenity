@@ -87,6 +87,7 @@ namespace ProjetoE21.Dao
 
                     curriculo.Local.Estado = Convert.ToString(dr["estado"]);
                     curriculo.Local.Cidade = Convert.ToString(dr["cidade"]);
+                    curriculo.Local.Bairro = Convert.ToString(dr["bairro"]);
                     curriculo.Local.Numero = Convert.ToInt32(dr["numero"]);
                     curriculo.Local.Rua = Convert.ToString(dr["rua"]);
 
@@ -216,6 +217,7 @@ namespace ProjetoE21.Dao
 
                         curriculo.Local.Estado = Convert.ToString(reader["estado"]);
                         curriculo.Local.Cidade = Convert.ToString(reader["cidade"]);
+                        curriculo.Local.Bairro = Convert.ToString(reader["bairro"]);
                         curriculo.Local.Numero = Convert.ToInt32(reader["numero"]);
                         curriculo.Local.Rua = Convert.ToString(reader["rua"]);
 
