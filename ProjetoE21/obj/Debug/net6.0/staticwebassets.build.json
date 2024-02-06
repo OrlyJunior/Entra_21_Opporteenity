@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kOnTbzxcm9LrjvHxpv2pQOlwQwsOe9B1ZKhIjkoj2sA=",
+  "Hash": "TzaUCiguWqMwA3TNpsck3Ly8km0f4J4o/4g2HIwjkJY=",
   "Source": "ProjetoE21",
   "BasePath": "_content/ProjetoE21",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\HoverCard.css"
+    },
+    {
+      "Identity": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\wwwroot\\css\\Imagens\\fotoDeJovemEmpresa.png",
+      "SourceId": "ProjetoE21",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\wwwroot\\",
+      "BasePath": "_content/ProjetoE21",
+      "RelativePath": "css/Imagens/fotoDeJovemEmpresa.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Imagens\\fotoDeJovemEmpresa.png"
     },
     {
       "Identity": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\wwwroot\\css\\Imagens\\ordenar Baixo.png",

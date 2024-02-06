@@ -8,7 +8,6 @@ namespace ProjetoE21.Controllers
 {
     public class HomeController : Controller
     {
-        
         DaoServico DaoS = new();
         DaoCadastro DaoC = new();
         DaoEmpresa DaoEmp = new();
