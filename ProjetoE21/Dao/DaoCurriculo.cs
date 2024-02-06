@@ -92,6 +92,7 @@ namespace ProjetoE21.Dao
                     curriculo.Local.Rua = Convert.ToString(dr["rua"]);
 
                     curriculo.RedeSocial = Convert.ToString(dr["redesocial"]);
+                    curriculo.Escola = Convert.ToString(dr["escola"]);
                     curriculo.Idiomas = Convert.ToString(dr["idiomas"]);
                     curriculo.Cursos = Convert.ToString(dr["cursos"]);
                     curriculo.Telefone = Convert.ToString(dr["telefone"]);
@@ -222,6 +223,7 @@ namespace ProjetoE21.Dao
                         curriculo.Local.Rua = Convert.ToString(reader["rua"]);
 
                         curriculo.RedeSocial = Convert.ToString(reader["redesocial"]);
+                        curriculo.Escola = Convert.ToString(reader["escola"]);
                         curriculo.Idiomas = Convert.ToString(reader["idiomas"]);
                         curriculo.Cursos = Convert.ToString(reader["cursos"]);
                         curriculo.Telefone = Convert.ToString(reader["telefone"]);
