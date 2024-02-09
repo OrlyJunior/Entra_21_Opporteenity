@@ -92,8 +92,10 @@
 </div>
 
 <script>
+    
+
     function pegarCep(){
-        document.onload(document.getElementById("cep").addEventListener("input", pegarCep));
+        
 
         async function pegarCep() {
            var cep = document.getElementById("cep").value;
@@ -138,5 +140,7 @@
                }
            }
         }
+
+        document.getElementById("cep").addEventListener("input", pegarCep);
     }
 </script>
