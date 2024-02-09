@@ -6,50 +6,62 @@
     <div>
         <label asp-for="Nome">Edite seu nome completo:</label>
         <input asp-for="Nome"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
     </div>
     <div>
         <label asp-for="Email">Edite seu endereço de email:</label>
         <input asp-for="Email"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
     </div>
     <div>
         <label asp-for="Senha">Edite sua senha:</label>
         <input asp-for="Senha"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
     </div>
     <div>
         <label asp-for="Telefone">Edite seu fone:</label>
         <input asp-for="Telefone"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
     </div>
     <div>
         <label asp-for="Local.Estado">Edite o estado de sua residência:</label>
         <input asp-for="Local.Estado"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
     </div>
     <div>
         <label asp-for="Local.Cidade">Edite a cidade de sua residência:</label>
         <input asp-for="Local.Cidade"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
     </div>
     <div>
         <label asp-for="Local.Bairro">Edite o bairro de sua residência:</label>
         <input asp-for="Local.Bairro"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
     </div>
     <div>
         <label asp-for="Local.Rua">Edite a rua de sua residência:</label>
         <input asp-for="Local.Rua"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
     </div>
     <div>
         <label asp-for="Local.Numero">Edite o número do local de sua residência:</label>
         <input asp-for="Local.Numero"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
     </div>
     <div>
         <label asp-for="DataNascimento">Edite sua data de nascimento:</label>
-        <input asp-for="DataNascimento"></input>
+        <input asp-for="DataNascimento" type="date"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.DataNascimento)</span>
     </div>
     <div>
         <label asp-for="Responsavel">Edite o nome de seu responsável:</label>
         <input asp-for="Responsavel"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Responsavel)</span>
     </div>
     <div>
         <label asp-for="FoneResponsavel">Edite o fone de seu responsável:</label>
         <input asp-for="FoneResponsavel"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.FoneResponsavel)</span>
     </div>
 
     <button asp-action="Editar" class="btn btn-warning">Editar</button>

@@ -34,11 +34,11 @@ namespace ProjetoE21.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginEmpresa(Empresa empresa)
+        public IActionResult LoginEmpresa(EmpresaLogin empresa)
         {
-            if (empresa == null)
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction("Error");
+                return View(empresa);
             }
 
             Listas.cadastrosE = DaoEmp.consultar();
@@ -66,11 +66,11 @@ namespace ProjetoE21.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginJovem(Jovem jovem)
+        public IActionResult LoginJovem(JovemLogin jovem)
         {
-            if (jovem == null)
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction("Error");
+                return View(jovem);
             }
 
             Listas.cadastrosJ = DaoC.consultar();

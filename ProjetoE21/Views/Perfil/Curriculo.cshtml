@@ -1,11 +1,60 @@
-﻿<h1>Adicionar currículo</h1>
+﻿@model Curriculo;
 
-<h2>Você realmente deseja adicionar o seu currículo?</h2>
+<h1>Adicionar currículo</h1>
 
-<form asp-action="Curriculo">
-    <button asp-action="Curriculo">Sim</button>
-</form>
+<div class="justify-content-center d-flex">
+    <form asp-action="Curriculo" style="width: 35%; height: 70%; backdrop-color: white">
+        <h1>Currículo</h1>
+        <div style="margin:auto; align-items: stretch; display: flex; width: 100%; height: 100%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
+            <div style="background-color: #a3d693; width: 35%; height: 100%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                <h2>Dados pessoais</h2>
+
+                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(255, 255, 255); resize: none;"
+                          asp-for="Experiencia" id="Curriculo-experiencia" rows="25" placeholder="experiencia"></textarea>
+            </div>
+
+            <div style="width: 65%;;">
+                <h2>Objetivo</h2>
+                <textarea asp-for="Objetivo"
+                          style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(241, 241, 241); resize: none;"
+                          id="Curriculo-objetivo" rows="5" cols="50" placeholder="objetivo"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    <h2>Escolaridade</h2>
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Escola" id="Curriculo-escola" placeholder="escola"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Idiomas)</span>
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;"></div>
+                <h2>Redes sociais</h2>
+                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" asp-for="RedeSocial" rows="2"
+                          id="Curriculo-redesocial" placeholder="rede social"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
+            </div>
+
+
+        </div>
+        <button type="submit" asp-action="Curriculo" style="width: 100%; border: 0; background-color: #a3d693; margin-top: 8px; border-radius: 8px;">Salvar</button>
+    </form>
+</div>
 
 <form asp-action="Index">
     <button asp-action="Index">Não</button>
 </form>
+
+<span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Experiencia)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idiomas)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>

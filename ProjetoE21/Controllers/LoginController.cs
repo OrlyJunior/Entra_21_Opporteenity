@@ -29,6 +29,11 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Empresa(Empresa empresa)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(empresa);
+            }
+
             DaoEmp.adicionar(empresa);
 
             return RedirectToAction("Index");
@@ -51,26 +56,15 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult CadastroJovem(Jovem jovem)
         {
-            var errors = ModelState
-    .Where(x => x.Value.Errors.Count > 0)
-    .Select(x => new { x.Key, x.Value.Errors })
-    .ToArray();
-
-            foreach(var i in errors)
-            {
-                Console.WriteLine(i);
-            }
-
             if (!ModelState.IsValid)
             {
                 return View(jovem);
             }
-            else
-            {
-                DaoC.adicionar(jovem);
 
-                return RedirectToAction("Index");
-            }
+            DaoC.adicionar(jovem);
+
+            return RedirectToAction("Index");
+
         }
     }
 }

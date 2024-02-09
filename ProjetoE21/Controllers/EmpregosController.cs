@@ -53,10 +53,10 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Adicionar(Emprego emprego)
         {
-            emprego.Empresa = new();
-
-            emprego.Empresa.Id = Usuario.LogadoE.Id;
-            emprego.Empresa.Nome = Usuario.LogadoE.Nome;
+            if (!ModelState.IsValid)
+            {
+                return View(emprego);
+            }
 
             DaoS.adicionar(emprego);
 
@@ -90,10 +90,10 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Edit(Emprego emprego)
         {
-            emprego.Empresa = new();
-
-            emprego.Empresa.Id = 1;
-            emprego.Empresa.Nome = "Empresa inventada";
+            if (!ModelState.IsValid)
+            {
+                return View(emprego);
+            }
 
             DaoS.editar(emprego);
 

@@ -61,6 +61,11 @@ namespace ProjetoE21.Controllers
         {
             jovem.Id = Usuario.LogadoJ.Id;
 
+            if (!ModelState.IsValid)
+            {
+                return View(jovem);
+            }
+
             DaoC.editar(jovem);
 
             return RedirectToAction("Index");
@@ -79,11 +84,23 @@ namespace ProjetoE21.Controllers
         {
             empresa.Id = Usuario.LogadoE.Id;
 
+            if (!ModelState.IsValid)
+            {
+                return View(empresa);
+            }
+
             DaoEmp.editar(empresa);
 
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Curriculo()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Curriculo(Curriculo curriculo)
         {
             curriculo.Nome = Usuario.LogadoJ.Nome;

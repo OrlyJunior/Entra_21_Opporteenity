@@ -6,34 +6,42 @@
     <div>
         <label asp-for="Descricao">Insira a descrição do serviço:</label>
         <input asp-for="Descricao"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Descricao)</span>
     </div>
     <div>
         <label asp-for="Local.Estado">Insira o estado do local serviço:</label>
         <input asp-for="Local.Estado"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
     </div>
     <div>
         <label asp-for="Local.Cidade">Insira a cidade do serviço:</label>
         <input asp-for="Local.Cidade"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
     </div>
     <div>
         <label asp-for="Local.Bairro">Insira o bairro do serviço:</label>
         <input asp-for="Local.Bairro"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
     </div>
     <div>
         <label asp-for="Local.Rua">Insira a rua do serviço:</label>
         <input asp-for="Local.Rua"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
     </div>
     <div>
         <label asp-for="Local.Numero">Insira o número do local do serviço:</label>
         <input asp-for="Local.Numero"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
     </div>
     <div>
         <label asp-for="Pagamento">Insira o valor a ser pago pelo serviço:</label>
         <input asp-for="Pagamento"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Pagamento)</span>
     </div>
     <div>
         <label asp-for="Horario">Insira o dia e hora do serviço:</label>
         <input asp-for="Horario"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Horario)</span>
     </div>
 
     <button asp-action="Adicionar">Adicionar</button>

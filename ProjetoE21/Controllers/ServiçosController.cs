@@ -59,6 +59,11 @@ namespace ProjetoE21.Controllers
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
 
+            if (!ModelState.IsValid)
+            {
+                return View(servico);
+            }
+
             DaoS.adicionar(servico);
 
             return RedirectToAction("Index");
@@ -98,6 +103,11 @@ namespace ProjetoE21.Controllers
 
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
+
+            if (!ModelState.IsValid)
+            {
+                return View(servico);
+            }
 
             DaoS.editar(servico);
 
