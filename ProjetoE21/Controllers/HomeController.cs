@@ -82,7 +82,7 @@ namespace ProjetoE21.Controllers
                     List<Curriculo> curriculos = DaoCur.consultar();
                     Usuario.LogadoE = null;
                     Usuario.LogadoJ = i;
-                    Usuario.LogadoJ.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
+                    Usuario.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
 
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
@@ -107,7 +107,7 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Candidatar(int id)
         {
-            if (Usuario.LogadoJ.Curriculo != null)
+            if (Usuario.Curriculo != null)
             {
                 DaoCur.candidatar(id);
             }

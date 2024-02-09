@@ -109,8 +109,6 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Candidatos(int id)
         {
-            Emprego emprego = Listas.empregos.FirstOrDefault(s => s.Id == id);
-
             List<Curriculo> candidatos = DaoCur.consultarCandidatos(id);
 
             return View(candidatos);

@@ -60,7 +60,7 @@
 
                                 @if (Usuario.LogadoE == null)
                                 {
-                                    <span href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">@Html.ActionLink("Candidatar", "Candidatar", new { Id = i.Empresa.Id })</span>
+                                    <span href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">@Html.ActionLink("Candidatar", "Candidatar", new { Id = i.Id })</span>
                                     <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Salvar", "Favoritar", new { Id = i.Id })</span>
                                     <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
 
