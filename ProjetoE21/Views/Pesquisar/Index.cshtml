@@ -1,0 +1,21 @@
+﻿@using ProjetoE21.Dados;
+
+@using (Html.BeginForm("Index", "Pesquisar", FormMethod.Get))
+{
+    <p>
+        Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@foreach(var i in Listas.cadastrosJ)
+{
+    <div class="w-100 d-flex p-3 align-content-center">
+        <div style="width:25%">
+            <img src="~/css/Imagens/Perfil.png" style="width:50%"></img>
+        </div>
+        <p class="m-2" style="width:25%">@i.Nome</p>
+        <p class="m-2" style="width:25%">@i.Local.Estado</p>
+        <p class="m-2" style="width:25%">@i.Local.Cidade</p>
+    </div>
+}

@@ -3,6 +3,9 @@
 <div style="width:80vw;">
     <div style="justify-content:center; text-align:center;">
         <h1>Perfil</h1>
+            <img src="~/css/Imagens/Perfil.png" width="25%"></img>
+        <input type="file" id="foto"></input>
+        <button onclick="enviarImagem()">Enviar</button>
 
         <h3>@Usuario.LogadoJ.Nome</h3>
         <p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
@@ -75,12 +78,40 @@
     {
         <p>Você ainda não tem vagas registradas como favoritas!</p>
     }
-
 </div>
 </div>
 
 <script>
-    document.onload = geocoding()
+    document.onload = geocoding();
+
+    async function enviarImagem() {
+        const fileInput = document.getElementById('foto');
+        const file = fileInput.files[0];
+
+        const formData = new FormData();
+        formData.append('image', file);
+
+        try {
+            const response = await fetch('https://api.imgur.com/3/image', {
+                method: 'POST',
+                headers: {
+                    Authorization: 'Client-ID 98972d1924cf9ce'
+                },
+                body: formData
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log(data);
+                alert('Imagem enviada com sucesso! Link: ' + data.data.link);
+            } else {
+                alert('Erro ao enviar imagem: ' + data.data.error);
+            }
+        } catch (error) {
+            alert('Ocorreu um erro ao enviar a imagem.');
+            console.error('Erro:', error);
+        }
+    }
 
     async function geocoding() {
     @{
