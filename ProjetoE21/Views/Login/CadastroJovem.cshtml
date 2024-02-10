@@ -47,7 +47,7 @@
             </div>
             <div>
                 <label>Insira seu CEP:</label>
-                <input id="cep" onclick="pegarCep()"></input>
+                <input id="cep"></input>
             </div>
             <div>
                 <label asp-for="Local.Estado">Insira o estado de sua residência:</label>
@@ -92,55 +92,49 @@
 </div>
 
 <script>
-    
+    async function pegarCep() {
+        var cep = document.getElementById("cep").value;
 
-    function pegarCep(){
-        
+        var cepLength = cep.length;
 
-        async function pegarCep() {
-           var cep = document.getElementById("cep").value;
-        
-           var cepLength = cep.length;
+        console.log(cepLength);
 
-           console.log(cepLength);
+        if (cepLength == 9) {
+            const dados = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
 
-           if(cepLength == 9){
-               const dados = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            const data = await dados.json();
 
-               const data = await dados.json();
+            console.log(data);
 
-               console.log(data);
+            document.getElementById("estado").value = data.uf;
 
-               document.getElementById("estado").value = data.uf;
+            document.getElementById("cidade").value = data.localidade;
 
-               document.getElementById("cidade").value = data.localidade;
+            document.getElementById("bairro").value = data.bairro;
 
-               document.getElementById("bairro").value = data.bairro;
+            document.getElementById("rua").value = data.logradouro;
 
-               document.getElementById("rua").value = data.logradouro;
+            if (document.getElementById("estado").value == "") {
+                document.getElementById("estado").removeAttribute("disabled");
+            }
 
-               if (document.getElementById("estado").value == ""){
-                   document.getElementById("estado").removeAttribute("disabled");
-               }
+            if (document.getElementById("cidade").value == "") {
+                document.getElementById("cidade").removeAttribute("disabled");
+            }
 
-               if (document.getElementById("cidade").value == "") {
-                   document.getElementById("cidade").removeAttribute("disabled");
-               }
+            if (document.getElementById("bairro").value == "") {
+                document.getElementById("bairro").removeAttribute("disabled");
+            }
 
-               if (document.getElementById("bairro").value == "") {
-                   document.getElementById("bairro").removeAttribute("disabled");
-               }
+            if (document.getElementById("rua").value == "") {
+                document.getElementById("rua").removeAttribute("disabled");
+            }
 
-               if (document.getElementById("rua").value == "") {
-                   document.getElementById("rua").removeAttribute("disabled");
-               }
-
-               if (document.getElementById("numero").value == "") {
-                   document.getElementById("numero").removeAttribute("disabled");
-               }
-           }
+            if (document.getElementById("numero").value == "") {
+                document.getElementById("numero").removeAttribute("disabled");
+            }
         }
-
-        document.getElementById("cep").addEventListener("input", pegarCep);
     }
+
+    document.getElementById("cep").addEventListener("input", pegarCep);
 </script>

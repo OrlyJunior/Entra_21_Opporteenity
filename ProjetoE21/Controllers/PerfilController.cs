@@ -115,7 +115,7 @@ namespace ProjetoE21.Controllers
 
             List<Curriculo> curriculos = DaoCur.consultar();
 
-            Usuario.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
+            Usuario.LogadoJ.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
 
             return RedirectToAction("Index");
         }

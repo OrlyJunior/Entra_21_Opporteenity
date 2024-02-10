@@ -10,12 +10,12 @@
 
 @foreach(var i in Listas.cadastrosJ)
 {
-    <div class="w-100 d-flex p-3 align-content-center">
+    <a asp-action="Ver" asp-route-id="@i.Id" class="w-100 d-flex p-3 align-content-center">
         <div style="width:25%">
             <img src="~/css/Imagens/Perfil.png" style="width:50%"></img>
         </div>
         <p class="m-2" style="width:25%">@i.Nome</p>
         <p class="m-2" style="width:25%">@i.Local.Estado</p>
         <p class="m-2" style="width:25%">@i.Local.Cidade</p>
-    </div>
+    </a>
 }

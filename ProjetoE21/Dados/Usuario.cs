@@ -7,7 +7,5 @@ namespace ProjetoE21.Dados
         public static Jovem LogadoJ = new();
 
         public static Empresa LogadoE = new();
-
-        public static Curriculo Curriculo { get; set; }
     }
 }

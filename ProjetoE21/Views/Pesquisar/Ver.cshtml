@@ -1,0 +1,57 @@
+﻿@using ProjetoE21.Dados;
+
+@model ProjetoE21.Models.Jovem;
+
+<div style="width:80vw;">
+    <div style="justify-content:center; text-align:center;">
+        <h1>Perfil</h1>
+            <img src="~/css/Imagens/Perfil.png" width="25%"></img>
+
+        <h3>@Model.Nome</h3>
+        <p>Data de nascimento: @Model.DataNascimento.Day/@Model.DataNascimento.Month/@Model.DataNascimento.Year</p>
+        <p>Telefone: @Model.Telefone</p>
+        <p>Email: @Model.Email</p>
+
+        <h1>Responsável</h1>
+
+        <p>Nome do responsável: @Model.Responsavel</p>
+        <p>Telefone do responsável: @Model.FoneResponsavel</p>
+    </div>
+</div>
+
+<a href="https://wa.me/@Model.Telefone">Enviar mensagem</a>
+
+<h1>Currículo</h1>
+
+<div style="width: 65%; height: 35rem; margin-top: 12px; background-color: white">
+    <div style="margin:auto; align-items: stretch; display: flex; width: 100%; height: 100%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
+        <div style="background-color: #a3d693; width: 38%; height: 100%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+            <h3>Experiência</h3>
+            <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: #a3d693; resize: none; margin-left: 4%; overflow: hidden; user-select: none" rows="21" cols="10" readonly
+                      id="Curriculo-experiencia" placeholder="experiencia">@Model.Curriculo.Experiencia</textarea>
+        </div>
+
+        <div style="width: 65%;">
+            <h3>Objetivo</h3>
+            <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;"
+                      id="Curriculo-objetivo" rows="4" placeholder="objetivo">@Model.Curriculo.Objetivo</textarea>
+
+            <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                <h2>Escolaridade</h2>
+                <textarea class="m-2"
+                          style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
+                          id="Curriculo-escola" placeholder="escola">@Model.Curriculo.Escola</textarea>
+                <textarea class="m-2"
+                          style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
+                          id="Curriculo-idiomas" placeholder="idiomas">@Model.Curriculo.Idiomas</textarea>
+                <textarea class="m-2"
+                          style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
+                          id="Curriculo-cursos" placeholder="cursos">@Model.Curriculo.Cursos</textarea>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;"></div>
+            <h3>Redes sociais</h3>
+            <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
+                      id="Curriculo-redesocial" placeholder="rede social">@Model.Curriculo.RedeSocial</textarea>
+        </div>
+    </div>
+</div>

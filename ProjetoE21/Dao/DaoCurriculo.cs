@@ -137,7 +137,7 @@ namespace ProjetoE21.Dao
 
                 cm.CommandText = "insert into tb_curriculosEnviados(idCurriculo, idEmprego)values(@idCurriculo, @idEmprego)";
 
-                cm.Parameters.Add("idCurriculo", MySqlDbType.Int32).Value = Usuario.Curriculo.Id;
+                cm.Parameters.Add("idCurriculo", MySqlDbType.Int32).Value = Usuario.LogadoJ.Curriculo.Id;
                 
                 cm.Parameters.Add("idEmprego", MySqlDbType.Int32).Value = idEmprego;
 

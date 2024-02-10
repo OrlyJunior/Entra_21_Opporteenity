@@ -10,6 +10,7 @@ namespace ProjetoE21.Controllers
     {
         OrdenaJovens ordena = new();
         DaoCadastro DaoC = new();
+        DaoCurriculo DaoCur = new();
 
         public IActionResult Index(string searchString)
         {
@@ -20,6 +21,19 @@ namespace ProjetoE21.Controllers
             ordena.Pesquisa(searchString);
 
             return View(Listas.cadastrosJ);
+        }
+
+        public IActionResult Ver(int id)
+        {
+            List<Jovem> jovens = DaoC.consultar();
+
+            List<Curriculo> curriculos = DaoCur.consultar();
+
+            Jovem jovem = jovens.FirstOrDefault(jv => jv.Id == id);
+
+            jovem.Curriculo = curriculos.FirstOrDefault(cr => cr.JovemId == id);
+
+            return View(jovem);
         }
     }
 }
