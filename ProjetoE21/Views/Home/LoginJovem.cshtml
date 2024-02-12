@@ -18,6 +18,12 @@
         <input asp-for="Senha" class="input" placeholder="Senha" type="password">
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
 
+        @if(ViewData.ModelState.ContainsKey("userIncorreto"))
+        {
+            @Html.ValidationMessage("userIncorreto");
+        }
+        
+
         <button asp-action="LoginJovem" class="button-confirm">Login</button>
     </div>
 </form>

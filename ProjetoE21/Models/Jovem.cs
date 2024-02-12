@@ -29,6 +29,6 @@ namespace ProjetoE21.Models
         [Required(ErrorMessage = "Você deve informar sua senha!")]
         public string Senha { get; set; }
 
-        public Curriculo Curriculo { get; set; } = new Curriculo();
+        public Curriculo Curriculo = new();
     }
 }

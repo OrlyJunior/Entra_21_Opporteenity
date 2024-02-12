@@ -56,10 +56,24 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult CadastroJovem(Jovem jovem)
         {
+            Console.WriteLine(ModelState);
+
+            var errors = ModelState
+    .Where(x => x.Value.Errors.Count > 0)
+    .Select(x => new { x.Key, x.Value.Errors })
+    .ToArray();
+
+            foreach(var i in errors)
+            {
+                Console.WriteLine(i);
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(jovem);
             }
+
+            
 
             DaoC.adicionar(jovem);
 

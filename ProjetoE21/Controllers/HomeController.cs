@@ -56,7 +56,8 @@ namespace ProjetoE21.Controllers
                 }
             }
 
-            return RedirectToAction("Error");
+            ModelState.AddModelError("userIncorreto", "Email ou senha incorretos!");
+            return View(empresa);
         }
 
         [HttpGet]
@@ -92,7 +93,8 @@ namespace ProjetoE21.Controllers
                 }
             }
 
-            return RedirectToAction("Error");
+            ModelState.AddModelError("userIncorreto", "Email ou senha incorretos!");
+            return View(jovem);
         }
 
         public IActionResult Favoritar(int id)
