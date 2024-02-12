@@ -76,6 +76,8 @@
                 <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
             </div>
 
+            <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
+
             <button asp-action="Empresa">Cadastrar</button>
         </form>
     </div>

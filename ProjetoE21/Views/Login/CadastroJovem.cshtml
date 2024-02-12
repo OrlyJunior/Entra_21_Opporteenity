@@ -86,6 +86,8 @@
                 <span class="text-danger">@Html.ValidationMessageFor(model => model.FoneResponsavel)</span>
             </div>
 
+            <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
+
             <button asp-action="CadastroJovem">Adicionar</button>
         </form>
     </div>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PagedList;
 using ProjetoE21.Dados;
 using ProjetoE21.Dao;
 using ProjetoE21.Models;
@@ -34,6 +35,17 @@ namespace ProjetoE21.Controllers
                 return View(empresa);
             }
 
+            List<Empresa> empresas = DaoEmp.consultar();
+
+            foreach(var i in empresas)
+            {
+                if (i.Email == empresa.Email)
+                {
+                    ModelState.AddModelError("userRepetido", "Este email já está cadastrado!");
+                    return View(empresa);
+                }
+            }
+            
             DaoEmp.adicionar(empresa);
 
             return RedirectToAction("Index");
@@ -56,24 +68,21 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult CadastroJovem(Jovem jovem)
         {
-            Console.WriteLine(ModelState);
-
-            var errors = ModelState
-    .Where(x => x.Value.Errors.Count > 0)
-    .Select(x => new { x.Key, x.Value.Errors })
-    .ToArray();
-
-            foreach(var i in errors)
-            {
-                Console.WriteLine(i);
-            }
-
             if (!ModelState.IsValid)
             {
                 return View(jovem);
             }
 
-            
+            List<Jovem> jovens = DaoC.consultar();
+
+            foreach(var i in jovens)
+            {
+                if(i.Email == jovem.Email)
+                {
+                    ModelState.AddModelError("userRepetido", "Este email já está cadastrado!");
+                    return View(jovem);
+                }
+            }
 
             DaoC.adicionar(jovem);
 
