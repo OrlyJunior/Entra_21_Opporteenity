@@ -20,7 +20,7 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = "insert into tb_curriculos(nome, estado, rua, numero, bairro, cidade, telefone, email, redesocial, objetivo, escola, idiomas, cursos, experiencia, jovemId)values(@nome, @estado, @rua, @numero, @bairro, @cidade, @telefone, @email, @redesocial, @objetivo, @escola, @idiomas, @cursos, @experiencia, @jovemId)";
+                cm.CommandText = "insert into tb_curriculos(nome, estado, rua, numero, bairro, cidade, telefone, email, objetivo, escola, escolaCidade, situacao, ensino, dataInicio, cursos, extraC1, extraC2, extraC3, extraC4, idioma1, idioma1Nivel, idioma1Valor, idioma2, idioma2Nivel, idioma2Valor, idioma3, idioma3Nivel, idioma3Valor, jovemId)values(@nome, @estado, @rua, @numero, @bairro, @cidade, @telefone, @email, @objetivo, @escola, @escolaCidade, @situacao, @ensino, @dataInicio, @cursos, @extraC1, @extraC2, @extraC3, @extraC4, @idioma1, @idioma1Nivel, @idioma1Valor, @idioma2, @idioma2Nivel, @idioma2Valor, @idioma3, @idioma3Nivel, @idioma3Valor, @jovemId)";
 
                 cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = curriculo.Nome;
                 cm.Parameters.Add("email", MySqlDbType.VarChar).Value = curriculo.Email;
@@ -30,12 +30,32 @@ namespace ProjetoE21.Dao
                 cm.Parameters.Add("numero", MySqlDbType.Int32).Value = curriculo.Local.Numero;
                 cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = curriculo.Local.Bairro;
                 cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = curriculo.Local.Cidade;
-                cm.Parameters.Add("redesocial", MySqlDbType.VarChar).Value = curriculo.RedeSocial;
-                cm.Parameters.Add("objetivo", MySqlDbType.VarChar).Value = curriculo.Objetivo;
+                cm.Parameters.Add("objetivo", MySqlDbType.VarChar).Value = curriculo.PerfilProfissional;
+
                 cm.Parameters.Add("escola", MySqlDbType.VarChar).Value = curriculo.Escola;
-                cm.Parameters.Add("idiomas", MySqlDbType.VarChar).Value = curriculo.Idiomas;
+                cm.Parameters.Add("dataInicio", MySqlDbType.DateTime).Value = curriculo.InicioEscola;
+                cm.Parameters.Add("situacao", MySqlDbType.VarChar).Value = curriculo.Status;
+                cm.Parameters.Add("escolaCidade", MySqlDbType.VarChar).Value = curriculo.EscolaCidade;
+                cm.Parameters.Add("ensino", MySqlDbType.VarChar).Value = curriculo.Ensino;
+
+                cm.Parameters.Add("idioma1", MySqlDbType.VarChar).Value = curriculo.Idioma1;
+                cm.Parameters.Add("idioma1Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma1;
+                cm.Parameters.Add("idioma1Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma1;
+
+                cm.Parameters.Add("idioma2", MySqlDbType.VarChar).Value = curriculo.Idioma2;
+                cm.Parameters.Add("idioma2Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma2;
+                cm.Parameters.Add("idioma2Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma2;
+
+                cm.Parameters.Add("idioma3", MySqlDbType.VarChar).Value = curriculo.Idioma3;
+                cm.Parameters.Add("idioma3Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma3;
+                cm.Parameters.Add("idioma3Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma3;
+
                 cm.Parameters.Add("cursos", MySqlDbType.VarChar).Value = curriculo.Cursos;
-                cm.Parameters.Add("experiencia", MySqlDbType.VarChar).Value = curriculo.Experiencia;
+                cm.Parameters.Add("extraC1", MySqlDbType.VarChar).Value = curriculo.Outros1;
+                cm.Parameters.Add("extraC2", MySqlDbType.VarChar).Value = curriculo.Outros2;
+                cm.Parameters.Add("extraC3", MySqlDbType.VarChar).Value = curriculo.Outros3;
+                cm.Parameters.Add("extraC4", MySqlDbType.VarChar).Value = curriculo.Outros4;
+
                 cm.Parameters.Add("jovemId", MySqlDbType.Int32).Value = Usuario.LogadoJ.Id;
 
                 cm.Connection = con;
@@ -79,8 +99,7 @@ namespace ProjetoE21.Dao
 
                     curriculo.Id = Convert.ToInt32(dr["id"]);
                     curriculo.Nome = Convert.ToString(dr["nome"]);
-                    
-                    curriculo.Experiencia = Convert.ToString(dr["experiencia"]);
+
                     curriculo.Email = Convert.ToString(dr["email"]);
 
                     curriculo.Local = new();
@@ -91,12 +110,48 @@ namespace ProjetoE21.Dao
                     curriculo.Local.Numero = Convert.ToInt32(dr["numero"]);
                     curriculo.Local.Rua = Convert.ToString(dr["rua"]);
 
-                    curriculo.RedeSocial = Convert.ToString(dr["redesocial"]);
                     curriculo.Escola = Convert.ToString(dr["escola"]);
-                    curriculo.Idiomas = Convert.ToString(dr["idiomas"]);
+                    curriculo.EscolaCidade = Convert.ToString(dr["escolaCidade"]);
+                    curriculo.Status = Convert.ToString(dr["situacao"]);
+                    curriculo.Ensino = Convert.ToString(dr["ensino"]);
+                    curriculo.InicioEscola = Convert.ToDateTime(dr["dataInicio"]);
+
+                    curriculo.Idioma1 = Convert.ToString(dr["idioma1"]);
+                    curriculo.NivelIdioma1 = Convert.ToString(dr["idioma1nivel"]);
+                    curriculo.ValorIdioma1 = Convert.ToInt32(dr["idioma1valor"]);
+
+                    curriculo.Idioma2 = Convert.ToString(dr["idioma2"]);
+                    curriculo.NivelIdioma2 = Convert.ToString(dr["idioma2nivel"]);
+
+                    if (dr["idioma2valor"] == DBNull.Value)
+                    {
+                        curriculo.ValorIdioma2 = 0;
+                    }
+                    else
+                    {
+                        curriculo.ValorIdioma2 = Convert.ToInt32(dr["idioma2valor"]);
+                    }
+                    
+                    curriculo.Idioma3 = Convert.ToString(dr["idioma3"]);
+                    curriculo.NivelIdioma3 = Convert.ToString(dr["idioma3nivel"]);
+
+                    if (dr["idioma3valor"] == DBNull.Value)
+                    {
+                        curriculo.ValorIdioma3 = 0;
+                    }
+                    else
+                    {
+                        curriculo.ValorIdioma3 = Convert.ToInt32(dr["idioma3valor"]);
+                    }
+
                     curriculo.Cursos = Convert.ToString(dr["cursos"]);
+                    curriculo.Outros1 = Convert.ToString(dr["extraC1"]);
+                    curriculo.Outros2 = Convert.ToString(dr["extraC2"]);
+                    curriculo.Outros3 = Convert.ToString(dr["extraC3"]);
+                    curriculo.Outros4 = Convert.ToString(dr["extraC4"]);
+
                     curriculo.Telefone = Convert.ToString(dr["telefone"]);
-                    curriculo.Objetivo = Convert.ToString(dr["objetivo"]);
+                    curriculo.PerfilProfissional = Convert.ToString(dr["objetivo"]);
                     curriculo.JovemId = Convert.ToInt32(dr["jovemId"]);
 
                     curriculos.Add(curriculo);
@@ -118,9 +173,35 @@ namespace ProjetoE21.Dao
             throw new NotImplementedException();
         }
 
-        public bool editar(Curriculo t)
+        public bool editar(Curriculo curriculo)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = "update tb_curriculos set experiencia = @experiencia, objetivo = @objetivo, idiomas = @idiomas, cursos = @cursos where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.VarChar).Value = curriculo.Id;
+                cm.Parameters.Add("experiencia", MySqlDbType.VarChar).Value = curriculo.Experiencia;
+                cm.Parameters.Add("objetivo", MySqlDbType.VarChar).Value = curriculo.Objetivo;
+                cm.Parameters.Add("idiomas", MySqlDbType.VarChar).Value = curriculo.Idioma1;
+                cm.Parameters.Add("cursos", MySqlDbType.VarChar).Value = curriculo.Cursos;
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return true;
         }
 
         public bool candidatar(int idEmprego)
@@ -138,7 +219,7 @@ namespace ProjetoE21.Dao
                 cm.CommandText = "insert into tb_curriculosEnviados(idCurriculo, idEmprego)values(@idCurriculo, @idEmprego)";
 
                 cm.Parameters.Add("idCurriculo", MySqlDbType.Int32).Value = Usuario.LogadoJ.Curriculo.Id;
-                
+
                 cm.Parameters.Add("idEmprego", MySqlDbType.Int32).Value = idEmprego;
 
                 cm.Connection = con;
@@ -182,7 +263,7 @@ namespace ProjetoE21.Dao
 
                 while (dr.Read())
                 {
-                    curriculosId.Add(Convert.ToInt32(dr["idCurriculo"]));    
+                    curriculosId.Add(Convert.ToInt32(dr["idCurriculo"]));
                 }
 
                 dr.Close();
@@ -222,9 +303,8 @@ namespace ProjetoE21.Dao
                         curriculo.Local.Numero = Convert.ToInt32(reader["numero"]);
                         curriculo.Local.Rua = Convert.ToString(reader["rua"]);
 
-                        curriculo.RedeSocial = Convert.ToString(reader["redesocial"]);
                         curriculo.Escola = Convert.ToString(reader["escola"]);
-                        curriculo.Idiomas = Convert.ToString(reader["idiomas"]);
+                        curriculo.Idioma1 = Convert.ToString(reader["idiomas"]);
                         curriculo.Cursos = Convert.ToString(reader["cursos"]);
                         curriculo.Telefone = Convert.ToString(reader["telefone"]);
                         curriculo.Objetivo = Convert.ToString(reader["objetivo"]);

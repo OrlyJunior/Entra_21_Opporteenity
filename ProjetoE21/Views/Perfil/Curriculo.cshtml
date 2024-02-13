@@ -109,11 +109,11 @@
                     <div style="margin-right: 15px;">
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="datainicio">Inicio</label>
-                            <textarea asp-for ="InicioEscola" placeholder="01/2024" id="datainicio" cols="25" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                            <input asp-for ="InicioEscola" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
                         </div>
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="escola1">Escola</label>
-                            <textarea asp-for="EscolaNome" placeholder="E.B.M.nome da escola" id="escola1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                            <textarea asp-for="Escola" placeholder="E.B.M.nome da escola" id="escola1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
                         </div>
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="cidadeescola">Cidade</label>
@@ -212,7 +212,7 @@
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Cidade)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.InicioEscola)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma1)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.EscolaNome)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.NivelIdioma1)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.EscolaCidade)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma2)</span>
@@ -233,5 +233,5 @@
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Experiencia)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Idiomas)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma1)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>

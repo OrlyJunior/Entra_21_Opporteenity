@@ -140,6 +140,36 @@ namespace ProjetoE21.Dao
 
                 MySqlDataReader dr;
                 dr = cm.ExecuteReader();
+
+                dr.Close();
+
+                con.Close();
+
+                if (Usuario.LogadoJ.Curriculo != null)
+                {
+                    con.Open();
+
+                    MySqlCommand cn = con.CreateCommand();
+
+                    cn.CommandText = "update tb_curriculos set nome = @nome, email = @email, telefone = @fone, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado where jovemId = @id";
+
+                    cn.Parameters.Add("id", MySqlDbType.Int32).Value = jovem.Id;
+                    cn.Parameters.Add("nome", MySqlDbType.VarChar).Value = jovem.Nome;
+                    cn.Parameters.Add("email", MySqlDbType.VarChar).Value = jovem.Email;
+                    cn.Parameters.Add("fone", MySqlDbType.VarChar).Value = jovem.Telefone;
+                    cn.Parameters.Add("estado", MySqlDbType.VarChar).Value = jovem.Local.Estado;
+                    cn.Parameters.Add("rua", MySqlDbType.VarChar).Value = jovem.Local.Rua;
+                    cn.Parameters.Add("numero", MySqlDbType.Int32).Value = jovem.Local.Numero;
+                    cn.Parameters.Add("bairro", MySqlDbType.VarChar).Value = jovem.Local.Bairro;
+                    cn.Parameters.Add("cidade", MySqlDbType.VarChar).Value = jovem.Local.Cidade;
+
+                    cn.Connection = con;
+
+                    MySqlDataReader reader;
+                    reader = cn.ExecuteReader();
+
+                    reader.Close();
+                }
             }
             finally
             {
