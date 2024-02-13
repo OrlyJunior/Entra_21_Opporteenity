@@ -114,14 +114,14 @@
             <div style="width: 63%;">
                 <div style="text-align: start;">
                     @* pegar o nome do perfil do usuario *@
-                    <h1 style="margin-left: 25px; color: #87b17a;">Orly</h1>
+                    <h1 style="margin-left: 25px; color: #87b17a;">@Usuario.LogadoJ.Nome</h1>
                     @* pegar o sobrenome do perfil do usuario *@
                     <h1 style="margin-left: 25px; margin-top: 30px;">Jogador caro</h1>
                 </div>
                 <div>
                     <div style="text-align: start; display: flex;">
                         <img src="" alt="">
-                        <input asp-for="Cidade" placeholder="Blumenau" style="border: none; margin: 0px 10px 10px 25px; font-weight: bold;">
+                        <p placeholder="Cidade" style="border: none; margin: 0px 10px 10px 25px; font-weight: bold;">@Usuario.LogadoJ.Local.Cidade</p>
                     </div>
                 </div>
                 <hr style="border: 1px solid #a3d693;">
@@ -247,12 +247,3 @@
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Outros2)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Outros3)</span>
 <span class="text-danger">@Html.ValidationMessageFor(model => model.Outros4)</span>
-
-
-@* velhos *@
-<span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Experiencia)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma1)</span>
-<span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>

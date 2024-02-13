@@ -311,26 +311,62 @@ namespace ProjetoE21.Dao
                     {
                         Curriculo curriculo = new();
 
-                        curriculo.Id = Convert.ToInt32(reader["id"]);
-                        curriculo.Nome = Convert.ToString(reader["nome"]);
+                        curriculo.Id = Convert.ToInt32(dr["id"]);
+                        curriculo.Nome = Convert.ToString(dr["nome"]);
 
-                        curriculo.Experiencia = Convert.ToString(reader["experiencia"]);
-                        curriculo.Email = Convert.ToString(reader["email"]);
+                        curriculo.Email = Convert.ToString(dr["email"]);
 
                         curriculo.Local = new();
 
-                        curriculo.Local.Estado = Convert.ToString(reader["estado"]);
-                        curriculo.Local.Cidade = Convert.ToString(reader["cidade"]);
-                        curriculo.Local.Bairro = Convert.ToString(reader["bairro"]);
-                        curriculo.Local.Numero = Convert.ToInt32(reader["numero"]);
-                        curriculo.Local.Rua = Convert.ToString(reader["rua"]);
+                        curriculo.Local.Estado = Convert.ToString(dr["estado"]);
+                        curriculo.Local.Cidade = Convert.ToString(dr["cidade"]);
+                        curriculo.Local.Bairro = Convert.ToString(dr["bairro"]);
+                        curriculo.Local.Numero = Convert.ToInt32(dr["numero"]);
+                        curriculo.Local.Rua = Convert.ToString(dr["rua"]);
 
-                        curriculo.Escola = Convert.ToString(reader["escola"]);
-                        curriculo.Idioma1 = Convert.ToString(reader["idiomas"]);
-                        curriculo.Cursos = Convert.ToString(reader["cursos"]);
-                        curriculo.Telefone = Convert.ToString(reader["telefone"]);
-                        curriculo.Objetivo = Convert.ToString(reader["objetivo"]);
-                        curriculo.JovemId = Convert.ToInt32(reader["jovemId"]);
+                        curriculo.Escola = Convert.ToString(dr["escola"]);
+                        curriculo.EscolaCidade = Convert.ToString(dr["escolaCidade"]);
+                        curriculo.Status = Convert.ToString(dr["situacao"]);
+                        curriculo.Ensino = Convert.ToString(dr["ensino"]);
+                        curriculo.InicioEscola = Convert.ToDateTime(dr["dataInicio"]);
+
+                        curriculo.Idioma1 = Convert.ToString(dr["idioma1"]);
+                        curriculo.NivelIdioma1 = Convert.ToString(dr["idioma1nivel"]);
+                        curriculo.ValorIdioma1 = Convert.ToInt32(dr["idioma1valor"]);
+
+                        curriculo.Idioma2 = Convert.ToString(dr["idioma2"]);
+                        curriculo.NivelIdioma2 = Convert.ToString(dr["idioma2nivel"]);
+
+                        if (dr["idioma2valor"] == DBNull.Value)
+                        {
+                            curriculo.ValorIdioma2 = 0;
+                        }
+                        else
+                        {
+                            curriculo.ValorIdioma2 = Convert.ToInt32(dr["idioma2valor"]);
+                        }
+
+                        curriculo.Idioma3 = Convert.ToString(dr["idioma3"]);
+                        curriculo.NivelIdioma3 = Convert.ToString(dr["idioma3nivel"]);
+
+                        if (dr["idioma3valor"] == DBNull.Value)
+                        {
+                            curriculo.ValorIdioma3 = 0;
+                        }
+                        else
+                        {
+                            curriculo.ValorIdioma3 = Convert.ToInt32(dr["idioma3valor"]);
+                        }
+
+                        curriculo.Cursos = Convert.ToString(dr["cursos"]);
+                        curriculo.Outros1 = Convert.ToString(dr["extraC1"]);
+                        curriculo.Outros2 = Convert.ToString(dr["extraC2"]);
+                        curriculo.Outros3 = Convert.ToString(dr["extraC3"]);
+                        curriculo.Outros4 = Convert.ToString(dr["extraC4"]);
+
+                        curriculo.Telefone = Convert.ToString(dr["telefone"]);
+                        curriculo.PerfilProfissional = Convert.ToString(dr["objetivo"]);
+                        curriculo.JovemId = Convert.ToInt32(dr["jovemId"]);
 
                         curriculos.Add(curriculo);
                     }

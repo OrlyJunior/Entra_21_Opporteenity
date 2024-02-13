@@ -110,13 +110,28 @@ namespace ProjetoE21.Controllers
         [HttpPost]
         public IActionResult Curriculo(Curriculo curriculo)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(curriculo);
+            }
+
             if(Usuario.LogadoJ.Curriculo != null)
             {
+                curriculo.Nome = Usuario.LogadoJ.Nome;
+
+                curriculo.Local = new();
+
+                curriculo.Local = Usuario.LogadoJ.Local;
+                curriculo.Telefone = Usuario.LogadoJ.Telefone;
+                curriculo.Email = Usuario.LogadoJ.Email;
+
                 DaoCur.editar(curriculo);
 
                 List<Curriculo> curriculosEditados = DaoCur.consultar();
 
                 Usuario.LogadoJ.Curriculo = curriculosEditados.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
+
+                return RedirectToAction("Index");
             }
 
             curriculo.Nome = Usuario.LogadoJ.Nome;
