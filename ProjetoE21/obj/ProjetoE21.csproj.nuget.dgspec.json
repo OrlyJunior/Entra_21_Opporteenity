@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj": {}
+    "C:\\Users\\User\\Desktop\\pull do repos\\ProjetoE21\\ProjetoE21.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj": {
+    "C:\\Users\\User\\Desktop\\pull do repos\\ProjetoE21\\ProjetoE21.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\pull do repos\\ProjetoE21\\ProjetoE21.csproj",
         "projectName": "ProjetoE21",
-        "projectPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
-        "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orly.junior\\Documents\\Projeto\\ProjetoE21\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\pull do repos\\ProjetoE21\\ProjetoE21.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\pull do repos\\ProjetoE21\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
