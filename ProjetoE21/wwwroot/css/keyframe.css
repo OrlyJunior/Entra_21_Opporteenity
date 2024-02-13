@@ -149,3 +149,37 @@
     z-index: 1;
     display: block !important;
 }
+.scroll-animationrtl {
+    display: flex !important;
+    flex-direction: row-reverse;
+    animation: move-right 1.5s ease-in;
+    /* //transition: transform 0.5s ease; */
+}
+
+@keyframes move-right {
+    0% {
+        transform: translateX(100%); /* Começa fora da tela à direita */
+    }
+
+    100% {
+        transform: translateX(0); /* Termina à esquerda */
+    }
+}
+
+.scroll-animationltr {
+    display: flex !important;
+    flex-direction: row;
+    animation: move-left 1.5s ease-in;
+    /* //transition: transform 0.5s ease; */
+}
+
+@keyframes move-left {
+    0% {
+        transform: translateX(-100%); /* Começa fora da tela à direita */
+    }
+
+    100% {
+        transform: translateX(0); /* Termina à esquerda */
+    }
+}
+       
