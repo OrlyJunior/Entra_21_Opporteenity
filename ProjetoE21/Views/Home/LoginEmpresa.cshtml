@@ -4,25 +4,30 @@
 
 @model EmpresaLogin;
 
-<form asp-action="LoginEmpresa" style="display: flex; align-items: center; justify-content: center; margin-right: 35px; margin-top: 100px; font-family: Arial, Helvetica, sans-serif;">
-    <div style="background-color: #fff; display:flex; flex-direction: column; text-align: center;border:2px solid black; padding: 20px; align-items: center; justify-content: center; border-radius: 8px; width: 50vw; height:300px; position: relative; box-shadow: -6px 8px 4px rgba(0, 0, 0, 1)">
-        <h1>Login</h1>
-        <h2> Insira os dados de sua empresa para continuar </h2>
+<div style="border-radius:10px; width:51vw; height:99vh; margin-left: 49vw; text-align: center; background-color:rgba(0, 0, 0, 0.229) ;">
+
+    <form asp-action="LoginEmpresa" style="padding: 10%; display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;">
+
+        <h1 style="font-size:6vh; color: rgb(11, 138, 11); margin-top: 10vh; margin-bottom: 20vh;">Login Empresa</h1>
+
 
         <lable>Insira seu email:</lable>
-        <input asp-for="Email" class="input" placeholder="Email" type="text">
+        <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Email" class="input" placeholder="Email" type="text">
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
-
         <lable>Insira sua senha:</lable>
-        <input asp-for="Senha" class="input" placeholder="Senha" type="password">
+        <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Senha" class="input" placeholder="Senha" type="password">
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+
+        <button asp-action="LoginEmpresa" style="font-size: large; font-weight: 400; color: white; background-color: rgb(11, 138, 11); margin: auto; width: 20vw;border-radius: 30px; margin-bottom: 20px; height: 6vh;" class="button-confirm">Login</button>
+
 
         @if (ViewData.ModelState.ContainsKey("userIncorreto"))
         {
-            @Html.ValidationMessage("userIncorreto");
+            @Html.ValidationMessage("userIncorreto")
+            ;
         }
+    </form>
 
-        <button class="button-confirm">Login</button>
 
-    </div>
-</form>
+
+</div>
