@@ -18,7 +18,14 @@
         <p>Telefone do responsável: @Usuario.LogadoJ.FoneResponsavel</p>
     </div>
 
-    <a asp-action="Curriculo">Adicionar curriculo</a>
+    @if(Usuario.LogadoJ.Curriculo == null)
+    {
+        <a asp-action="Curriculo">Adicionar curriculo</a>
+    }
+    else
+    {
+        <a asp-action="Curriculo">Editar curriculo</a>
+    }
 
     <div style="margin:auto; justify-content:center" class="d-flex">
         <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>

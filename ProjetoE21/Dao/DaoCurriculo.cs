@@ -185,13 +185,35 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = "update tb_curriculos set experiencia = @experiencia, objetivo = @objetivo, idiomas = @idiomas, cursos = @cursos where id = @id";
+                cm.CommandText = "update tb_curriculos set objetivo = @objetivo, escola = @escola, dataInicio = @dataInicio, situacao = @situacao, escolaCidade = @escolaCidade, ensino = @ensino, idioma1 = @idioma1, idioma1Nivel = @idioma1Nivel, idioma1Valor = @idioma1Valor, idioma2 = @idioma2, idioma2Nivel = @idioma2Nivel, idioma2Valor = @idioma2Valor, idioma3 = @idioma3, idioma3Nivel = @idioma3Nivel, idioma3Valor = @idioma3Valor, cursos = @cursos, extraC1 = @extraC1, extraC2 = @extraC2, extraC3 = @extraC3, extraC4 = @extraC4 where id = @id";
 
-                cm.Parameters.Add("id", MySqlDbType.VarChar).Value = curriculo.Id;
-                cm.Parameters.Add("experiencia", MySqlDbType.VarChar).Value = curriculo.Experiencia;
-                cm.Parameters.Add("objetivo", MySqlDbType.VarChar).Value = curriculo.Objetivo;
-                cm.Parameters.Add("idiomas", MySqlDbType.VarChar).Value = curriculo.Idioma1;
+                cm.Parameters.Add("objetivo", MySqlDbType.VarChar).Value = curriculo.PerfilProfissional;
+
+                cm.Parameters.Add("escola", MySqlDbType.VarChar).Value = curriculo.Escola;
+                cm.Parameters.Add("dataInicio", MySqlDbType.DateTime).Value = curriculo.InicioEscola;
+                cm.Parameters.Add("situacao", MySqlDbType.VarChar).Value = curriculo.Status;
+                cm.Parameters.Add("escolaCidade", MySqlDbType.VarChar).Value = curriculo.EscolaCidade;
+                cm.Parameters.Add("ensino", MySqlDbType.VarChar).Value = curriculo.Ensino;
+
+                cm.Parameters.Add("idioma1", MySqlDbType.VarChar).Value = curriculo.Idioma1;
+                cm.Parameters.Add("idioma1Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma1;
+                cm.Parameters.Add("idioma1Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma1;
+
+                cm.Parameters.Add("idioma2", MySqlDbType.VarChar).Value = curriculo.Idioma2;
+                cm.Parameters.Add("idioma2Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma2;
+                cm.Parameters.Add("idioma2Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma2;
+
+                cm.Parameters.Add("idioma3", MySqlDbType.VarChar).Value = curriculo.Idioma3;
+                cm.Parameters.Add("idioma3Nivel", MySqlDbType.VarChar).Value = curriculo.NivelIdioma3;
+                cm.Parameters.Add("idioma3Valor", MySqlDbType.Int32).Value = curriculo.ValorIdioma3;
+
                 cm.Parameters.Add("cursos", MySqlDbType.VarChar).Value = curriculo.Cursos;
+                cm.Parameters.Add("extraC1", MySqlDbType.VarChar).Value = curriculo.Outros1;
+                cm.Parameters.Add("extraC2", MySqlDbType.VarChar).Value = curriculo.Outros2;
+                cm.Parameters.Add("extraC3", MySqlDbType.VarChar).Value = curriculo.Outros3;
+                cm.Parameters.Add("extraC4", MySqlDbType.VarChar).Value = curriculo.Outros4;
+
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = Usuario.LogadoJ.Curriculo.Id;
             }
             finally
             {

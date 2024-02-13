@@ -97,12 +97,28 @@ namespace ProjetoE21.Controllers
         [HttpGet]
         public IActionResult Curriculo()
         {
-            return View();
+            if(Usuario.LogadoJ.Curriculo != null)
+            {
+                return View(Usuario.LogadoJ.Curriculo);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
         public IActionResult Curriculo(Curriculo curriculo)
         {
+            if(Usuario.LogadoJ.Curriculo != null)
+            {
+                DaoCur.editar(curriculo);
+
+                List<Curriculo> curriculosEditados = DaoCur.consultar();
+
+                Usuario.LogadoJ.Curriculo = curriculosEditados.FirstOrDefault(cr => cr.JovemId == Usuario.LogadoJ.Id);
+            }
+
             curriculo.Nome = Usuario.LogadoJ.Nome;
 
             curriculo.Local = new();

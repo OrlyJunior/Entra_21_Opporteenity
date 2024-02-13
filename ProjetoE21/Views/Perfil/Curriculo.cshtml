@@ -1,4 +1,6 @@
-﻿@model Curriculo;
+﻿@using ProjetoE21.Dados;
+
+@model Curriculo;
 
 <h1>Adicionar currículo</h1>
 
@@ -69,24 +71,43 @@
                             <input asp-for="Idioma1" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma1 type="text">
                             <p style="width:15%; margin:auto;" id="valor1"></p>
                         </div>
-                        <input asp-for="NivelIdioma1" type="range" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
 
+                        @if(Usuario.LogadoJ.Curriculo != null){
+                            <input asp-for="NivelIdioma1" type="range" value="@Model.NivelIdioma1" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
+                        }
+                        else
+                        {
+                            <input asp-for="NivelIdioma1" type="range" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
+                        }
                     </div>
                     <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
                         <div style="display: flex;">
                             <input asp-for ="Idioma2" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma2 type="text">
                             <p style="width:15%; margin:auto;" id="valor2"></p>
                         </div>
-                        <input asp-for="NivelIdioma2" type="range" id="intervalo2" min="0" max="100" oninput="nivelidioma('intervalo2', 'valor2')">
-
-                    </div>
+                        @if (Usuario.LogadoJ.Curriculo != null)
+                        {
+                            <input asp-for="NivelIdioma2" type="range" value="@Model.NivelIdioma2" id="intervalo2" min="0" max="100" oninput="nivelidioma('intervalo2', 'valor2')">
+                        }
+                        else
+                        {
+                            <input asp-for="NivelIdioma2" type="range" id="intervalo2" min="0" max="100" oninput="nivelidioma('intervalo2', 'valor2')">
+                        }
+                        </div>
                     <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
                         <div style="display: flex;">
                             <input asp-for="Idioma3" style=" width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma3 type="text">
                             <p style="width:15%; margin:auto;" id="valor3"></p>
                         </div>
-                        <input asp-for ="NivelIdioma3" type="range" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
-                    </div>
+                        @if (Usuario.LogadoJ.Curriculo != null)
+                        {
+                            <input asp-for="NivelIdioma3" type="range" value="@Model.NivelIdioma3" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
+                        }
+                        else
+                        {
+                            <input asp-for="NivelIdioma3" type="range" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
+                            }
+                        </div>
                 </div>
             </div>
 
@@ -109,7 +130,7 @@
                     <div style="margin-right: 15px;">
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="datainicio">Inicio</label>
-                            <input asp-for ="InicioEscola" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
+                            <input asp-for ="InicioEscola" type="date" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
                         </div>
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="escola1">Escola</label>
