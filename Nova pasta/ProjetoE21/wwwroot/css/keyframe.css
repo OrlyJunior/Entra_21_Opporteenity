@@ -1,0 +1,151 @@
+@keyframes abrirEspacoETeen {
+    0% {
+        width: 2.4em;
+    }
+
+    20% {
+        width: 2.9em;
+    }
+
+    60% {
+        color: #7CDFE5;
+    }
+
+    100% {
+        color: #7CDFE5;
+        width: 2.9em;
+    }
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    30% {
+        transform: rotate(180deg) translateY(-0.150em) translateX(-0.5532em);
+    }
+
+    60% {
+        color: #A378FF;
+        transform: rotate(180deg) translateY(-0.150em) translateX(-0.5532em);
+    }
+
+    100% {
+        color: #A378FF;
+        transform: rotate(180deg) translateY(-0.150em) translateX(-0.5532em);
+    }
+}
+
+@keyframes opacidade {
+    0% {
+        opacity: 0;
+        transform: translateX(3.08em) scale(1);
+    }
+
+    8% {
+        opacity: 0;
+        transform: translateX(3.09em) scale(1);
+    }
+
+    80% {
+        opacity: 0;
+        transform: translateX(3.09em) scale(1);
+    }
+
+
+    100% {
+        opacity: 0;
+        transform: translateX(3.09em) scale(1);
+    }
+}
+
+@keyframes opacidadeteen {
+    0% {
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 1;
+    }
+}
+/*@keyframes cor-start {
+    0% {
+        color: #7CDFE5;
+    }
+
+    60% {
+        color: #7CDFE5;
+    }
+
+    100% {
+        color: #7CDFE5;
+    }
+}*/
+@keyframes cor-end {
+    0% {
+    }
+
+    60% {
+        color: #E21EAD;
+    }
+
+    100% {
+        color: #E21EAD;
+    }
+}
+
+
+.teen {
+    animation: opacidade 9s ease-in-out forwards;
+}
+
+.teenrosa {
+    animation: opacidadeteen 9s ease-in-out forwards;
+}
+
+.u {
+    animation: girar 9s ease-in-out forwards;
+}
+
+
+.container {
+    display: flex;
+}
+
+.paragrafo {
+    animation: abrirEspacoETeen 9s ease-in-out forwards;
+}
+
+.final-logo {
+    animation: cor-end 9s ease-in-out forwards;
+}
+@keyframes AsideEnter {
+    from {
+        transform: translateX(100%);
+       
+    }
+
+    to {
+        transform: translateX(0%);
+       
+    }
+}
+
+
+
+.jloginanimation {
+    position:absolute;
+    animation: AsideEnter 0.5s ease-in;
+    z-index: 1;
+    display: block !important;
+}

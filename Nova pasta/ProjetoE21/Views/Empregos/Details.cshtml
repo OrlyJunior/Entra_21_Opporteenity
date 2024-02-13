@@ -1,0 +1,24 @@
+﻿@model ProjetoE21.Models.Emprego
+
+<h1>Detalhes</h1>
+
+<div>
+    <h5>Descrição: @Html.DisplayFor(model => model.Descricao)</h5>
+    <h5>Empresa: @Html.DisplayFor(model => model.Empresa.Nome)</h5>
+    <h5>Horário de início: @Html.DisplayFor(model => model.HoraDeInicio)</h5>
+    <h5>Horário de término: @Html.DisplayFor(model => model.HoraDeFim)</h5>
+    <h5>Salário mensal: @Html.DisplayFor(model => model.Salario)</h5>
+    <h5>Dias trabalhados (por semana): @Html.DisplayFor(model => model.DiasTrabalhados)</h5>
+
+    <h3 class="mt-3 text-danger">Local</h3>
+
+    <h5>Estado: @Html.DisplayFor(model => model.Local.Estado)</h5>
+    <h5>Cidade: @Html.DisplayFor(model => model.Local.Cidade)</h5>
+    <h5>Bairro: @Html.DisplayFor(model => model.Local.Bairro)</h5>
+    <h5>Rua: @Html.DisplayFor(model => model.Local.Rua)</h5>
+    <h5>Número: @Html.DisplayFor(model => model.Local.Numero)</h5>
+</div>
+
+<form asp-action="Index">
+    <button asp-action="Index">Voltar</button>
+</form>

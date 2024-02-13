@@ -1,0 +1,132 @@
+﻿@model ProjetoE21.Models.Empresa
+@{
+    Layout = null;
+}
+
+<script>
+    function formatarTelefone(telefone) {
+
+        telefone = telefone.replace(/\D/g, '');
+
+
+        telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
+
+
+        document.getElementById('Telefone').value = telefone;
+    }
+</script>
+
+<div style="border: 1px solid black; border-radius: 15px; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: auto; width: 80vw;">
+    <h1 style="margin: 5em;">Cadastre-se</h1>
+
+    <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
+        <form asp-action="Empresa">
+            <div>
+                <label asp-for="Nome">Insira o nome da empresa:</label>
+                <input asp-for="Nome"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
+            </div>
+            <div>
+                <label asp-for="Email">Insira o endereço de email da empresa:</label>
+                <input asp-for="Email"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+            </div>
+            <div>
+                <label asp-for="Senha">Insira a senha:</label>
+                <input asp-for="Senha"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+            </div>
+            <div>
+                <label asp-for="Telefone">Insira o fone da empresa:</label>
+                <input asp-for="Telefone"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
+            </div>
+            <div>
+                <label>Insira seu CEP:</label>
+                <input id="cep"></input>
+            </div>
+            <div>
+                <label asp-for="Local.Estado">Insira o estado da empresa:</label>
+                <input asp-for="Local.Estado" id="estado"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
+            </div>
+            <div>
+                <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
+                <input asp-for="Local.Cidade" id="cidade"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
+            </div>
+            <div>
+                <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
+                <input asp-for="Local.Bairro" id="bairro"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
+            </div>
+            <div>
+                <label asp-for="Local.Rua">Insira a rua da empresa:</label>
+                <input asp-for="Local.Rua" id="rua"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
+            </div>
+            <div>
+                <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
+                <input asp-for="Local.Numero" id="numero"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
+            </div>
+            <div>
+                <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
+                <input asp-for="Cnpj"></input>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
+            </div>
+
+            <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
+
+            <button asp-action="Empresa">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    async function pegarCep() {
+        var cep = document.getElementById("cep").value;
+
+        var cepLength = cep.length;
+
+        console.log(cepLength);
+
+        if (cepLength == 9) {
+            const dados = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+            const data = await dados.json();
+
+            console.log(data);
+
+            document.getElementById("estado").value = data.uf;
+
+            document.getElementById("cidade").value = data.localidade;
+
+            document.getElementById("bairro").value = data.bairro;
+
+            document.getElementById("rua").value = data.logradouro;
+
+            if (document.getElementById("estado").value == "") {
+                document.getElementById("estado").removeAttribute("disabled");
+            }
+
+            if (document.getElementById("cidade").value == "") {
+                document.getElementById("cidade").removeAttribute("disabled");
+            }
+
+            if (document.getElementById("bairro").value == "") {
+                document.getElementById("bairro").removeAttribute("disabled");
+            }
+
+            if (document.getElementById("rua").value == "") {
+                document.getElementById("rua").removeAttribute("disabled");
+            }
+
+            if (document.getElementById("numero").value == "") {
+                document.getElementById("numero").removeAttribute("disabled");
+            }
+        }
+    }
+
+    document.getElementById("cep").addEventListener("input", pegarCep);
+</script>

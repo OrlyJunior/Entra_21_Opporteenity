@@ -1,0 +1,237 @@
+﻿@model Curriculo;
+
+<h1>Adicionar currículo</h1>
+
+@* <div class="justify-content-center d-flex">
+    <form asp-action="Curriculo" style="width: 35%; height: 70%; backdrop-color: white">
+     
+
+                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(255, 255, 255); resize: none;"
+                          asp-for="Experiencia" id="Curriculo-experiencia" rows="25" placeholder="experiencia"></textarea>
+           
+                <textarea asp-for="Objetivo"
+                          style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(241, 241, 241); resize: none;"
+                          id="Curriculo-objetivo" rows="5" cols="50" placeholder="objetivo"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
+
+                
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Escola" id="Curriculo-escola" placeholder="escola"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Idiomas)</span>
+                    <textarea class="m-2"
+                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
+                              asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos"></textarea>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>
+             
+                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" asp-for="RedeSocial" rows="2"
+                          id="Curriculo-redesocial" placeholder="rede social"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
+          
+        <button type="submit" asp-action="Curriculo" style="width: 100%; border: 0; background-color: #a3d693; margin-top: 8px; border-radius: 8px;">Salvar</button>
+    </form>
+</div> *@
+
+
+
+@* ================================================================= *@
+
+<div style="font-family: Arial, Helvetica, sans-serif;" class="justify-content-center d-flex">
+    <form asp-action="Curriculo" style="width: 35%; height: 70%; background-color: white;">
+        <h1>Currículo</h1>
+
+        <div style="margin: auto; align-items: stretch; display: flex; width: 100%; height: 100%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
+            <div style="padding-top: 5px; border: 1px solid black; background-color: #a3d693; width: 37%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                <img style="background-color: #3a5033; width: 90%; height: 17%;" src="http://lorempixel.com.br/199/150" alt="foto perfil">
+                <hr style="border: 1px solid #87b17a;">
+                <h2 style="padding: 10px; text-align: left; background-color: #87b17a;">Perfil</h2>
+
+                <div style=" padding: 10px; text-align: left;">
+                    <span style="font-weight: bold;">Perfil Profissional</span>
+                    <textarea asp-for="PerfilProfissional" placeholder="Fale um pouco sobre seu Perfil Profissional" name="perfilprofissional" id="perfilprofissional" cols="25" rows="5" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
+
+                    <span style="font-weight: bold;">Telefone</span>
+                    <textarea asp-for="Telefone" placeholder="(xx) xxxxx-xxxx" name="telefonecurriculo" id="telefonecurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
+
+                    <span style="font-weight: bold;">E-mail</span>
+                    <textarea asp-for="Email" placeholder="email@gmail.com" name="emailcurriculo" id="emailcurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
+                </div>
+
+                <div>
+                    <hr style="border: 1px solid #87b17a;">
+                    <h2 style="padding: 10px; text-align: left; background-color: #87b17a;">Idiomas</h2>
+                    <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                        <div style="display: flex;">
+                            <input asp-for="Idioma1" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma1 type="text">
+                            <p style="width:15%; margin:auto;" id="valor1"></p>
+                        </div>
+                        <input asp-for="NivelIdioma1" type="range" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
+
+                    </div>
+                    <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                        <div style="display: flex;">
+                            <input asp-for ="Idioma2" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma2 type="text">
+                            <p style="width:15%; margin:auto;" id="valor2"></p>
+                        </div>
+                        <input asp-for="NivelIdioma2" type="range" id="intervalo2" min="0" max="100" oninput="nivelidioma('intervalo2', 'valor2')">
+
+                    </div>
+                    <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                        <div style="display: flex;">
+                            <input asp-for="Idioma3" style=" width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma3 type="text">
+                            <p style="width:15%; margin:auto;" id="valor3"></p>
+                        </div>
+                        <input asp-for ="NivelIdioma3" type="range" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 63%;">
+                <div style="text-align: start;">
+                    @* pegar o nome do perfil do usuario *@
+                    <h1 style="margin-left: 25px; color: #87b17a;">Orly</h1>
+                    @* pegar o sobrenome do perfil do usuario *@
+                    <h1 style="margin-left: 25px; margin-top: 30px;">Jogador caro</h1>
+                </div>
+                <div>
+                    <div style="text-align: start; display: flex;">
+                        <img src="" alt="">
+                        <input asp-for="Cidade" placeholder="Blumenau" style="border: none; margin: 0px 10px 10px 25px; font-weight: bold;">
+                    </div>
+                </div>
+                <hr style="border: 1px solid #a3d693;">
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    <h3 style="text-align: start; margin-left: 25px;">Escolaridade</h3>
+                    <div style="margin-right: 15px;">
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="datainicio">Inicio</label>
+                            <input asp-for ="InicioEscola" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="escola1">Escola</label>
+                            <textarea asp-for="Escola" placeholder="E.B.M.nome da escola" id="escola1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="cidadeescola">Cidade</label>
+                            <textarea asp-for="EscolaCidade" placeholder="Blumenau" id="cidadeescola" cols="25" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="ensino">Ensino</label>
+                            <textarea asp-for="Ensino" placeholder="Médio" id="ensino" cols="25" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="status">Status</label>
+                            <textarea asp-for="Status" placeholder="Cursando" id="status" cols="15" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border: 1px solid #a3d693;">
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    <h3 style="text-align: start; margin-left: 25px;">Atividades extra curriculares</h3>
+                    <div style="margin-right: 15px;">
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="cursos">Cursos</label>
+                            <textarea asp-for="Cursos" class="m-2" id="cursos" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;" asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos"></textarea>
+                            @* <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span> *@
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros1">Outros</label>
+                            <textarea asp-for="Outros1" placeholder="lider de turma" id="outros1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros2">Outros</label>
+                            <textarea asp-for="Outros2" placeholder="lider de turma" id="outros2" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros3">Outros</label>
+                            <textarea asp-for="Outros3" placeholder="lider de turma" id="outros3" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros4">Outros</label>
+                            <textarea asp-for="Outros4" placeholder="lider de turma" id="outros4" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" asp-action="Curriculo" style="width: 100%; border: 0; background-color: #a3d693; margin-top: 8px; border-radius: 8px;">Salvar</button>
+    </form>
+</div>
+
+<script>
+
+
+    function nivelidioma(intervalo, valor) {
+
+
+      var valorOutput = document.getElementById(valor);
+      var intervaloInput = document.getElementById(intervalo);
+
+      valorOutput.innerText = "";
+
+          if (intervaloInput.value > 0 && intervaloInput.value < 17){
+              valorOutput.innerText = "A1";
+          }
+          else if(intervaloInput.value >= 17 && intervaloInput.value < 33){
+              valorOutput.innerText = "A2";
+          }
+          else if(intervaloInput.value >= 33 && intervaloInput.value < 49){
+              valorOutput.innerText =  "B1";
+          }
+          else if(intervaloInput.value >= 49 && intervaloInput.value < 65){
+              valorOutput.innerText =  "B2";
+          }
+          else if(intervaloInput.value >= 65 && intervaloInput.value < 81){
+              valorOutput.innerText = "C1";
+          }
+          else if(intervaloInput.value >= 81){
+              valorOutput.innerText = "C2";
+          }
+
+      }
+
+</script>
+
+
+
+<form asp-action="Index">
+    <button asp-action="Index">Não</button>
+</form>
+
+@* novos *@
+
+<span class="text-danger">@Html.ValidationMessageFor(model => model.PerfilProfissional)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Cidade)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.InicioEscola)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma1)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.NivelIdioma1)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.EscolaCidade)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma2)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Ensino)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.NivelIdioma2)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Status)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma3)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.NivelIdioma3)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Outros1)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Outros2)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Outros3)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Outros4)</span>
+
+
+@* velhos *@
+<span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Experiencia)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Idioma1)</span>
+<span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>

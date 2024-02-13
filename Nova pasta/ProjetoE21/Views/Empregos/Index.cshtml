@@ -1,0 +1,83 @@
+﻿@using X.PagedList.Mvc.Core;
+@using ProjetoE21.Dados;
+@model X.PagedList.PagedList<ProjetoE21.Models.Emprego>
+
+@{
+    ViewBag.Title = "Empregos";
+}
+
+<div>
+    <h1>Meus empregos</h1>
+
+    <p>
+        <a asp-action="Adicionar">Adicionar empregos</a>
+    </p>
+
+    @using (Html.BeginForm("Index", "Empregos", FormMethod.Get))
+    {
+        <p>
+            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+        </p>
+    }
+
+    <div class="d-flex mb-3 w-50">
+        <div>
+            <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.descSort})
+        </div>
+        <div>
+            <img width="16%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.Sort})
+        </div>
+    </div>
+
+    @foreach (var i in Model)
+    {
+        if (Usuario.LogadoE.Id == i.Empresa.Id)
+        {
+            <div class="d-flex">
+                <div class="card mb-5" style="width: 100%">
+                    <div class="row g-0">
+                        <div class="row flex-column">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(model => i.Empresa.Nome)</h5>
+                                <p class="card-text">
+                                    @Html.DisplayFor(model => i.Descricao)
+                                </p>
+                                <p class="card-text">
+                                    @Html.DisplayFor(model => i.Local.Rua)  @Html.DisplayFor(model => i.Local.Cidade)
+                                    <br>
+                                    @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
+                                    <br>
+                                    <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <span>R$: @Html.DisplayFor(model => i.Salario)</span>
+                                    <span> Data da postagem: 10/12</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <div class="card-body">
+                                @Html.ActionLink("Details", "Details", new { Id = i.Id }) |
+                                @Html.ActionLink("Edit", "Edit", new { Id = i.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { Id = i.Id }) |
+                                @Html.ActionLink("Candidatos", "Candidatos", new { Id = i.Id })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+    @if (Model.HasNextPage || Model.HasPreviousPage)
+    {
+        <div style="text-align: center">
+            @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.CurrentFilter }))
+        </div>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@model ProjetoE21.Models.Servico
+
+<h1>Detalhes</h1>
+
+<div>
+    <h5>ID: @Html.DisplayFor(model => model.Id)</h5>
+    <h5>Descrição: @Html.DisplayFor(model => model.Descricao)</h5>
+    <h5>Pagamento: @Html.DisplayFor(model => model.Pagamento)</h5>
+    <h5>Dia: @Html.DisplayFor(model => model.Dia)</h5>
+    <h5>Hora: @Html.DisplayFor(model => model.Hora)</h5>
+    <h5>ID: @Html.DisplayFor(model => model.EmpresaS.Nome)</h5>
+
+    <h3 class="mt-3 text-danger">Local</h3>
+
+    <h5>Estado: @Html.DisplayFor(model => model.Local.Estado)</h5>
+    <h5>Cidade: @Html.DisplayFor(model => model.Local.Cidade)</h5>
+    <h5>Bairro: @Html.DisplayFor(model => model.Local.Bairro)</h5>
+    <h5>Rua: @Html.DisplayFor(model => model.Local.Rua)</h5>
+    <h5>Número: @Html.DisplayFor(model => model.Local.Numero)</h5>
+</div>
+
+<form asp-action="Index">
+    <button asp-action="Index">Voltar</button>
+</form>

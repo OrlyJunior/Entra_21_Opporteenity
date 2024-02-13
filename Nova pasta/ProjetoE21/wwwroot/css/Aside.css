@@ -1,0 +1,13 @@
+﻿@keyframes AsideEnter {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 25%
+    }
+}
+
+.asdEnter {
+    animation: AsideEnter 1s ease-in ;
+}

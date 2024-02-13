@@ -1,0 +1,183 @@
+﻿@using ProjetoE21.Dados;
+
+<div style="width:80vw;">
+    <div style="justify-content:center; text-align:center;">
+        <h1>Perfil</h1>
+            <img src="~/css/Imagens/Perfil.png" width="25%"></img>
+        <input type="file" id="foto"></input>
+        <button onclick="enviarImagem()">Enviar</button>
+
+        <h3>@Usuario.LogadoJ.Nome</h3>
+        <p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
+        <p>Telefone: @Usuario.LogadoJ.Telefone</p>
+        <p>Email: @Usuario.LogadoJ.Email</p>
+
+        <h1>Responsável</h1>
+
+        <p>Nome do responsável: @Usuario.LogadoJ.Responsavel</p>
+        <p>Telefone do responsável: @Usuario.LogadoJ.FoneResponsavel</p>
+    </div>
+
+    <a asp-action="Curriculo">Adicionar curriculo</a>
+
+    <div style="margin:auto; justify-content:center" class="d-flex">
+        <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
+        <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
+    </div>
+</div>
+
+<a href="https://wa.me/@Usuario.LogadoJ.Telefone">Enviar mensagem</a>
+
+<hr />
+
+<div style="justify-content:center; text-align:center;">
+    <h1>Favoritos</h1>
+
+    @if (Listas.favoritos.Count != 0)
+    {
+        foreach (var i in ProjetoE21.Dados.Listas.favoritos)
+        {
+            <div class="d-flex">
+                <div class="card mb-5 hoverCard" style="width: 100%">
+                    <div class="row g-0">
+                        <div class="row flex-column">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(model => i.Empresa.Nome)</h5>
+                                <p class="card-text">
+                                    @Html.DisplayFor(model => i.Descricao)
+                                </p>
+                                <p class="card-text">
+                                <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
+                                <br>
+                                <p name="distancia">Distancia</p>
+                                <br>
+                                    @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
+                                <br>
+                                <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <span>R$: @Html.DisplayFor(model => i.Salario)</span>
+                                    <span> Data da postagem: 10/12</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <div class="card-body">
+                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">Candidatar</a>
+                                <span class="card-link" style="text-decoration:none; font-size:1em; color:blue;">@Html.ActionLink("Desfavoritar", "Desfavoritar", new { Id = i.Id })</span>
+                                <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Você ainda não tem vagas registradas como favoritas!</p>
+    }
+</div>
+</div>
+
+<script>
+    document.onload = geocoding();
+
+    async function enviarImagem() {
+        const fileInput = document.getElementById('foto');
+        const file = fileInput.files[0];
+
+        const formData = new FormData();
+        formData.append('image', file);
+
+        try {
+            const response = await fetch('https://api.imgur.com/3/image', {
+                method: 'POST',
+                headers: {
+                    Authorization: 'Client-ID 98972d1924cf9ce'
+                },
+                body: formData
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log(data);
+                alert('Imagem enviada com sucesso! Link: ' + data.data.link);
+            } else {
+                alert('Erro ao enviar imagem: ' + data.data.error);
+            }
+        } catch (error) {
+            alert('Ocorreu um erro ao enviar a imagem.');
+            console.error('Erro:', error);
+        }
+    }
+
+    async function geocoding() {
+    @{
+        var ruaJovem = Usuario.LogadoJ.Local.Rua;
+
+        var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
+    }
+
+                        var local = "@ruaJovem" + "+" + "@cidadeJovem";
+        var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
+
+        var latitude1 = 0
+        var longitude1 = 0;
+
+        await fetch(url1)
+            .then(data => data.json())
+            .then(item => {
+                latitude1 = parseFloat(item.results[0].geometry.lat)
+
+                longitude1 = parseFloat(item.results[0].geometry.lng)
+            })
+
+        var ruas = document.getElementsByName("rua")
+        var cidades = document.getElementsByName("cidade")
+        var distancias = document.getElementsByName("distancia")
+
+        for (var i = 0; i < ruas.length; i++) {
+            var endereco = `${ruas[i].innerHTML} + ${cidades[i].innerHTML}`
+            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+
+            var latitude2;
+            var longitude2;
+
+            await fetch(url2)
+                .then(data => data.json())
+                .then(item => {
+                    console.log(item)
+
+                    latitude2 = parseFloat(item.results[0].geometry.lat)
+
+                    longitude2 = parseFloat(item.results[0].geometry.lng)
+                })
+
+            var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
+
+            distancias[i].innerHTML = `${distancia}km`;
+        }
+    }
+
+    function toRadians(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+    function formulaDeHaversine(lat1, lon1, lat2, lon2) {
+        var R = 6371;
+        var dLat = toRadians(lat2 - lat1);
+        var dLon = toRadians(lon2 - lon1);
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        var distance = R * c;
+
+        return distance.toFixed(2);
+    }
+</script>

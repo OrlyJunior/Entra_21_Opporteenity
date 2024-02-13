@@ -1,0 +1,27 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.background-div {
+    background-image: url('Imagens/background.png');
+    /* Outras propriedades de estilo, se necessário */
+    width: 100%;
+    background-size: cover; /* Para garantir que a imagem cubra todo o elemento */
+}
+/*EMPRESA*/

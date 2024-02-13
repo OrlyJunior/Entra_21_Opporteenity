@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+
+}
+
+@model ProjetoE21.Models.Jovem
+
+<head>
+    <link rel="stylesheet" href="~/css/keyframe.css" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body style="overflow-x:hidden;">
+<div class="background-div" style="overflow-x: hidden; font-family: Arial, sans-serif; background-color: transparent; overflow: auto; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;">
+
+
+
+    <div style="z-index:1; overflow-x: hidden; display:flex; flex-direction: row; justify-content: space-between;">
+
+        <div style="  margin-left:10vw; text-shadow:2px 2px 2px black; background-color: transparent; margin-top:20vh; ">
+            <div class="container" style="font-size:5em; font-family: Arial, sans-serif; position: relative; justify-content: start;">
+                <p class="paragrafo">Opport</p>
+                <p class="teen" style="margin-bottom: 4px; position: absolute;">ee</p>
+
+                <p class="teenrosa" style="position: absolute; margin-left: 2.78em; color: #A378FF; z-index: 1;">tee</p>
+
+                <p class="u" style="text-shadow:-2px -2px 0px black;margin-left: 56px;">u</p>
+                <p class="final-logo">nity</p>
+            </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column; border-radius:10px; width:33vw; height:80vh; padding:5px; margin-top:4vh; text-align: center; background-color:rgba(0, 0, 0, 0.229) ;">
+            <h1 style="text-shadow: 2px 2px 4px black; color:white; font-size:2.5em; font-weight:500;"> Conectando Jovens e Empresas</h1>
+
+            <div style="padding: 20px; width: 90%; height:2vh; justify-content:space-around;">
+
+   @*              <a onclick="Jlogindash()" style="text-decoration:none; color: red; margin-top:30px;margin-right:10px; padding: 10px; border:1px solid green; border-radius: 4px; cursor: pointer; width: 100%;">Sou aprendiz</a> *@
+
+                <a asp-controller="Home" asp-action="LoginJovem" type="submit" style="text-decoration:none; color: green; margin-top:30px;margin-right:10px; padding: 10px; border:1px solid green; border-radius: 4px; cursor: pointer; width: 100%;">Sou aprendiz</a> 
+
+                <a asp-controller="Home" asp-action="LoginEmpresa" type="submit" style="text-decoration:none;  color: cornflowerblue; margin-top:30px;margin-left:5px; padding: 10px; border:1px solid cornflowerblue; border-radius: 4px; cursor: pointer; width: 100%;">Sou empresa</a>
+            </div>
+            <h2 style="color:white;  margin-top:50px; margin-bottom:25px;">Ainda nao tem cadastro?</h2>
+
+            <a style="text-decoration:none;  color: #e21ead ; margin-top:50px; margin-left:5px; padding: 10px; border:1px solid #e21ead; border-radius: 4px; cursor: pointer; width: 100%;" class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Confirmar">Cadastrar</a>
+
+        </div>
+
+        <div id="Jlogin" style=" display:none;  border-radius:10px; width:49vw; height:90vh; margin-left: 49vw; text-align: center; background-color:white ;">
+            <div style=" display: flex; justify-content: flex-end;"> <button onclick="Jlogindashclose()">X</button> </div>
+
+            <form asp-action="LoginEmpresa" style="padding: 10%; display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;">
+                <h1 style="font-size:6vh; color: rgb(11, 138, 11); margin-top: 10vh; margin-bottom: 20vh;">Login Empresa</h1>
+
+
+                @* <lable>Insira seu email:</lable> *@
+                <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Email" class="input" placeholder="Email" type="text">
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+                @* <lable>Insira sua senha:</lable> *@
+                <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Senha" class="input" placeholder="Senha" type="password">
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+
+                <button style="font-size: large; font-weight: 400; color: white; background-color: rgb(11, 138, 11); margin: auto; width: 20vw;border-radius: 30px; margin-bottom: 20px; height: 6vh;" class="button-confirm">Login</button>
+
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function Jlogindash() {
+            console.log("foi");
+            var divJlogin = document.getElementById("Jlogin");
+            divJlogin.classList.add("jloginanimation");
+        }
+        function Jlogindashclose() {
+            var divJlogin = document.getElementById("Jlogin");
+            divJlogin.classList.remove("jloginanimation");
+
+        }
+    </script>
+</div>
+<div style="background-color:orangered; text-align:center; font-family:Arial;">
+    <h1 style="width:100vw; font-size:10vw; font-weight:400; " >envie seu curriculo</h1>
+</div>
+<div style="margin:4em 7em 7em 7em; font-family: 'Arial', sans-serif;">
+    <h1>  ** OPPORTEENITY : Seu Caminho para o Primeiro Emprego!** </h1>
+
+
+
+
+    <p>
+        Iniciar sua trajetória profissional não precisa ser uma tarefa difícil. Apresentamos o Opporteenity, um site de vagas de emprego exclusivo para menores aprendizes. Reconhecemos a importância de criar oportunidades acessíveis para jovens talentos entrarem no mercado de trabalho, e é por isso que projetamos uma plataforma que conecta empresas em busca de novos talentos a jovens ávidos por experiência profissional.
+    </p>
+
+    <h3> No Oporteenity, oferecemos:</h3>
+
+    <p>
+        <span style="font-weight: bold;">1. <strong>Vagas Exclusivas para Menores Aprendizes:</strong></span> Nosso foco é proporcionar oportunidades especialmente voltadas para quem está começando a carreira.
+    </p>
+    <p>
+        <span style="font-weight: bold;">2. <strong>Aconselhamento Profissional:</strong></span> Compreendemos as incertezas que cercam os primeiros passos no mundo profissional. Oferecemos suporte e aconselhamento para ajudar os candidatos a se prepararem para entrevistas e desenvolverem habilidades essenciais.
+    </p>
+    <p>
+        <span style="font-weight: bold;">3. <strong>Crescimento Profissional:</strong></span> Encontrar um emprego é apenas o começo. Oferecemos recursos para o desenvolvimento contínuo, permitindo que os jovens aprendizes cresçam em suas carreiras.
+    </p>
+
+    <p>
+        Estamos comprometidos em ser o seu parceiro na busca pelo primeiro emprego. No **Oporteenity**, acreditamos que todos merecem uma chance justa de construir um futuro sólido. Junte-se a nós e transforme seus sonhos profissionais em realidade. Acesse nosso site e descubra as oportunidades que esperam por você!
+    </p>
+
+</div>
+</body>

@@ -1,0 +1,48 @@
+﻿@model ProjetoE21.Models.Servico
+
+<h1>Editar serviço</h1>
+
+<form asp-action="Edit">
+    <div>
+        <label asp-for="Descricao">Insira a nova descrição do serviço:</label>
+        <input asp-for="Descricao"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Descricao)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Estado">Insira o novo estado do local serviço:</label>
+        <input asp-for="Local.Estado"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Cidade">Insira a nova cidade do serviço:</label>
+        <input asp-for="Local.Cidade"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Bairro">Insira o novo bairro do serviço:</label>
+        <input asp-for="Local.Bairro"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Rua">Insira a nova rua do serviço:</label>
+        <input asp-for="Local.Rua"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Numero">Insira o novo número do local do serviço:</label>
+        <input asp-for="Local.Numero"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
+    </div>
+    <div>
+        <label asp-for="Pagamento">Insira o novo valor a ser pago pelo serviço:</label>
+        <input asp-for="Pagamento"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Pagamento)</span>
+    </div>
+    <div>
+        <label asp-for="Horario">Insira o novo dia e hora do serviço:</label>
+        <input asp-for="Horario"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Horario)</span>
+    </div>
+
+    <button asp-action="Edit">Editar</button>
+</form>

@@ -1,0 +1,58 @@
+﻿@model ProjetoE21.Models.Emprego
+
+<h1>Editar emprego</h1>
+
+<form asp-action="Edit">
+    <div>
+        <label asp-for="Descricao">Insira a nova descrição do emprego:</label>
+        <input asp-for="Descricao"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Descricao)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Estado">Insira o estado do local emprego:</label>
+        <input asp-for="Local.Estado"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Cidade">Insira a cidade do emprego:</label>
+        <input asp-for="Local.Cidade"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Bairro">Insira o bairro do emprego:</label>
+        <input asp-for="Local.Bairro"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Rua">Insira a rua do emprego:</label>
+        <input asp-for="Local.Rua"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
+    </div>
+    <div>
+        <label asp-for="Local.Numero">Insira o número do local do emprego:</label>
+        <input asp-for="Local.Numero"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
+    </div>
+    <div>
+        <label asp-for="HoraDeInicio">Insira o novo horário de início do emprego:</label>
+        <input asp-for="HoraDeInicio" type="time"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.HoraDeInicio)</span>
+    </div>
+    <div>
+        <label asp-for="HoraDeFim">Insira o novo horário de término do emprego:</label>
+        <input asp-for="HoraDeFim" type="time"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.HoraDeFim)</span>
+    </div>
+    <div>
+        <label asp-for="DiasTrabalhados">Insira os dias trabalhados por semana no emprego:</label>
+        <input asp-for="DiasTrabalhados"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.DiasTrabalhados)</span>
+    </div>
+    <div>
+        <label asp-for="Salario">Insira o novo salário mensal do emprego:</label>
+        <input asp-for="Salario"></input>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Salario)</span>
+    </div>
+
+    <button asp-action="Edit">Editar</button>
+</form>

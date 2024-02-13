@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProjetoE21.Models.Curriculo>;
+
+    <style>
+        textarea{
+            cursor: default;
+        }
+    </style>
+    <style>
+        /*mudar para o css/
+            QuadradoCurriculo:width: 130%; height: 35rem; margin-top: 12px; background-color: white
+            ContêinerdoCurrículo.:margin:auto; align-items: stretch; display: flex; width: 100%; height: 100%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;
+            CordeFundoCurriculo background-color: #a3d693; width: 38%; height: 100%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;
+
+            CorDentroExperiencia:text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: #a3d693; resize: none; margin-left: 4%; overflow: hidden; user-select: none"
+            CorDentroObjetivo:text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;
+            CorDentro
+            
+         */
+    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<div class="justify-content-center d-flex" style="flex-direction: column;">
+    @foreach (var i in Model)
+    {
+        <div ="">
+        <div ="">
+            <div ="">
+                <h3>Experiência</h3>
+                    <textarea style="" rows="21" cols="10" readonly
+                   id="Curriculo-experiencia" placeholder="experiencia">@i.Experiencia</textarea>
+            </div>
+
+            <div style="width: 65%;">
+                <h3>Objetivo</h3>
+                <textarea style=""
+                   id="Curriculo-objetivo" rows="4" placeholder="objetivo">@i.Objetivo</textarea>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    
+                    <h2>Escolaridade</h2>
+                    <textarea class="m-2"
+                           style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
+                       id="Curriculo-escola" placeholder="escola">@i.Escola</textarea>
+                    
+                       <textarea class="m-2"
+                           style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
+                       id="Curriculo-idiomas" placeholder="idiomas">@i.Idioma1</textarea>
+                    
+                       <textarea class="m-2"
+                                  style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
+                       id="Curriculo-cursos" placeholder="cursos">@i.Cursos</textarea>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;"></div>
+                <h3>Redes sociais</h3>
+                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
+                   id="Curriculo-redesocial" placeholder="rede social">@i.RedeSocial</textarea>
+            </div>
+        </div>
+        </div>
+    }
+</div>
