@@ -12,9 +12,7 @@ namespace ProjetoE21.Models
 
         [Required(ErrorMessage = "Você deve inserir pelo menos um idioma!")]
         public string Idioma1 { get; set; }
-
-        [Required(ErrorMessage = "Você deve inserir seu nível de proficiência em seu idioma!")]
-        public string NivelIdioma1 { get; set; }
+        public string? NivelIdioma1 { get; set; }
 
         [Required(ErrorMessage = "Você deve inserir a escola em que sua cidade se localiza!")]
         public string EscolaCidade { get; set; }

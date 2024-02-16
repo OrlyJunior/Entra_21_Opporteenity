@@ -8,40 +8,158 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-@* <div class="justify-content-center d-flex" style="flex-direction: column;">
+<div class="justify-content-center d-flex" style="flex-direction: column;">
     @foreach (var i in Model)
     {
-        <div style="width: 130%; height: 35rem; margin-top: 12px; background-color: white">
-        <div style="margin:auto; align-items: stretch; display: flex; width: 100%; height: 100%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
-            <div style="background-color: #a3d693; width: 38%; height: 100%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-                <h3>Experiência</h3>
-                    <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: #a3d693; resize: none; margin-left: 4%; overflow: hidden; user-select: none" rows="21" cols="10" readonly
-                   id="Curriculo-experiencia" placeholder="experiencia">@i.Experiencia</textarea>
-            </div>
+        
 
-            <div style="width: 65%;">
-                <h3>Objetivo</h3>
-                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;"
-                   id="Curriculo-objetivo" rows="4" placeholder="objetivo">@i.Objetivo</textarea>
+        <div style="margin: auto; align-items: stretch; display: flex; width: 30%; height: 60%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
+            <div style="padding-top: 5px; border: 1px solid black; background-color: #a3d693; width: 37%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                <img style="background-color: #3a5033; width: 90%; height: 17%;" src="http://lorempixel.com.br/199/150" alt="foto perfil">
+                <hr style="border: 1px solid #87b17a;">
+                <h2 style="padding: 10px; text-align: left; background-color: #87b17a;">Perfil</h2>
 
-                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
-                    <h2>Escolaridade</h2>
-                    <textarea class="m-2"
-                           style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
-                       id="Curriculo-escola" placeholder="escola">@i.Escola</textarea>
-                    <textarea class="m-2"
-                           style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
-                       id="Curriculo-idiomas" placeholder="idiomas">@i.Idioma1</textarea>
-                    <textarea class="m-2"
-                                  style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="3"
-                       id="Curriculo-cursos" placeholder="cursos">@i.Cursos</textarea>
+                <div style=" padding: 10px; text-align: left;">
+                    <span style="font-weight: bold;">Perfil Profissional</span>
+                    <textarea readonly placeholder="Fale um pouco sobre seu Perfil Profissional" name="perfilprofissional" id="perfilprofissional" cols="25" rows="5" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;">@i.PerfilProfissional</textarea>
+
+                    <span style="font-weight: bold;">Telefone</span>
+                    <textarea readonly placeholder="(xx) xxxxx-xxxx" name="telefonecurriculo" id="telefonecurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;">@i.Telefone</textarea>
+
+                    <span style="font-weight: bold;">E-mail</span>
+                    <textarea readonly placeholder="email@gmail.com" name="emailcurriculo" id="emailcurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;">@i.Email</textarea>
                 </div>
-                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;"></div>
-                <h3>Redes sociais</h3>
-                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; resize: none;" rows="2"
-                   id="Curriculo-redesocial" placeholder="rede social">@i.RedeSocial</textarea>
+
+                <div>
+                    <hr style="border: 1px solid #87b17a;">
+                    <h2 style="padding: 10px; text-align: left; background-color: #87b17a;">Idiomas</h2>
+                    <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                        <div style="display: flex;">
+                            <p readonly style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma1 type="text">@i.Idioma1</p>
+                            <p style="width:15%; margin:auto;" id="valor1">@i.NivelIdioma1</p>
+                        </div>
+                        <input readonly type="range" value="@i.ValorIdioma1" onload="nivelidioma('intervalo1', 'valor1')" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
+                        
+                    </div>
+                    @if(i.Idioma2 != ""){
+                        <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                            <div style="display: flex;">
+                                <p readonly style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma2 type="text">@i.Idioma2</p>
+                                <p style="width:15%; margin:auto;" id="valor2">@i.NivelIdioma2</p>
+                            </div>
+                            <input readonly type="range" value="@i.ValorIdioma2" id="intervalo2" min="0" max="100" onload="nivelidioma('intervalo2', 'valor2')" oninput="nivelidioma('intervalo2', 'valor2')">
+
+                        </div>
+                    }
+                    @if(i.Idioma3 != ""){
+                        <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
+                            <div style="display: flex;">
+                                <p readonly style=" width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma3 type="text">@i.Idioma3</p>
+                                <p style="width:15%; margin:auto;" id="valor3">@i.NivelIdioma3</p>
+                            </div>
+                            <input readonly type="range" value="@i.ValorIdioma3" onload="nivelidioma('intervalo3', 'valor3')" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
+                        </div>
+                    }
+                </div>
             </div>
-        </div>
+
+            <div style="width: 63%;">
+                <div style="text-align: start;">
+                    @* pegar o nome do perfil do usuario *@
+                    <h1 style="margin-left: 25px; color: #87b17a;">@i.Nome</h1>
+                </div>
+                <div>
+                    <div style="text-align: start; display: flex;">
+                        <img src="" alt="">
+                        <p placeholder="Cidade" style="border: none; margin: 0px 10px 10px 25px; font-weight: bold;">@i.Local.Cidade</p>
+                    </div>
+                </div>
+                <hr style="border: 1px solid #a3d693;">
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    <h3 style="text-align: start; margin-left: 25px;">Escolaridade</h3>
+                    <div style="margin-right: 15px;">
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="datainicio">Inicio</label>
+                            <p readonly style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">
+                                @i.InicioEscola.Day/@if (i.InicioEscola.Month.ToString().Length == 1)
+                                                            {
+                                    string o = i.InicioEscola.Month.ToString();
+
+                                    string zero = "0";
+
+                                    string j = zero += o;
+
+                                    @j
+                                    ;
+                                }
+                                else
+                                {
+                                    @i.InicioEscola.Month;
+                                }
+                                /@i.InicioEscola.Year
+                            </p>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="escola1">Escola</label>
+                            <textarea readonly placeholder="E.B.M.nome da escola" id="escola1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Escola</textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="cidadeescola">Cidade</label>
+                            <textarea readonly placeholder="Blumenau" id="cidadeescola" cols="25" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.EscolaCidade</textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="ensino">Ensino</label>
+                            <textarea readonly placeholder="Médio" id="ensino" cols="25" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Ensino</textarea>
+                        </div>
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="status">Status</label>
+                            <textarea readonly placeholder="Cursando" id="status" cols="15" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Status</textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border: 1px solid #a3d693;">
+                <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                    <h3 style="text-align: start; margin-left: 25px;">Atividades extra curriculares</h3>
+                    <div style="margin-right: 15px;">
+
+                        @if(i.Cursos != ""){
+                            <div style="display: flex;">
+                                <label style="margin-left: 25px;" for="cursos">Cursos</label>
+                                <textarea readonly class="m-2" id="cursos" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;" readonly id="Curriculo-cursos" placeholder="cursos">@i.Cursos</textarea>
+                                @* <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span> *@
+                            </div>
+                        }
+                        @if (i.Outros1 != "")
+                        {
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros1">Outros</label>
+                            <textarea readonly placeholder="lider de turma" id="outros1" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Outros1</textarea>
+                        </div>
+                        }
+                        @if (i.Outros2 != "")
+                        {
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros2">Outros</label>
+                            <textarea readonly placeholder="lider de turma" id="outros2" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Outros2</textarea>
+                        </div>
+                        }
+                        @if (i.Outros3 != "")
+                        {
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros3">Outros</label>
+                                <textarea readonly placeholder="lider de turma" id="outros3" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Outros3</textarea>
+                        </div>
+                        }
+                        @if (i.Outros4 != "")
+                        {
+                        <div style="display: flex;">
+                            <label style="margin-left: 25px;" for="outros4">Outros</label>
+                                <textarea readonly placeholder="lider de turma" id="outros4" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;">@i.Outros4</textarea>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     }
-</div> *@
+</div>
