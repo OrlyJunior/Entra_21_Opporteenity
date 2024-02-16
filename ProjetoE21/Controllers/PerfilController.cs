@@ -117,6 +117,8 @@ namespace ProjetoE21.Controllers
 
             if(Usuario.LogadoJ.Curriculo != null)
             {
+                Console.WriteLine(curriculo.PerfilProfissional);
+
                 curriculo.Nome = Usuario.LogadoJ.Nome;
 
                 curriculo.Local = new();

@@ -87,7 +87,7 @@
                         </div>
                         @if (Usuario.LogadoJ.Curriculo != null)
                         {
-                            <input asp-for="ValorIdioma2" type="range" value="@Model.NivelIdioma2" id="intervalo2" min="0" max="100" onload="nivelidioma('intervalo2', 'valor2')" oninput="nivelidioma('intervalo2', 'valor2')">
+                            <input asp-for="ValorIdioma2" type="range" value="@Model.ValorIdioma2" id="intervalo2" min="0" max="100" onload="nivelidioma('intervalo2', 'valor2')" oninput="nivelidioma('intervalo2', 'valor2')">
                         }
                         else
                         {
@@ -101,7 +101,7 @@
                         </div>
                         @if (Usuario.LogadoJ.Curriculo != null)
                         {
-                            <input asp-for="ValorIdioma3" type="range" value="@Model.NivelIdioma3" onload="nivelidioma('intervalo3', 'valor3')" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
+                            <input asp-for="ValorIdioma3" type="range" value="@Model.ValorIdioma3" onload="nivelidioma('intervalo3', 'valor3')" id="intervalo3" min="0" max="100" oninput="nivelidioma('intervalo3', 'valor3')">
                         }
                         else
                         {

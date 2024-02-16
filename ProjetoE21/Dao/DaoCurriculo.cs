@@ -10,7 +10,7 @@ namespace ProjetoE21.Dao
     {
         public bool adicionar(Curriculo curriculo)
         {
-            if (curriculo.ValorIdioma1 > 0 && curriculo.ValorIdioma1 < 17)
+            if (curriculo.ValorIdioma1 >= 0 && curriculo.ValorIdioma1 < 17)
             {
                 curriculo.NivelIdioma1 = "A1";
             }
@@ -250,6 +250,81 @@ namespace ProjetoE21.Dao
 
         public bool editar(Curriculo curriculo)
         {
+            if (curriculo.ValorIdioma1 >= 0 && curriculo.ValorIdioma1 < 17)
+            {
+                curriculo.NivelIdioma1 = "A1";
+            }
+            else if (curriculo.ValorIdioma1 >= 17 && curriculo.ValorIdioma1 < 33)
+            {
+                curriculo.NivelIdioma1 = "A2";
+            }
+            else if (curriculo.ValorIdioma1 >= 33 && curriculo.ValorIdioma1 < 49)
+            {
+                curriculo.NivelIdioma1 = "B1";
+            }
+            else if (curriculo.ValorIdioma1 >= 49 && curriculo.ValorIdioma1 < 65)
+            {
+                curriculo.NivelIdioma1 = "B2";
+            }
+            else if (curriculo.ValorIdioma1 >= 65 && curriculo.ValorIdioma1 < 81)
+            {
+                curriculo.NivelIdioma1 = "C1";
+            }
+            else if (curriculo.ValorIdioma1 >= 81)
+            {
+                curriculo.NivelIdioma1 = "C2";
+            }
+            //
+            if (curriculo.ValorIdioma2 > 0 && curriculo.ValorIdioma2 < 17)
+            {
+                curriculo.NivelIdioma2 = "A1";
+            }
+            else if (curriculo.ValorIdioma2 >= 17 && curriculo.ValorIdioma2 < 33)
+            {
+                curriculo.NivelIdioma2 = "A2";
+            }
+            else if (curriculo.ValorIdioma2 >= 33 && curriculo.ValorIdioma2 < 49)
+            {
+                curriculo.NivelIdioma2 = "B1";
+            }
+            else if (curriculo.ValorIdioma2 >= 49 && curriculo.ValorIdioma2 < 65)
+            {
+                curriculo.NivelIdioma2 = "B2";
+            }
+            else if (curriculo.ValorIdioma2 >= 65 && curriculo.ValorIdioma2 < 81)
+            {
+                curriculo.NivelIdioma2 = "C1";
+            }
+            else if (curriculo.ValorIdioma2 >= 81)
+            {
+                curriculo.NivelIdioma2 = "C2";
+            }
+            //
+            if (curriculo.ValorIdioma3 > 0 && curriculo.ValorIdioma3 < 17)
+            {
+                curriculo.NivelIdioma3 = "A1";
+            }
+            else if (curriculo.ValorIdioma3 >= 17 && curriculo.ValorIdioma3 < 33)
+            {
+                curriculo.NivelIdioma3 = "A2";
+            }
+            else if (curriculo.ValorIdioma3 >= 33 && curriculo.ValorIdioma3 < 49)
+            {
+                curriculo.NivelIdioma3 = "B1";
+            }
+            else if (curriculo.ValorIdioma3 >= 49 && curriculo.ValorIdioma3 < 65)
+            {
+                curriculo.NivelIdioma3 = "B2";
+            }
+            else if (curriculo.ValorIdioma3 >= 65 && curriculo.ValorIdioma3 < 81)
+            {
+                curriculo.NivelIdioma3 = "C1";
+            }
+            else if (curriculo.ValorIdioma3 >= 81)
+            {
+                curriculo.NivelIdioma3 = "C2";
+            }
+
             MySqlConnection con = new();
 
             con.ConnectionString = Conexao.conecta();
@@ -289,6 +364,9 @@ namespace ProjetoE21.Dao
                 cm.Parameters.Add("extraC4", MySqlDbType.VarChar).Value = curriculo.Outros4;
 
                 cm.Parameters.Add("id", MySqlDbType.Int32).Value = Usuario.LogadoJ.Curriculo.Id;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
             }
             finally
             {
