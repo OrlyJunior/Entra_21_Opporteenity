@@ -11,9 +11,7 @@
 <div class="justify-content-center d-flex" style="flex-direction: column;">
     @foreach (var i in Model)
     {
-        
-
-        <div style="margin: auto; align-items: stretch; display: flex; width: 30%; height: 60%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px;">
+        <div style="margin: auto; align-items: stretch; display: flex; width: 30%; height: 50%; flex-direction: row; border: 1px solid black; text-align: center; border-radius: 8px; margin-bottom: 12px">
             <div style="padding-top: 5px; border: 1px solid black; background-color: #a3d693; width: 37%; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
                 <img style="background-color: #3a5033; width: 90%; height: 17%;" src="http://lorempixel.com.br/199/150" alt="foto perfil">
                 <hr style="border: 1px solid #87b17a;">
@@ -134,7 +132,8 @@
                     <h3 style="text-align: start; margin-left: 25px;">Atividades extra curriculares</h3>
                     <div style="margin-right: 15px;">
 
-                        @if(i.Cursos != ""){
+                        @if(i.Cursos != "")
+                        {
                             <div style="display: flex;">
                                 <label style="margin-left: 25px;" for="cursos">Cursos</label>
                                 <textarea readonly class="m-2" id="cursos" cols="155" rows="1" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;" readonly id="Curriculo-cursos" placeholder="cursos">@i.Cursos</textarea>
