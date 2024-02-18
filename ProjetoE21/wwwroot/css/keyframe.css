@@ -1,10 +1,10 @@
 @keyframes abrirEspacoETeen {
     0% {
-        width: 2.4em;
+        width: 14.4vw;
     }
 
     20% {
-        width: 2.9em;
+        width: 17.5vw;
     }
 
     60% {
@@ -13,7 +13,7 @@
 
     100% {
         color: #7CDFE5;
-        width: 2.9em;
+        width: 17.5vw;
     }
 }
 
@@ -157,6 +157,28 @@
     display: flex !important;
     flex-direction: row;
     animation: move-left 1.5s ease-in;
+}
+.scroll-rudapeanimationdtu {
+    display: flex !important;
+    flex-direction: row;
+    animation: rodapeanimation 1s ease-in;
+}
+
+@keyframes rodapeanimation {
+    0% {
+        opacity: 0;
+       
+    }
+
+    50% {
+        opacity: 0;
+        
+    }
+
+    100% {
+        opacity: 1;
+        
+    }
 }
 
 @keyframes move-left {
