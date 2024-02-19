@@ -65,45 +65,14 @@
 
                     <a id="ebtn" asp-controller="Home" asp-action="LoginEmpresa" type="submit" style="text-decoration:none;  color: #7CDFE5; margin-top:30px;margin-left:5px; padding: 2vh 5vw 5vh 5vw; border:1px solid #7CDFE5; border-radius: 4px; cursor: pointer; width: 100%;">Empresa</a>
                 </div>
-                <h2 style="font-size:2.5vw; color:white;  margin-top:50px; margin-bottom:25px;">Ainda nao tem cadastro?</h2>
+
+                <h2 style="font-size:2.5vw; color:white;  margin-top:15vh; margin-bottom:25px;">Ainda nao tem cadastro?</h2>
 
                 <a id="cbtn" style="text-decoration:none;  color: #e21ead ; margin-top:20px; margin-left:5px; padding: 10px; border:1px solid #e21ead; border-radius: 4px; cursor: pointer; width: 80%;" class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Confirmar">Cadastrar</a>
 
             </div> 
         </div>
-7/         @* <script>
-
-        <div id="Jlogin" style=" display:none;  border-radius:10px; width:49vw; height:90vh; margin-left: 49vw; text-align: center; background-color:white ;">
-                <div style=" display: flex; justify-content: flex-end;"> <button onclick="Jlogindashclose()">X</button> </div>
-
-                <form asp-action="LoginEmpresa" style="padding: 10%; display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;">
-                    <h1 style="font-size:6vh; color: rgb(11, 138, 11); margin-top: 10vh; margin-bottom: 20vh;">Login Empresa</h1>
-
-
-                     <lable>Insira seu email:</lable> 
-                    <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Email" class="input" placeholder="Email" type="text">
-                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
-                     <lable>Insira sua senha:</lable> 
-                    <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Senha" class="input" placeholder="Senha" type="password">
-                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
-
-                    <button style="font-size: large; font-weight: 400; color: white; background-color: rgb(11, 138, 11); margin: auto; width: 20vw;border-radius: 30px; margin-bottom: 20px; height: 6vh;" class="button-confirm">Login</button>
-
-                </form>
-            </div>
-
-
-        function Jlogindash() {
-        console.log("foi");
-        var divJlogin = document.getElementById("Jlogin");
-        divJlogin.classList.add("jloginanimation");
-        }
-        function Jlogindashclose() {
-        var divJlogin = document.getElementById("Jlogin");
-        divJlogin.classList.remove("jloginanimation");
-
-        }
-        </script> *@
+   
     </div>
 
     <div style="width:100vw; background-color:darkslategray; text-align:center; font-family:Arial; margin-top:-10px;">
@@ -150,9 +119,24 @@
 
     </div>
     <footer id="rodape" style="display: none; margin:auto; width:100vw; height:12vh; justify-content:center; justify-content:space-around; background-color:darkslategrey;">
-        <div style="margin:auto; width:3vw; height:3vh; background-color:fuchsia;">insta</div>
-        <div style="margin:auto; width:3vw; height:3vh; background-color:fuchsia;">twiter</div>
-        <div style="margin:auto; width:3vw; height:3vh;  background-color:fuchsia;">twiter</div>
+        <div style="margin:auto auto auto 40%; width:3vw; height:3vw;">
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank">
+                <img style="margin:auto; width: 100%; height: 100%;" src="~/css/Imagens/iconfb.png" alt="">
+            </a>
+        </div>
+       
+        <div style="margin:auto; width:3vw; height:3vw;">
+            <a href="https://www.instagram.com/opporteenityahkop/?next=%2F" target="_blank">
+                <img style="margin:auto; width: 100%; height: 100%;" src="~/css/Imagens/iconinsta.png" alt="">
+            </a>
+        </div>
+      
+        <div style="margin:auto 40% auto auto; width:3vw; height:3vw;">
+            <a href="https://github.com/OrlyJunior/Entra_21" target="_blank">
+                <img style="margin:auto; width: 100%; height: 100%;" src="~/css/Imagens/icongithub.png" alt="">
+            </a>
+        </div>
+
     </footer>
 
     <script>

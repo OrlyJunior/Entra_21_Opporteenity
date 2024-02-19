@@ -4,8 +4,8 @@
     <div style="justify-content:center; text-align:center;">
         <h1>Perfil</h1>
             <img src="~/css/Imagens/Perfil.png" width="25%"></img>
-        <input type="file" id="foto"></input>
-        <button onclick="enviarImagem()">Enviar</button>
+        <input type="file" id="foto">
+        <button onclick="getPath()">Enviar</button>
 
         <h3>@Usuario.LogadoJ.Nome</h3>
         <p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
@@ -20,11 +20,11 @@
 
     @if(Usuario.LogadoJ.Curriculo == null)
     {
-        <a asp-action="Curriculo">Adicionar curriculo</a>
+        <a  style="text-decoration:none; color:black;"; asp-action="Curriculo">Adicionar curriculo</a>
     }
     else
     {
-        <a asp-action="Curriculo">Editar curriculo</a>
+        <a style="text-decoration:none; color:black;" asp-action="Curriculo">Editar curriculo</a>
     }
 
     <div style="margin:auto; justify-content:center" class="d-flex">
@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<a href="https://wa.me/@Usuario.LogadoJ.Telefone">Enviar mensagem</a>
+<a style="text-decoration:none; color:black;"  href="https://wa.me/@Usuario.LogadoJ.Telefone">Enviar mensagem</a>
 
 <hr />
 
@@ -86,38 +86,51 @@
         <p>Você ainda não tem vagas registradas como favoritas!</p>
     }
 </div>
-</div>
+
 
 <script>
     document.onload = geocoding();
 
+    function getPath() {
+        var input = document.getElementById('foto');
+        if (input.files.length > 0) {
+            var filePath = input.files[0];
+            upload(filePath)
+        }
+    }
+
     async function upload(file) {
         try {
+            //console.log(file)
+
             var formData = new FormData();
             formData.append('image', file);
 
-            var client_id = "98972d1924cf9ce"
+            var client_id = "24850399c332c65";
 
             if (client_id == null) {
-                throw new Error('Usuário não autenticado')
+                console.log('Credenciais inválidas');
             }
 
             var headers = new Headers();
-            headers.append('Authorization', `Client-ID ${client_id}`)
-            // headers.append('Content-Type', 'multipart/form-data')
+            headers.append('Authorization', `Client-ID 9e145e9b01fa0f5`)
+            headers.append('Content-Type', 'multipart/form-data')
+          
+
+            var formData = new FormData();
+            formData.append('image', file);
 
             var response = await fetch('https://api.imgur.com/3/image', {
                 method: 'POST',
-                headers: headers,
-                body: formData,
-            })
+               // headers: headers,
+                body: formData
+            });
 
-            var data = await response.json()
-            document.getElementById("imgur-img").src = data.data.link
-            document.getElementById("path-imgur").innerHTML = data.data.link
+            var data = await response.json();
+           // console.log(data);
         }
         catch (error) {
-            document.getElementById("path-imgur").innerHTML = error
+            console.log(error);
         }
     }
 
@@ -128,7 +141,7 @@
         var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
     }
 
-                        var local = "@ruaJovem" + "+" + "@cidadeJovem";
+                            var local = "@ruaJovem" + "+" + "@cidadeJovem";
         var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
 
         var latitude1 = 0

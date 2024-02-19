@@ -21,64 +21,74 @@
 
     <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
         <form asp-action="Empresa">
-            <div>
-                <label asp-for="Nome">Insira o nome da empresa:</label>
-                <input asp-for="Nome"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
-            </div>
-            <div>
-                <label asp-for="Email">Insira o endereço de email da empresa:</label>
-                <input asp-for="Email"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
-            </div>
-            <div>
-                <label asp-for="Senha">Insira a senha:</label>
-                <input asp-for="Senha"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
-            </div>
-            <div>
-                <label asp-for="Telefone">Insira o fone da empresa:</label>
-                <input asp-for="Telefone"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
-            </div>
-            <div>
-                <label>Insira seu CEP:</label>
-                <input id="cep"></input>
-            </div>
-            <div>
-                <label asp-for="Local.Estado">Insira o estado da empresa:</label>
-                <input asp-for="Local.Estado" id="estado"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
-            </div>
-            <div>
-                <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
-                <input asp-for="Local.Cidade" id="cidade"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
-            </div>
-            <div>
-                <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
-                <input asp-for="Local.Bairro" id="bairro"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
-            </div>
-            <div>
-                <label asp-for="Local.Rua">Insira a rua da empresa:</label>
-                <input asp-for="Local.Rua" id="rua"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
-            </div>
-            <div>
-                <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
-                <input asp-for="Local.Numero" id="numero"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
-            </div>
-            <div>
-                <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
-                <input asp-for="Cnpj"></input>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
-            </div>
+            <fieldset style="border: none; display: flex; flex-direction: row; ">
+                <div>
 
-            <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Nome">Insira o nome da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Nome"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Email">Insira o endereço de email da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Email"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Senha">Insira a senha:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Senha"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Telefone">Insira o fone da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Telefone"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
+                    </div>
+                    <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 6vw; height: 4vh;" asp-action="Empresa">Cadastrar</button>
+                    <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 9.3vw; height: 4vh;" asp-action="Empresa">Limpar Campos</button>
 
-            <button asp-action="Empresa">Cadastrar</button>
+                </div> 
+                <div style="margin-left:2vw;">
+                    <div style="display: flex; flex-direction: column;">
+                        <label>Insira seu CEP:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" id="cep"></input>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Local.Estado">Insira o estado da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Estado" id="estado"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Cidade" id="cidade"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Bairro" id="bairro"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Local.Rua">Insira a rua da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Rua" id="rua"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Numero" id="numero"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
+                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Cnpj"></input>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
+                    </div>
+
+                    <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
+                </div>
+
+
+            </fieldset>
         </form>
     </div>
 </div>
