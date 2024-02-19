@@ -15,18 +15,18 @@
 
     @using (Html.BeginForm("Index", "Empregos", FormMethod.Get))
     {
-        <p>
-            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <p style="display:flex;">
+            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control w-50"  })
             <input type="submit" value="Search" />
         </p>
     }
 
     <div class="d-flex mb-3 w-50">
-        <div>
-            <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.descSort})
+        <div style="text-decoration: none;">
+            <img width="10%" src="~/css/Imagens/ordenar Baixo.png"></img> @Html.ActionLink("Nome", "Index", new { sorter = ViewBag.descSort })
         </div>
         <div>
-            <img width="16%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new {sorter = ViewBag.Sort})
+            <img width="16%" src="~/css/Imagens/ordenarCima.png"></img> @Html.ActionLink("Nome", "Index", new { sorter = ViewBag.Sort })
         </div>
     </div>
 
