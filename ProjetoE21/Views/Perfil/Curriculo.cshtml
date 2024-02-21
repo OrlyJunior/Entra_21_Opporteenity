@@ -2,7 +2,14 @@
 
 @model Curriculo;
 
-<h1>Adicionar currículo</h1>
+@if (Usuario.LogadoJ.Curriculo != null)
+{
+    <h1>Editar currículo</h1>
+}
+else
+{
+    <h1>Adicionar currículo</h1>
+}
 
 @* <div class="justify-content-center d-flex">
     <form asp-action="Curriculo" style="width: 35%; height: 70%; backdrop-color: white">

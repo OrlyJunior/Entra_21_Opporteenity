@@ -17,128 +17,217 @@
 </script>
 <body style=" overflow:hidden;">
 
-<div style="  border: 1px solid black; border-radius: 15px; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: auto; width: 70vw;">
-    <h1 style="margin: 5em;">Cadastre-se</h1>
+    <div style="  border: 1px solid black; border-radius: 15px; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: auto; width: 70vw;">
+        <h1 style="margin: 5em;">Cadastre-se</h1>
 
-    <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
-        <form asp-action="Empresa">
-            <fieldset style="border: none; display: flex; flex-direction: row; ">
-                <div>
+        <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; ">
+            <form asp-action="Empresa">
+                <fieldset style="border: none; display: flex; flex-direction: row; ">
+                    <div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Nome">Insira o nome da empresa:</label>
+                            <input maxlength="100" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Nome"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Email">Insira o endereço de email da empresa:</label>
+                            <input maxlength="50" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Email"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Senha">Insira a senha:</label>
+                            <input maxlength="50" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Senha"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Telefone">Insira o fone da empresa:</label>
+                            <input maxlength="15" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Telefone"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
+                            <input maxlength="20" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Cnpj"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
+                        </div>
+                        <div style="margin: 1vw;">
+                            <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 6vw; height: 4vh;" asp-action="Empresa">Cadastrar</button>
+                            <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 9.3vw; height: 4vh" type="button" onclick="limparCampos()">Limpar Campos</button>
+                        </div>
+                    </div>
+                    <div style="margin-left:2vw;">
+                        <div style="display: flex; flex-direction: column;">
+                            <label>Insira seu CEP:</label>
+                            <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" id="cep"></input>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Local.Estado">Insira o estado da empresa:</label>
+                            <select oninput="cidades()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Estado" id="estado">
+                                <option id="padraoE" value="vazio"></option>
+                                <option onclick="cidades()" value="SC">SC</option>
+                                <option onclick="cidades()" value="SP">SP</option>
+                            </select>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
+                            <select oninput="bairros()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Cidade" id="cidade">
+                                <option id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>
+                            </select>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
+                            <select oninput="ruas()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Bairro" id="bairro">
+                                <option id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>
+                            </select>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Local.Rua">Insira a rua da empresa:</label>
+                            <select style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Rua" id="rua">
+                                <option id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>
+                            </select>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
+                        </div>
 
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Nome">Insira o nome da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Nome"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Nome)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Email">Insira o endereço de email da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Email"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Senha">Insira a senha:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Senha"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Telefone">Insira o fone da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Telefone"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Telefone)</span>
-                    </div>
-                    <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 6vw; height: 4vh;" asp-action="Empresa">Cadastrar</button>
-                    <button style="border-radius:10px; font-size: 1vw; color: white; background-color: rgb(64, 112, 0); width: 9.3vw; height: 4vh;" asp-action="Empresa">Limpar Campos</button>
-
-                </div> 
-                <div style="margin-left:2vw;">
-                    <div style="display: flex; flex-direction: column;">
-                        <label>Insira seu CEP:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" id="cep"></input>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Local.Estado">Insira o estado da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Estado" id="estado"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Cidade" id="cidade"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Bairro" id="bairro"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Local.Rua">Insira a rua da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Rua" id="rua"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Numero" id="numero"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <label asp-for="Cnpj">Insira o CNPJ da empresa:</label>
-                        <input style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Cnpj"></input>
-                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Cnpj)</span>
+                        <div style="display: flex; flex-direction: column;">
+                            <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
+                            <input maxlength="20" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Numero" id="numero"></input>
+                            <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
+                        </div>
                     </div>
 
                     <span class="text-danger">@Html.ValidationMessage("userRepetido")</span>
-                </div>
-
-
-            </fieldset>
-        </form>
+                </fieldset>
+            </form>
+        </div>
     </div>
-</div>
+    </div>
 
-<script>
-    async function pegarCep() {
-        var cep = document.getElementById("cep").value;
-
-        var cepLength = cep.length;
-
-        console.log(cepLength);
-
-        if (cepLength == 9) {
-            const dados = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
-
-            const data = await dados.json();
-
-            console.log(data);
-
-            document.getElementById("estado").value = data.uf;
-
-            document.getElementById("cidade").value = data.localidade;
-
-            document.getElementById("bairro").value = data.bairro;
-
-            document.getElementById("rua").value = data.logradouro;
-
+    <script>
+        function cidades() {
             if (document.getElementById("estado").value == "") {
-                document.getElementById("estado").removeAttribute("disabled");
+                document.getElementById("cidade").innerHTML = "";
+
+                document.getElementById("bairro").innerHTML = "";
+
+                document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option id='removeCidade'>Antes de selecionar a cidade, selecione o estado!</option>");
+
+                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>");
             }
 
-            if (document.getElementById("cidade").value == "") {
-                document.getElementById("cidade").removeAttribute("disabled");
+            if (document.getElementById("estado").value == "SC") {
+                document.getElementById("cidade").innerHTML = "";
+
+                document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option></option><option onclick='bairros()' value='Blumenau'>Blumenau</option><option onclick='bairros()' value='Itajaí'>Itajaí</option><option onclick='bairros()' value='Florianópolis'>Florianópolis</option>")
+
+                document.getElementById("removeCidade").remove();
             }
 
-            if (document.getElementById("bairro").value == "") {
-                document.getElementById("bairro").removeAttribute("disabled");
-            }
+            if (document.getElementById("estado").value == "SP") {
+                document.getElementById("cidade").innerHTML = "";
 
-            if (document.getElementById("rua").value == "") {
-                document.getElementById("rua").removeAttribute("disabled");
-            }
+                document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option></option><option onclick='bairros()' value='São Paulo'>São Paulo</option><option onclick='bairros()' value='Itú'>Itú</option><option onclick='bairros()' value='Santos'>Santos</option>")
 
-            if (document.getElementById("numero").value == "") {
-                document.getElementById("numero").removeAttribute("disabled");
+                document.getElementById("removeCidade").remove();
             }
         }
-    }
 
-    document.getElementById("cep").addEventListener("input", pegarCep);
-</script>
+        function bairros() {
+            if (document.getElementById("cidade").value == "") {
+                document.getElementById("bairro").innerHTML = "";
+
+                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>")
+            }
+
+            if (document.getElementById("cidade").value == "Blumenau") {
+                document.getElementById("bairro").innerHTML = "";
+
+                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option></option><option value='Itoupava Norte'>Itoupava Norte</option><option value='Itoupava Seca'>Itoupava Seca</option><option value='Itoupava Central'>Itoupava Central</option>")
+            }
+        }
+
+        function ruas() {
+            if (document.getElementById("bairro").value == "") {
+                document.getElementById("rua").innerHTML = "";
+
+                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar a rua, selecione o bairro!</option>")
+            }
+
+            if (document.getElementById("bairro").value == "Itoupava Norte") {
+                document.getElementById("rua").innerHTML = "";
+
+                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua 25 de Agosto'>Rua 25 de Agosto</option><option value='Rua 2 de Setembro'>Rua 2 de Setembro</option>")
+            }
+        }
+
+        function limparCampos() {
+            for (i = 0; i < document.getElementsByTagName("input").length; i++) {
+                console.log(12312);
+
+                document.getElementsByTagName("input")[i].value = "";
+            }
+        }
+
+        async function pegarCep() {
+            var cep = document.getElementById("cep").value;
+
+            var cepLength = cep.length;
+
+            console.log(cepLength);
+
+            if (cepLength == 9) {
+                const dados = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+                const data = await dados.json();
+
+                if (data.uf == undefined) {
+                    return;
+                }
+
+                document.getElementById("estado").innerHTML = "<option id='padraoE' value='vazio'></option>";
+
+                document.getElementById("padraoE").value = data.uf;
+
+                document.getElementById("padraoE").innerHTML = data.uf;
+
+                document.getElementById("cidade").innerHTML = `<option id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>`;
+
+                document.getElementById("removeCidade").value = data.localidade;
+
+                document.getElementById("removeCidade").innerHTML = data.localidade;
+
+                document.getElementById("bairro").innerHTML = `<option id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>`;
+
+                document.getElementById("removeBairro").value = data.bairro;
+
+                document.getElementById("removeBairro").innerHTML = data.bairro;
+
+                document.getElementById("rua").innerHTML = `<option id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>`;
+
+                document.getElementById("removeRua").value = data.logradouro;
+
+                document.getElementById("removeRua").innerHTML = data.logradouro;
+            }
+            else {
+                document.getElementById("estado").innerHTML = `<option id="padraoE" value="vazio"></option>
+                                        <option onclick="cidades()" value="SC">SC</option>
+                                        <option onclick="cidades()" value="SP">SP</option>`
+
+                cidades();
+
+                document.getElementById("cidade").innerHTML = `<option id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>`
+
+                bairros();
+
+                document.getElementById("bairro").innerHTML = `<option id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>`
+
+                ruas();
+
+                document.getElementById("rua").innerHTML = `<option id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>`
+            }
+        }
+
+        document.getElementById("cep").addEventListener("input", pegarCep);
+    </script>
 </body>

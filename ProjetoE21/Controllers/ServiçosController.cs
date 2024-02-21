@@ -53,8 +53,7 @@ namespace ProjetoE21.Controllers
         {
             servico.EmpresaS = new();
 
-            servico.EmpresaS.Id = 1;
-            servico.EmpresaS.Nome = "Empresa inventada";
+            servico.EmpresaS = Usuario.LogadoE;
 
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
@@ -98,8 +97,7 @@ namespace ProjetoE21.Controllers
         {
             servico.EmpresaS = new();
 
-            servico.EmpresaS.Id = 1;
-            servico.EmpresaS.Nome = "Empresa inventada";
+            servico.EmpresaS = Usuario.LogadoE;
 
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
