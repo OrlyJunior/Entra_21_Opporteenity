@@ -1544,7 +1544,6 @@ C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\Syste
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\X.PagedList.dll
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\obj\Debug\net6.0\ProjetoE21.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\obj\Debug\net6.0\ProjetoE21.sourcelink.json
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\obj\Debug\net6.0\staticwebassets\msbuild.ProjetoE21.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\obj\Debug\net6.0\staticwebassets\msbuild.build.ProjetoE21.props
 C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ProjetoE21.props

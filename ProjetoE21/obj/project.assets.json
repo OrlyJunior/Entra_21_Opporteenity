@@ -2111,19 +2111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\analu.baade\\.nuget\\packages\\": {}
+    "C:\\Users\\patrick.kremer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\analu.baade\\Desktop\\Nova pasta\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\Nova pasta (2)\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\analu.baade\\Desktop\\Nova pasta\\ProjetoE21\\ProjetoE21.csproj",
-      "packagesPath": "C:\\Users\\analu.baade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\analu.baade\\Desktop\\Nova pasta\\ProjetoE21\\obj\\",
+      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\Nova pasta (2)\\ProjetoE21\\ProjetoE21.csproj",
+      "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\Nova pasta (2)\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\analu.baade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2131,6 +2131,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2189,7 +2190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   },
