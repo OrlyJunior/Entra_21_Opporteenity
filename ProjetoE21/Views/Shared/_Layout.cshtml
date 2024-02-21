@@ -32,16 +32,49 @@
         .dark-mode2 {
             filter: invert(80%);
         }
+
+       
+        body {
+            background-color: rgb(246, 245, 252);
+        }
+
+        
+        .navbar {
+            margin-bottom: 3vh;
+        }
+
+        
+        #config {
+            width: 100%;
+        }
+
+        
+        .container {
+            min-height: 100vh;
+            min-width: 98vw;
+            padding-top: 80px;
+        }
+
+        #containerdonav{
+            height: 3rem;
+        }
+
+        #paragrafonome{
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
     </style>
 </head>
 
 <body style="background-color:rgb(246, 245, 252);">
     <header>
-        <nav style="margin-bottom:3vh;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
-            <div class="container-fluid" style="height: 3rem">
-                <a style="color:black; text-decoration:none; width: 20%; margin-right: 8px; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
-                    <img src="~/css/Imagens/Perfil.png" width="20%" class="m-1"></img>
-                    <p style="text-decoration:none; font-weight:bold; margin-top: 1rem">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
+            <div id="containerdonav" class="container-fluid" >
+                <a asp-controller="Perfil" asp-action="Index">
+                    <img src="~/css/Imagens/Perfil.png" width="20%" class="m-1">
+                    <p id="paragrafonome">
                         @if (Usuario.LogadoE == null)
                         {
                             @Usuario.LogadoJ.Nome
@@ -55,7 +88,7 @@
                         }
                     </p>
                 </a>
-                <a class="navbar-brand d-flex" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: 32px; font-family: Arial; margin-top: 4px">
+                <a class="navbar-brand d-flex" asp-area="" asp-controller="Home" asp-action="Index" >
                     <p id="oppor" style="color: #7CDFE5">Oppor</p>
                     <p id="teen" style="color: #A378FF">teen</p>
                     <p id="ity" style="color: #E21EAD">ity</p>
@@ -107,7 +140,7 @@
         </nav>
     </header>
 
-    <div class="container d-flex justify-content-center" style="min-height: 100vh;min-width:98vw; padding-top: 80px;">
+    <div class="container d-flex justify-content-center" >
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
