@@ -16,8 +16,8 @@
     @using (Html.BeginForm("Index", "Empregos", FormMethod.Get))
     {
         <p style="display:flex;">
-            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control w-50"  })
-            <input type="submit" value="Search" />
+            Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control w-50 d-flex me-2 ms-2"  })
+            <input class="btn btn-outline-dark" type="submit" value="Search" />
         </p>
     }
 

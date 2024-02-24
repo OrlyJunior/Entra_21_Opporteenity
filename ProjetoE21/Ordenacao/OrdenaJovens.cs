@@ -1,4 +1,8 @@
-﻿using ProjetoE21.Dados;
+﻿using MMLib.Extensions;
+using ProjetoE21.Dados;
+using ProjetoE21.Models;
+using System.Globalization;
+using System.Text;
 
 namespace ProjetoE21.Ordenacao
 {
@@ -8,7 +12,7 @@ namespace ProjetoE21.Ordenacao
         {
             if (!String.IsNullOrEmpty(searchString))
             {
-                Listas.cadastrosJ = Listas.cadastrosJ.Where(s => s.Nome.Contains(searchString)).ToList();
+                Listas.cadastrosJ = Listas.cadastrosJ.Where(s => s.Nome.ToLower().RemoveDiacritics().Contains(searchString.ToLower().RemoveDiacritics())).ToList();
             }
 
             return true;

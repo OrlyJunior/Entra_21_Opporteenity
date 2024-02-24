@@ -3,9 +3,7 @@
 <div style="width:80vw;">
     <div style="justify-content:center; text-align:center;">
         <h1>Perfil</h1>
-            <img src="~/css/Imagens/Perfil.png" width="25%"></img>
-        <input type="file" id="foto">
-        <button onclick="getPath()">Enviar</button>
+        <img src="~/css/Imagens/Perfil.png" width="15%" class="mb-2"></img>
 
         <h3>@Usuario.LogadoJ.Nome</h3>
         <p>Data de nascimento: @Usuario.LogadoJ.DataNascimento.Day/@Usuario.LogadoJ.DataNascimento.Month/@Usuario.LogadoJ.DataNascimento.Year</p>
@@ -32,8 +30,6 @@
         <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
     </div>
 </div>
-
-<a style="text-decoration:none; color:black;"  href="https://wa.me/@Usuario.LogadoJ.Telefone">Enviar mensagem</a>
 
 <hr />
 
@@ -90,49 +86,6 @@
 
 <script>
     document.onload = geocoding();
-
-    function getPath() {
-        var input = document.getElementById('foto');
-        if (input.files.length > 0) {
-            var filePath = input.files[0];
-            upload(filePath)
-        }
-    }
-
-    async function upload(file) {
-        try {
-            //console.log(file)
-
-            var formData = new FormData();
-            formData.append('image', file);
-
-            var client_id = "24850399c332c65";
-
-            if (client_id == null) {
-                console.log('Credenciais inválidas');
-            }
-
-            var headers = new Headers();
-            headers.append('Authorization', `Client-ID 9e145e9b01fa0f5`)
-            headers.append('Content-Type', 'multipart/form-data')
-          
-
-            var formData = new FormData();
-            formData.append('image', file);
-
-            var response = await fetch('https://api.imgur.com/3/image', {
-                method: 'POST',
-               // headers: headers,
-                body: formData
-            });
-
-            var data = await response.json();
-           // console.log(data);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
 
     async function geocoding() {
     @{

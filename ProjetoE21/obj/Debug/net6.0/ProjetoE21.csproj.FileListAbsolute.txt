@@ -1700,3 +1700,5 @@ C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\refin
 C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\ProjetoE21.pdb
 C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\ProjetoE21.genruntimeconfig.cache
 C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\ref\ProjetoE21.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Core.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Extensions.dll

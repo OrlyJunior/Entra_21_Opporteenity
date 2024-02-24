@@ -1,4 +1,5 @@
-﻿using ProjetoE21.Dados;
+﻿using MMLib.Extensions;
+using ProjetoE21.Dados;
 using ProjetoE21.Interfaces;
 using ProjetoE21.Models;
 
@@ -30,7 +31,7 @@ namespace ProjetoE21.Ordenacao
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                Listas.servicos = Listas.servicos.Where(s => s.Descricao.Contains(searchString)).ToList();
+                Listas.servicos = Listas.servicos.Where(s => s.Descricao.ToLower().RemoveDiacritics().Contains(searchString.ToLower().RemoveDiacritics())).ToList();
             }
 
             return true;

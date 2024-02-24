@@ -4,7 +4,7 @@
     {
         public static string conecta()
         {
-            string conecta = @"Server=monorail.proxy.rlwy.net; Port=34074; Uid=root; Pwd=ca5C33h5c2gAE2eC4-dgcdeCdBfBe5c6; Database=railway; SslMode=None";
+            string conecta = @"Server=monorail.proxy.rlwy.net; Port=34074; Uid=root; Pwd=ca5C33h5c2gAE2eC4-dgcdeCdBfBe5c6; Database=railway; SslMode=None; Connection Timeout=120";
             
             string conecta2 = Environment.GetEnvironmentVariable("DATABASE_URL");
 

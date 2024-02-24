@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="MMLib.Extensions" Version="1.0.10.13" />
     <PackageReference Include="MySql.Data" Version="8.2.0" />
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
     <PackageReference Include="System.Web.Mvc.Extensions" Version="1.1.1.2" />

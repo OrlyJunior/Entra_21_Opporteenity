@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ProjetoE21/1.0.0": {
         "dependencies": {
+          "MMLib.Extensions": "1.0.10.13",
           "Microsoft.AspNet.Mvc": "5.3.0",
           "MySql.Data": "8.2.0",
           "PagedList.Mvc": "4.5.0",
@@ -141,6 +142,18 @@
             "assetType": "runtime",
             "assemblyVersion": "4.0.2.0",
             "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "MMLib.Extensions/1.0.10.13": {
+        "runtime": {
+          "lib/MMLib.Core.dll": {
+            "assemblyVersion": "1.0.5305.36249",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/MMLib.Extensions.dll": {
+            "assemblyVersion": "1.0.2.6",
+            "fileVersion": "1.0.2.6"
           }
         }
       },
@@ -550,6 +563,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "MMLib.Extensions/1.0.10.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3rOsWjBNZHr59EeEHsTTpQB7DwopPc68onDkLDjH7zOjtJf/zHuNTxt8A2n07F0AP0ny5hfl8Pvz4jLLEyY68w==",
+      "path": "mmlib.extensions/1.0.10.13",
+      "hashPath": "mmlib.extensions.1.0.10.13.nupkg.sha512"
     },
     "MySql.Data/8.2.0": {
       "type": "package",

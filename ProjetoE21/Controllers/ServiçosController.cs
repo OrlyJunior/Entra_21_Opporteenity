@@ -58,6 +58,8 @@ namespace ProjetoE21.Controllers
             servico.Dia = $"{servico.Horario.Day}/{servico.Horario.Month}/{servico.Horario.Year}";
             servico.Hora = $"{servico.Horario.TimeOfDay}";
 
+            servico.EmpresaId = Usuario.LogadoE.Id;
+
             if (!ModelState.IsValid)
             {
                 return View(servico);

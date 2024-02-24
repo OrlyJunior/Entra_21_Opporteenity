@@ -20,5 +20,6 @@ namespace ProjetoE21.Models
         public DateTime Horario { get; set; }
         public string Dia { get; set; } = "";
         public string Hora { get; set; } = "";
+        public int? EmpresaId { get; set; }
     }
 }

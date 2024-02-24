@@ -199,6 +199,17 @@
           }
         }
       },
+      "MMLib.Extensions/1.0.10.13": {
+        "type": "package",
+        "compile": {
+          "lib/MMLib.Core.dll": {},
+          "lib/MMLib.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/MMLib.Core.dll": {},
+          "lib/MMLib.Extensions.dll": {}
+        }
+      },
       "MySql.Data/8.2.0": {
         "type": "package",
         "dependencies": {
@@ -956,6 +967,25 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MMLib.Extensions/1.0.10.13": {
+      "sha512": "3rOsWjBNZHr59EeEHsTTpQB7DwopPc68onDkLDjH7zOjtJf/zHuNTxt8A2n07F0AP0ny5hfl8Pvz4jLLEyY68w==",
+      "type": "package",
+      "path": "mmlib.extensions/1.0.10.13",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MMLib.Core.dll",
+        "lib/MMLib.Core.pdb",
+        "lib/MMLib.Core.xml",
+        "lib/MMLib.Extensions.XML",
+        "lib/MMLib.Extensions.dll",
+        "lib/MMLib.Extensions.pdb",
+        "mmlib.extensions.1.0.10.13.nupkg.sha512",
+        "mmlib.extensions.nuspec",
+        "tools/install.ps1"
       ]
     },
     "MySql.Data/8.2.0": {
@@ -2103,6 +2133,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "MMLib.Extensions >= 1.0.10.13",
       "Microsoft.AspNet.Mvc >= 5.3.0",
       "MySql.Data >= 8.2.0",
       "PagedList.Mvc >= 4.5.0",
@@ -2111,19 +2142,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\orly.junior\\.nuget\\packages\\": {}
+    "C:\\Users\\Orly\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
+      "projectUniqueName": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
       "projectName": "ProjetoE21",
-      "projectPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\ProjetoE21.csproj",
-      "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orly.junior\\Documents\\Pjt\\ProjetoE21\\obj\\",
+      "projectPath": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\ProjetoE21.csproj",
+      "packagesPath": "C:\\Users\\Orly\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Orly\\Documents\\Projeto\\ProjetoE21\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Orly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2131,6 +2167,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2149,6 +2186,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "MMLib.Extensions": {
+            "target": "Package",
+            "version": "[1.0.10.13, )"
+          },
           "Microsoft.AspNet.Mvc": {
             "target": "Package",
             "version": "[5.3.0, )"
@@ -2230,6 +2271,16 @@
       "warningLevel": 1,
       "message": "O pacote 'Microsoft.Web.Infrastructure 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'MMLib.Extensions 1.0.10.13' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "MMLib.Extensions",
       "targetGraphs": [
         "net6.0"
       ]

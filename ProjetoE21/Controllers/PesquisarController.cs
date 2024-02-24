@@ -3,6 +3,8 @@ using ProjetoE21.Dao;
 using ProjetoE21.Ordenacao;
 using ProjetoE21.Models;
 using ProjetoE21.Dados;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using X.PagedList;
 
 namespace ProjetoE21.Controllers
 {
@@ -12,15 +14,23 @@ namespace ProjetoE21.Controllers
         DaoCadastro DaoC = new();
         DaoCurriculo DaoCur = new();
 
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string searchString, int? page)
         {
             Listas.cadastrosJ = DaoC.consultar();
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
 
             ViewBag.CurrentFilter = searchString;
 
             ordena.Pesquisa(searchString);
 
-            return View(Listas.cadastrosJ);
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+
+            return View(Listas.cadastrosJ.ToPagedList(pageNumber, pageSize));
         }
 
         public IActionResult Ver(int id)

@@ -18,7 +18,7 @@ namespace ProjetoE21.Dao
             {
                 MySqlCommand cm = con.CreateCommand();
 
-                cm.CommandText = @"insert into tb_servicos(descricao, contratanteNome, estado, cidade, bairro, rua, numero, data, valor, dia, hora)values(@descricao, @contratante, @estado, @cidade, @bairro, @rua, @numero, @data, @valor, @dia, @hora)";
+                cm.CommandText = @"insert into tb_servicos(descricao, contratanteNome, estado, cidade, bairro, rua, numero, data, valor, dia, hora, empresaId)values(@descricao, @contratante, @estado, @cidade, @bairro, @rua, @numero, @data, @valor, @dia, @hora, @empresaId)";
 
                 cm.Parameters.Add("descricao", MySqlDbType.VarChar).Value = servico.Descricao;
                 cm.Parameters.Add("contratante", MySqlDbType.VarChar).Value = servico.EmpresaS.Nome;
@@ -31,6 +31,7 @@ namespace ProjetoE21.Dao
                 cm.Parameters.Add("valor", MySqlDbType.Decimal).Value = servico.Pagamento;
                 cm.Parameters.Add("dia", MySqlDbType.VarChar).Value = servico.Dia;
                 cm.Parameters.Add("hora", MySqlDbType.VarChar).Value = servico.Hora;
+                cm.Parameters.Add("empresaId", MySqlDbType.VarChar).Value = servico.EmpresaId;
 
                 cm.Connection = con;
 
@@ -87,6 +88,8 @@ namespace ProjetoE21.Dao
                     service.Local.Bairro = Convert.ToString(dr["bairro"]);
                     service.Local.Rua = Convert.ToString(dr["rua"]);
                     service.Local.Numero = Convert.ToInt32(dr["numero"]);
+
+                    service.EmpresaId = Convert.ToInt32(dr["empresaId"]);
 
                     servicos.Add(service);
                 }

@@ -1,16 +1,20 @@
-﻿@using ProjetoE21.Dados;
+﻿@model X.PagedList.PagedList<ProjetoE21.Models.Jovem>
+
+@using ProjetoE21.Dados;
+@using X.PagedList.Mvc.Core
 
 @using (Html.BeginForm("Index", "Pesquisar", FormMethod.Get))
 {
-    <p>
-        Encontrar pela descrição: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-        <input class="form-control" type="submit" value="Search" />
+    <p style="display:flex;">
+        Encontrar pelo nome: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control w-50 d-flex ms-2 me-2" })
+
+        <input class="btn btn-outline-dark" type="submit" value="Search" />
     </p>
 }
 
-@foreach(var i in Listas.cadastrosJ)
+@foreach(var i in Model)
 {
-    <a asp-action="Ver" asp-route-id="@i.Id" class="w-100 d-flex p-3 align-content-center mb-2 border">
+    <a asp-action="Ver" asp-route-id="@i.Id" class="w-100 d-flex p-3 align-content-center mb-2 border" style="background-color: #ededed; border-radius: 4px">
         <div style="width:25%">
             <img src="~/css/Imagens/Perfil.png" style="width:50%"></img>
         </div>
@@ -18,4 +22,13 @@
         <p class="m-2" style="width:25%">@i.Local.Estado</p>
         <p class="m-2" style="width:25%">@i.Local.Cidade</p>
     </a>
+}
+
+Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+@if (Model.HasNextPage || Model.HasPreviousPage)
+{
+    <div style="text-align: center">
+        @Html.PagedListPager(Model, (page) => Url.Action("Index", new { page = page, filtro = @ViewBag.CurrentFilter }))
+    </div>
 }
