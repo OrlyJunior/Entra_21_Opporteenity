@@ -26,7 +26,7 @@
     </aside>
 </div>
 
-<div class="d-flex" style="width: 100%; justify-content:center;" >
+<div class="d-flex" style="width: 100%; justify-content:center;">
 
     <div style="border-radius:10px; width: 40%" class="m-2">
         @foreach (var i in ProjetoE21.Dados.Listas.empregos)
@@ -41,8 +41,10 @@
                                     @Html.DisplayFor(model => i.Descricao)
                                 </p>
                                 <p class="card-text">
-                                    @Html.DisplayFor(model => i.Local.Rua)  @Html.DisplayFor(model => i.Local.Cidade)
-                                    <br>
+                                <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
+                                <br>
+                                <p name="distancia">Distancia</p>
+                                <br>
                                     @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
                                     <br>
                                     <span>Dias Trabalhados: </span>@Html.DisplayFor(model => i.DiasTrabalhados)
@@ -56,8 +58,6 @@
 
                         <div class="d-flex justify-content-between">
                             <div class="card-body">
-
-
                                 @if (Usuario.LogadoE == null)
                                 {
                                     <span href="#" class="card-link" style="text-decoration:none; font-size:1em; color:green;">@Html.ActionLink("Candidatar", "Candidatar", new { Id = i.Id })</span>
@@ -71,12 +71,7 @@
                                     <span class="card-link" style="cursor:pointer; text-decoration:none; font-size:1em; color:blue;">Salvar</span>
                                     <a href="#" class="card-link" style="text-decoration:none; font-size:1em; color:red;">Compartilhar</a>
                                 }
-                               
-                            
-                            
-                            
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -96,8 +91,10 @@
                                     @Html.DisplayFor(model => i.Descricao)
                                 </p>
                                 <p class="card-text">
-                                    @Html.DisplayFor(model => i.Local.Rua)  @Html.DisplayFor(model => i.Local.Cidade)
+                                <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
                                     <br>
+                                    <p name="distancia">Distancia</p>
+
                                     @Html.DisplayFor(model => i.Dia) @Html.DisplayFor(model => i.Hora)
                                 </p>
                                 <div class="d-flex justify-content-between">
@@ -121,3 +118,75 @@
         }
     </div>
 </div>
+
+<script>
+    document.onload = geocoding();
+
+    async function geocoding() {
+    @{
+        var ruaJovem = Usuario.LogadoJ.Local.Rua;
+
+        var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
+    }
+
+        var local = "@ruaJovem" + "+" + "@cidadeJovem";
+        var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
+
+        var latitude1 = 0
+        var longitude1 = 0;
+
+        await fetch(url1)
+            .then(data => data.json())
+            .then(item => {
+                latitude1 = parseFloat(item.results[0].geometry.lat)
+
+                longitude1 = parseFloat(item.results[0].geometry.lng)
+            })
+
+        var ruas = document.getElementsByName("rua")
+        var cidades = document.getElementsByName("cidade")
+        var distancias = document.getElementsByName("distancia")
+
+        for (var i = 0; i < ruas.length; i++) {
+            var endereco = `${ruas[i].innerHTML} + ${cidades[i].innerHTML}`
+            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+
+            var latitude2;
+            var longitude2;
+
+            await fetch(url2)
+                .then(data => data.json())
+                .then(item => {
+                    console.log(item)
+
+                    latitude2 = parseFloat(item.results[0].geometry.lat)
+
+                    longitude2 = parseFloat(item.results[0].geometry.lng)
+                })
+
+            var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
+
+            distancias[i].innerHTML = `${distancia}km`;
+        }
+    }
+
+    function toRadians(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+    function formulaDeHaversine(lat1, lon1, lat2, lon2) {
+        var R = 6371;
+        var dLat = toRadians(lat2 - lat1);
+        var dLon = toRadians(lon2 - lon1);
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        var distance = R * c;
+
+        return distance.toFixed(2);
+    }
+</script>
