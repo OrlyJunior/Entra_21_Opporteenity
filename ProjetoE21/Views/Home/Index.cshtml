@@ -29,7 +29,7 @@
 <div class="d-flex" style="width: 100%; justify-content:center;">
 
     <div style="border-radius:10px; width: 40%" class="m-2">
-        @foreach (var i in ProjetoE21.Dados.Listas.empregos)
+        @foreach (var i in ProjetoE21.Dados.Listas.empregos.OrderBy(emprego => emprego.Distancia))
         {
             <div class="d-flex">
                 <div class="card mb-5 hoverCard" style="width: 100%">
@@ -43,7 +43,7 @@
                                 <p class="card-text">
                                 <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
                                 <br>
-                                <p name="distancia">Distancia</p>
+                                <p name="distancia">@Html.DisplayFor(model => i.MostrarD)</p>
                                 <br>
                                     @Html.DisplayFor(model => i.HoraDeInicio.TimeOfDay) @Html.DisplayFor(model => i.HoraDeFim.TimeOfDay)
                                     <br>
@@ -120,73 +120,73 @@
 </div>
 
 <script>
-    document.onload = geocoding();
+    // document.onload = geocoding();
 
-    async function geocoding() {
-    @{
-        var ruaJovem = Usuario.LogadoJ.Local.Rua;
+    // async function geocoding() {
+    // {
+    //     var ruaJovem = Usuario.LogadoJ.Local.Rua;
 
-        var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
-    }
+    //     var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
+    // }
+        
+    //     var local = "ruaJovem" + "+" + "cidadeJovem";
+    //     var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
 
-        var local = "@ruaJovem" + "+" + "@cidadeJovem";
-        var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
+    //     var latitude1 = 0
+    //     var longitude1 = 0;
 
-        var latitude1 = 0
-        var longitude1 = 0;
+    //     await fetch(url1)
+    //         .then(data => data.json())
+    //         .then(item => {
+    //             latitude1 = parseFloat(item.results[0].geometry.lat)
 
-        await fetch(url1)
-            .then(data => data.json())
-            .then(item => {
-                latitude1 = parseFloat(item.results[0].geometry.lat)
+    //             longitude1 = parseFloat(item.results[0].geometry.lng)
+    //         })
 
-                longitude1 = parseFloat(item.results[0].geometry.lng)
-            })
+    //     var ruas = document.getElementsByName("rua")
+    //     var cidades = document.getElementsByName("cidade")
+    //     var distancias = document.getElementsByName("distancia")
 
-        var ruas = document.getElementsByName("rua")
-        var cidades = document.getElementsByName("cidade")
-        var distancias = document.getElementsByName("distancia")
+    //     for (var i = 0; i < ruas.length; i++) {
+    //         var endereco = `${ruas[i].innerHTML} + ${cidades[i].innerHTML}`
+    //         var url2 = `https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
 
-        for (var i = 0; i < ruas.length; i++) {
-            var endereco = `${ruas[i].innerHTML} + ${cidades[i].innerHTML}`
-            var url2 = `https://api.opencagedata.com/geocode/v1/json?q=${endereco}&key=de8ec31691d84fada09018809123c939&pretty=1`
+    //         var latitude2;
+    //         var longitude2;
 
-            var latitude2;
-            var longitude2;
+    //         await fetch(url2)
+    //             .then(data => data.json())
+    //             .then(item => {
+    //                 console.log(item)
 
-            await fetch(url2)
-                .then(data => data.json())
-                .then(item => {
-                    console.log(item)
+    //                 latitude2 = parseFloat(item.results[0].geometry.lat)
 
-                    latitude2 = parseFloat(item.results[0].geometry.lat)
+    //                 longitude2 = parseFloat(item.results[0].geometry.lng)
+    //             })
 
-                    longitude2 = parseFloat(item.results[0].geometry.lng)
-                })
+    //         var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
 
-            var distancia = formulaDeHaversine(latitude1, longitude1, latitude2, longitude2);
+    //         distancias[i].innerHTML = `${distancia}km`;
+    //     }
+    // }
 
-            distancias[i].innerHTML = `${distancia}km`;
-        }
-    }
+    // function toRadians(degrees) {
+    //     return degrees * Math.PI / 180;
+    // }
 
-    function toRadians(degrees) {
-        return degrees * Math.PI / 180;
-    }
+    // function formulaDeHaversine(lat1, lon1, lat2, lon2) {
+    //     var R = 6371;
+    //     var dLat = toRadians(lat2 - lat1);
+    //     var dLon = toRadians(lon2 - lon1);
 
-    function formulaDeHaversine(lat1, lon1, lat2, lon2) {
-        var R = 6371;
-        var dLat = toRadians(lat2 - lat1);
-        var dLon = toRadians(lon2 - lon1);
+    //     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    //         Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+    //         Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
-        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    //     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    //     var distance = R * c;
 
-        var distance = R * c;
-
-        return distance.toFixed(2);
-    }
+    //     return distance.toFixed(2);
+    // }
 </script>

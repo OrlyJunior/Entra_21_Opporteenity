@@ -1702,3 +1702,6 @@ C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\Proje
 C:\Users\patrick.kremer\Desktop\segundafeira19\ProjetoE21\obj\Debug\net6.0\ref\ProjetoE21.dll
 C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Core.dll
 C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Extensions.dll
+C:\Users\orly.junior\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Core.dll
+C:\Users\orly.junior\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\MMLib.Extensions.dll
+C:\Users\orly.junior\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\Newtonsoft.Json.dll

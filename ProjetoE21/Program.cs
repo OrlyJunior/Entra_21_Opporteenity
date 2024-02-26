@@ -1,3 +1,5 @@
+using ProjetoE21.apiGeolocalizacao;
+
 namespace ProjetoE21
 {
     public class Program
@@ -8,6 +10,7 @@ namespace ProjetoE21
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<Geolocalizacao>();
 
             var app = builder.Build();
 

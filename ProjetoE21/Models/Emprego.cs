@@ -26,5 +26,9 @@ namespace ProjetoE21.Models
 
         [Required(ErrorMessage = "Você deve informar quantos dias serão trabalhados!")]
         public int DiasTrabalhados { get; set; }
+
+        public double? Distancia { get; set; }
+
+        public string? MostrarD {  get; set; }
     }
 }

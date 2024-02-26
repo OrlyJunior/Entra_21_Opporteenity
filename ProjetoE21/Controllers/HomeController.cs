@@ -3,6 +3,12 @@ using ProjetoE21.Models;
 using System.Diagnostics;
 using ProjetoE21.Dao;
 using ProjetoE21.Dados;
+using System.Reflection.Metadata;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using ProjetoE21.apiGeolocalizacao;
+
 
 namespace ProjetoE21.Controllers
 {
@@ -15,17 +21,25 @@ namespace ProjetoE21.Controllers
         DaoFavoritos DaoF = new();
         DaoCurriculo DaoCur = new();
 
+        private readonly Geolocalizacao _geolocalizacao;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, Geolocalizacao geolocalizacao)
         {
             _logger = logger;
+            _geolocalizacao = geolocalizacao;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+
+        async public Task<IActionResult> Index()
+         {
+            if(Usuario.LogadoE == null)
+            {
+                await _geolocalizacao.GeocodingAsync();
+            }
+
+             return View();
+         }
 
         [HttpGet]
         public IActionResult LoginEmpresa()
@@ -49,6 +63,7 @@ namespace ProjetoE21.Controllers
                 {
                     Usuario.LogadoJ = null;
                     Usuario.LogadoE = i;
+
                     Listas.empregos = DaoE.consultar();
                     Listas.servicos = DaoS.consultar();
 
@@ -114,7 +129,7 @@ namespace ProjetoE21.Controllers
             {
                 DaoCur.candidatar(id);
             }
-            
+
             return RedirectToAction("Index");
         }
 

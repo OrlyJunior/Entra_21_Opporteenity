@@ -21,5 +21,7 @@ namespace ProjetoE21.Models
         public string Dia { get; set; } = "";
         public string Hora { get; set; } = "";
         public int? EmpresaId { get; set; }
+        public double? Distancia { get; set; }
+        public string? MostrarD { get; set; }
     }
 }
