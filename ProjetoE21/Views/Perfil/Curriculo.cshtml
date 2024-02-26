@@ -13,17 +13,17 @@ else
 
 @* <div class="justify-content-center d-flex">
     <form asp-action="Curriculo" style="width: 35%; height: 70%; backdrop-color: white">
-     
+
 
                 <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(255, 255, 255); resize: none;"
                           asp-for="Experiencia" id="Curriculo-experiencia" rows="25" placeholder="experiencia"></textarea>
-           
+
                 <textarea asp-for="Objetivo"
                           style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(241, 241, 241); resize: none;"
                           id="Curriculo-objetivo" rows="5" cols="50" placeholder="objetivo"></textarea>
                 <span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
 
-                
+
                     <textarea class="m-2"
                               style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
                               asp-for="Escola" id="Curriculo-escola" placeholder="escola"></textarea>
@@ -36,18 +36,18 @@ else
                               style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
                               asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos"></textarea>
                     <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>
-             
+
                 <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" asp-for="RedeSocial" rows="2"
                           id="Curriculo-redesocial" placeholder="rede social"></textarea>
                 <span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
-          
+
         <button type="submit" asp-action="Curriculo" style="width: 100%; border: 0; background-color: #a3d693; margin-top: 8px; border-radius: 8px;">Salvar</button>
     </form>
 </div> *@
 
 
 
-@* ================================================================= *@
+@* ============================================================================ *@
 
 <div style="font-family: Arial, Helvetica, sans-serif;" class="justify-content-center d-flex">
     <form asp-action="Curriculo" style="width: 35%; height: 70%; background-color: white;">
@@ -79,7 +79,8 @@ else
                             <p style="width:15%; margin:auto;" id="valor1"></p>
                         </div>
 
-                        @if(Usuario.LogadoJ.Curriculo != null){
+                        @if (Usuario.LogadoJ.Curriculo != null)
+                        {
                             <input asp-for="ValorIdioma1" type="range" value="@Model.ValorIdioma1" onload="nivelidioma('intervalo1', 'valor1')" id="intervalo1" min="0" max="100" oninput="nivelidioma('intervalo1', 'valor1')">
                         }
                         else
@@ -89,7 +90,7 @@ else
                     </div>
                     <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
                         <div style="display: flex;">
-                            <input asp-for ="Idioma2" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma2 type="text">
+                            <input asp-for="Idioma2" style="width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma2 type="text">
                             <p style="width:15%; margin:auto;" id="valor2"></p>
                         </div>
                         @if (Usuario.LogadoJ.Curriculo != null)
@@ -100,7 +101,7 @@ else
                         {
                             <input asp-for="ValorIdioma2" type="range" id="intervalo2" min="0" max="100" onload="nivelidioma('intervalo2', 'valor2')" oninput="nivelidioma('intervalo2', 'valor2')">
                         }
-                        </div>
+                    </div>
                     <div style="padding: 10px; text-align: left; display: flex; flex-direction: column;">
                         <div style="display: flex;">
                             <input asp-for="Idioma3" style=" width:70%; background-color: #a3d693; border: none; margin: 0px 10px 10px 5px; font-weight: bold;" id=idioma3 type="text">
@@ -113,8 +114,8 @@ else
                         else
                         {
                             <input asp-for="ValorIdioma3" type="range" id="intervalo3" min="0" max="100" onload="nivelidioma('intervalo3', 'valor3')" oninput="nivelidioma('intervalo3', 'valor3')">
-                            }
-                        </div>
+                        }
+                    </div>
                 </div>
             </div>
 
@@ -135,7 +136,7 @@ else
                     <div style="margin-right: 15px;">
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="datainicio">Inicio</label>
-                            <input asp-for ="InicioEscola" type="date" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
+                            <input asp-for="InicioEscola" type="date" style="margin-left: 5px; margin-bottom: 15px; border: none; resize: none;"></input>
                         </div>
                         <div style="display: flex;">
                             <label style="margin-left: 25px;" for="escola1">Escola</label>
@@ -191,37 +192,37 @@ else
 </div>
 
 <script>
-    window.onload = function () { 
-          nivelidioma("intervalo1", "valor1"); 
-          nivelidioma("intervalo2", "valor2");
-          nivelidioma("intervalo3", "valor3");
+    window.onload = function () {
+        nivelidioma("intervalo1", "valor1");
+        nivelidioma("intervalo2", "valor2");
+        nivelidioma("intervalo3", "valor3");
     };
 
     function nivelidioma(intervalo, valor) {
-      var valorOutput = document.getElementById(valor);
-      var intervaloInput = document.getElementById(intervalo);
+        var valorOutput = document.getElementById(valor);
+        var intervaloInput = document.getElementById(intervalo);
 
-      valorOutput.innerText = "";
+        valorOutput.innerText = "";
 
-          if (intervaloInput.value > 0 && intervaloInput.value < 17){
-              valorOutput.innerText = "A1";
-          }
-          else if(intervaloInput.value >= 17 && intervaloInput.value < 33){
-              valorOutput.innerText = "A2";
-          }
-          else if(intervaloInput.value >= 33 && intervaloInput.value < 49){
-              valorOutput.innerText =  "B1";
-          }
-          else if(intervaloInput.value >= 49 && intervaloInput.value < 65){
-              valorOutput.innerText =  "B2";
-          }
-          else if(intervaloInput.value >= 65 && intervaloInput.value < 81){
-              valorOutput.innerText = "C1";
-          }
-          else if(intervaloInput.value >= 81){
-              valorOutput.innerText = "C2";
-          }
-      }
+        if (intervaloInput.value > 0 && intervaloInput.value < 17) {
+            valorOutput.innerText = "A1";
+        }
+        else if (intervaloInput.value >= 17 && intervaloInput.value < 33) {
+            valorOutput.innerText = "A2";
+        }
+        else if (intervaloInput.value >= 33 && intervaloInput.value < 49) {
+            valorOutput.innerText = "B1";
+        }
+        else if (intervaloInput.value >= 49 && intervaloInput.value < 65) {
+            valorOutput.innerText = "B2";
+        }
+        else if (intervaloInput.value >= 65 && intervaloInput.value < 81) {
+            valorOutput.innerText = "C1";
+        }
+        else if (intervaloInput.value >= 81) {
+            valorOutput.innerText = "C2";
+        }
+    }
 </script>
 
 

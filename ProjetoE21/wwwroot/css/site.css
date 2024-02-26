@@ -1,20 +1,20 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 
@@ -24,3 +24,15 @@ body {
     width: 100%;
     background-size: cover; /* Para garantir que a imagem cubra todo o elemento */
 }
+/*.backgroundloginj-div {
+    background-image: url('Imagens/telaloginvermelho.png');*/
+/* Outras propriedades de estilo, se necessário */
+/*width: 100%;
+    background-size: cover;*/ /* Para garantir que a imagem cubra todo o elemento */
+/*}
+.backgroundlogine-div {
+    background-image: url('Imagens/telaloginazul.png');*/
+/* Outras propriedades de estilo, se necessário */
+/*width: 100%;
+    background-size: cover;*/ /* Para garantir que a imagem cubra todo o elemento */
+/*}*/

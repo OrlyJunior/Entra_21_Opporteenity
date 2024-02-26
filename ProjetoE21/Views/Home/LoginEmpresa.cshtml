@@ -3,27 +3,30 @@
 }
 
 @model EmpresaLogin;
+<body style="background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,125,255,0.8855917366946778) 100%);">
 
-<div style="border-radius:10px; width:51vw; height:99vh; margin-left: 49vw; text-align: center; background-color:rgba(0, 0, 0, 0.229) ;">
+    <div style="border-radius:10px; width:40vw; height:98vh; margin:auto; text-align: center; background-color:rgba(0, 0, 0, 0.229) ;">
 
-    <form asp-action="LoginEmpresa" style="padding: 10%; display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;">
+        <form asp-action="LoginEmpresa" style="padding: 10%; display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;">
 
-        <h1 style="font-size:6vh; color: rgb(11, 138, 11); margin-top: 10vh; margin-bottom: 20vh;">Login Empresa</h1>
+            <h1 style="font-size:6vh; color:rgba(0,125,255,0.8855917366946778) ; margin-top: 10vh; margin-bottom: 20vh;">Login Empresa</h1>
 
 
-        <lable>Insira seu email:</lable>
-        <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Email" class="input" placeholder="Email" type="text">
-        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
-        <lable>Insira sua senha:</lable>
-        <input style=" margin-bottom: 20px; height: 6vh;" asp-for="Senha" class="input" placeholder="Senha" type="password">
-        <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
+            <lable>Insira seu email:</lable>
+            <input style="height: 6vh; margin-bottom: 20px; border-radius: 10px; border: 1px solid rgba(0,125,255,0.8855917366946778); padding: 10px; box-sizing: border-box; width: 100%; text-align: center;" asp-for="Email" class="input" placeholder="Email" type="text">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+            <lable>Insira sua senha:</lable>
+            <input style="height: 6vh; margin-bottom: 20px; border-radius: 10px; border: 1px solid rgba(0,125,255,0.8855917366946778); padding: 10px; box-sizing: border-box; width: 100%; text-align: center;" asp-for="Senha" class="input" placeholder="Senha" type="password">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Senha)</span>
 
-        <button asp-action="LoginEmpresa" style="font-size: large; font-weight: 400; color: white; background-color: rgb(11, 138, 11); margin: auto; width: 20vw;border-radius: 30px; margin-bottom: 20px; height: 6vh;" class="button-confirm">Login</button>
+            <button asp-action="LoginEmpresa" style="font-size: large; font-weight: 400; border:1px solid rgba(0,125,255,0.8855917366946778) color: rgba(0,125,255,0.8855917366946778); background-color: transparent; margin: auto; width: 20vw;border-radius: 30px; margin-bottom: 20px; height: 6vh;" class="button-confirm">Login</button>
 
-        @if (ViewData.ModelState.ContainsKey("userIncorreto"))
-        {
-            @Html.ValidationMessage("userIncorreto")
-            ;
-        }
-    </form>
-</div>
+            @if (ViewData.ModelState.ContainsKey("userIncorreto"))
+            {
+                @Html.ValidationMessage("userIncorreto")
+                ;
+            }
+        </form>
+    </div>
+</body>

@@ -16,16 +16,19 @@
         <p>Telefone do responsável: @Usuario.LogadoJ.FoneResponsavel</p>
     </div>
 
-    @if(Usuario.LogadoJ.Curriculo == null)
-    {
-        <a  style="text-decoration:none; color:black;"; asp-action="Curriculo">Adicionar curriculo</a>
-    }
-    else
-    {
-        <a style="text-decoration:none; color:black;" asp-action="Curriculo">Editar curriculo</a>
-    }
 
     <div style="margin:auto; justify-content:center" class="d-flex">
+
+        @if (Usuario.LogadoJ.Curriculo == null)
+        {
+            <a class="btn btn-warning me-2" style="text-decoration:none; color:black;" ; asp-action="Curriculo">Adicionar curriculo</a>
+        }
+        else
+        {
+            <a class="btn btn-warning me-2" style="text-decoration:none; color:black;" asp-action="Curriculo">Editar curriculo</a>
+        }
+
+
         <a asp-controller="Perfil" asp-action="Editar" class="btn btn-warning me-2">Editar</a>
         <a asp-controller="Login" asp-action="Deslogar" class="btn btn-danger">Deslogar</a>
     </div>
@@ -94,7 +97,7 @@
         var cidadeJovem = Usuario.LogadoJ.Local.Cidade;
     }
 
-                            var local = "@ruaJovem" + "+" + "@cidadeJovem";
+                                var local = "@ruaJovem" + "+" + "@cidadeJovem";
         var url1 = `https://api.opencagedata.com/geocode/v1/json?q=${local}&key=de8ec31691d84fada09018809123c939&pretty=1`;
 
         var latitude1 = 0

@@ -5,14 +5,14 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\orly.junior\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\patrick.kremer\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\orly.junior\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\patrick.kremer\.nuget\packages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMMLib_Extensions Condition=" '$(PkgMMLib_Extensions)' == '' ">C:\Users\orly.junior\.nuget\packages\mmlib.extensions\1.0.10.13</PkgMMLib_Extensions>
+    <PkgMMLib_Extensions Condition=" '$(PkgMMLib_Extensions)' == '' ">C:\Users\patrick.kremer\.nuget\packages\mmlib.extensions\1.0.10.13</PkgMMLib_Extensions>
   </PropertyGroup>
 </Project>

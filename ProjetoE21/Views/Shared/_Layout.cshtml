@@ -32,30 +32,47 @@
         .dark-mode2 {
             filter: invert(80%);
         }
+
+        @@media only all and (max-width: 600px) {
+            #navlayout {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 3vh;
+                height: 45vh;
+            }
+
+            #divdanav {
+                height: 45vh;
+                justify-content: space-between;
+            }
+        }
+
     </style>
 </head>
 
 <body style="background-color:rgb(246, 245, 252);">
     <header>
-        <nav style="margin-bottom:3vh;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
-            <div class="container-fluid" style="height: 3rem">
-                <a style="color:black; text-decoration:none; width: 20%; margin-right: 8px; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
-                    <img src="~/css/Imagens/Perfil.png" width="20%" class="m-1"></img>
+        <nav id="navlayout" style="display:flex; justify-content:space-between; margin-bottom:3vh;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
+            <div id="divdanav" class="container-fluid" style="height: 3rem; justify-content:space-between;">
+                <a style="color:black; text-decoration:none; width: 20%; margin:auto 8px auto auto; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
+                    <img src="~/css/Imagens/Perfil.png" width="45vh" class="m-1"></img>
                     <p style="text-decoration:none; font-weight:bold; margin-top: 1rem">
+
                         @if (Usuario.LogadoE == null)
                         {
                             @Usuario.LogadoJ.Nome
                             ;
-
                         }
+
                         else
                         {
                             @Usuario.LogadoE.Nome
                             ;
                         }
+
                     </p>
                 </a>
-                <a class="navbar-brand d-flex" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: 32px; font-family: Arial; margin-top: 4px">
+                <a class="navbar-brand d-flex" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: 32px; font-family: Arial; margin:4px auto auto auto;">
                     <p id="oppor" style="color: #7CDFE5">Oppor</p>
                     <p id="teen" style="color: #A378FF">teen</p>
                     <p id="ity" style="color: #E21EAD">ity</p>
@@ -158,18 +175,18 @@
         function aside() {
             if (localStorage.getItem("dm") == "no") {
                 document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
-                                                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
-                                                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
-                                                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
-                                                                                                                              </aside>`);
-            } else {
-                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
                                                                                                                                              <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
-                                                                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
+                                                                                                                                             <div class="rounded w-100 asd-item p-2" id="dm" onclick="darkMode()">Dark mode</div>
                                                                                                                                              <div class="rounded w-100 asd-item p-2">Minha conta</div>
                                                                                                                                              <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
                                                                                                                                       </aside>`);
+            } else {
+                document.getElementById("config").insertAdjacentHTML("afterend", `<aside class="asdEnter position-absolute end-0 bg-light rounded p-2 mt-0" style="height: 98vh; width:25%; box-shadow: -10px 10px 15px -4px rgba(0,0,0,0.75);" id="aside">
+                                                                                                                                                     <div class="rounded w-100 asd-item p-2" onclick="asideRemove()">X</div>
+                                                                                                                                                     <div class="rounded w-100 asd-item p-2" id="dm" onclick="lightMode()">Light mode</div>
+                                                                                                                                                     <div class="rounded w-100 asd-item p-2">Minha conta</div>
+                                                                                                                                                     <div class="rounded w-100 asd-item p-2 position-absolute" style="bottom: 16px">Sair da conta</div>
+                                                                                                                                              </aside>`);
             }
         }
 
