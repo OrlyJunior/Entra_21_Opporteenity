@@ -79,7 +79,7 @@
         }
     </div>
     <div style="border-radius:10px; width: 40%" class="m-2">
-        @foreach (var i in ProjetoE21.Dados.Listas.servicos)
+        @foreach (var i in ProjetoE21.Dados.Listas.servicos.OrderBy(servico => servico.Distancia))
         {
             <div class="d-flex">
                 <div class="card mb-5" style="width: 100%">
@@ -93,7 +93,7 @@
                                 <p class="card-text">
                                 <p name="rua">@Html.DisplayFor(model => i.Local.Rua)</p>  <p name="cidade">@Html.DisplayFor(model => i.Local.Cidade)</p>
                                     <br>
-                                    <p name="distancia">Distancia</p>
+                                    <p name="distancia">@Html.DisplayFor(model => i.MostrarD)</p>
 
                                     @Html.DisplayFor(model => i.Dia) @Html.DisplayFor(model => i.Hora)
                                 </p>

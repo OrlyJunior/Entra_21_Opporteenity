@@ -1708,3 +1708,4 @@ C:\Users\orly.junior\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\Newtonsoft.Js
 C:\Users\patrick.kremer\Desktop\Nova pasta\ProjetoE21\bin\Debug\net6.0\MMLib.Core.dll
 C:\Users\patrick.kremer\Desktop\Nova pasta\ProjetoE21\bin\Debug\net6.0\MMLib.Extensions.dll
 C:\Users\patrick.kremer\Desktop\Nova pasta\ProjetoE21\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Orly\Documents\Projeto\ProjetoE21\bin\Debug\net6.0\Newtonsoft.Json.dll

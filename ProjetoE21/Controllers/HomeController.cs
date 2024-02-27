@@ -35,7 +35,13 @@ namespace ProjetoE21.Controllers
          {
             if(Usuario.LogadoE == null)
             {
-                await _geolocalizacao.GeocodingAsync();
+                await _geolocalizacao.GeocodingAsyncEmpregos();
+                await _geolocalizacao.GeocodingAsyncServicos();
+            }
+            else
+            {
+                Listas.servicos = DaoS.consultar();
+                Listas.empregos = DaoE.consultar();
             }
 
              return View();

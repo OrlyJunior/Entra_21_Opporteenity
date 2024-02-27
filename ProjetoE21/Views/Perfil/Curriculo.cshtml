@@ -64,10 +64,10 @@ else
                     <textarea asp-for="PerfilProfissional" placeholder="Fale um pouco sobre seu Perfil Profissional" name="perfilprofissional" id="perfilprofissional" cols="25" rows="5" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
 
                     <span style="font-weight: bold;">Telefone</span>
-                    <textarea asp-for="Telefone" placeholder="(xx) xxxxx-xxxx" name="telefonecurriculo" id="telefonecurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
+                    <p asp-for="Telefone" placeholder="(xx) xxxxx-xxxx" name="telefonecurriculo" id="telefonecurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;">@Usuario.LogadoJ.Telefone</p>
 
                     <span style="font-weight: bold;">E-mail</span>
-                    <textarea asp-for="Email" placeholder="email@gmail.com" name="emailcurriculo" id="emailcurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;"></textarea>
+                    <p asp-for="Email" placeholder="email@gmail.com" name="emailcurriculo" id="emailcurriculo" cols="25" rows="1" style="width: 100%; margin-bottom: 15px; background-color: #a3d693; border: none; resize: none;">@Usuario.LogadoJ.Email</p>
                 </div>
 
                 <div>

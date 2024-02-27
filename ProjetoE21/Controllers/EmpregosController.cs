@@ -15,7 +15,7 @@ namespace ProjetoE21.Controllers
 
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
-            Listas.empregos = DaoS.consultar();
+            Listas.empregos = DaoS.consultarEmp();
 
             ViewBag.CurrentSort = sorter;
             ViewBag.descSort = "nome_desc";

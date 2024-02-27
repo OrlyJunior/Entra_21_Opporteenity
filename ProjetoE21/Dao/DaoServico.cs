@@ -105,6 +105,66 @@ namespace ProjetoE21.Dao
             return servicos;
         }
 
+        public List<Servico> consultarEmp()
+        {
+            List<Servico> servicos = new();
+
+            MySqlConnection con = new();
+            con.ConnectionString = Conexao.conecta();
+
+            con.Open();
+
+            try
+            {
+                MySqlCommand cm = con.CreateCommand();
+
+                cm.CommandText = @"select * from tb_servicos";
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    if (Convert.ToInt32(dr["empresaId"]) == Usuario.LogadoE.Id)
+                    {
+                        Servico service = new Servico();
+
+                        service.Id = Convert.ToInt32(dr["id"]);
+                        service.Descricao = Convert.ToString(dr["descricao"]);
+
+                        service.EmpresaS = new();
+                        service.Local = new();
+
+                        service.EmpresaS.Nome = Convert.ToString(dr["contratanteNome"]);
+                        service.Horario = Convert.ToDateTime(dr["data"]);
+                        service.Pagamento = Convert.ToDecimal(dr["valor"]);
+                        service.Dia = Convert.ToString(dr["dia"]);
+                        service.Hora = Convert.ToString(dr["hora"]);
+                        service.Local.Estado = Convert.ToString(dr["estado"]);
+                        service.Local.Cidade = Convert.ToString(dr["cidade"]);
+                        service.Local.Bairro = Convert.ToString(dr["bairro"]);
+                        service.Local.Rua = Convert.ToString(dr["rua"]);
+                        service.Local.Numero = Convert.ToInt32(dr["numero"]);
+
+                        service.EmpresaId = Convert.ToInt32(dr["empresaId"]);
+
+                        servicos.Add(service);
+                    }
+                }
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return servicos;
+        }
+
         public void deletar(Servico servico)
         {
             MySqlConnection con = new();

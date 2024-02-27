@@ -13,7 +13,7 @@ namespace ProjetoE21.Controllers
         DaoServico DaoS = new();
         public IActionResult Index(string sorter, string currentFilter, string searchString, int? page)
         {
-            Listas.servicos = DaoS.consultar();
+            Listas.servicos = DaoS.consultarEmp();
 
             ViewBag.CurrentSort = sorter;
             ViewBag.descSort = "nome_desc";

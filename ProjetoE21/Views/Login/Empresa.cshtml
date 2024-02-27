@@ -62,7 +62,7 @@
                         <div style="display: flex; flex-direction: column;">
                             <label asp-for="Local.Estado">Insira o estado da empresa:</label>
                             <select oninput="cidades()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Estado" id="estado">
-                                <option id="padraoE" value="vazio"></option>
+                                <option value="" id="padraoE" value="vazio"></option>
                                 <option onclick="cidades()" value="SC">SC</option>
                                 <option onclick="cidades()" value="SP">SP</option>
                             </select>
@@ -71,25 +71,24 @@
                         <div style="display: flex; flex-direction: column;">
                             <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
                             <select oninput="bairros()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Cidade" id="cidade">
-                                <option id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>
+                                <option value="" id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>
                             </select>
                             <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
                         </div>
                         <div style="display: flex; flex-direction: column;">
                             <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
                             <select oninput="ruas()" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Bairro" id="bairro">
-                                <option id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>
+                                <option value="" id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>
                             </select>
                             <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
                         </div>
                         <div style="display: flex; flex-direction: column;">
                             <label asp-for="Local.Rua">Insira a rua da empresa:</label>
                             <select style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Rua" id="rua">
-                                <option id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>
+                                <option value="" id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>
                             </select>
                             <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
                         </div>
-
                         <div style="display: flex; flex-direction: column;">
                             <label asp-for="Local.Numero">Insira o número do local da empresa:</label>
                             <input maxlength="20" style="width: 25vw; height: 3vh; border-radius: 5px; background-color: rgb(199, 223, 199);" asp-for="Local.Numero" id="numero"></input>
@@ -111,9 +110,9 @@
 
                 document.getElementById("bairro").innerHTML = "";
 
-                document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option id='removeCidade'>Antes de selecionar a cidade, selecione o estado!</option>");
+                document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option value='' id='removeCidade'>Antes de selecionar a cidade, selecione o estado!</option>");
 
-                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>");
+                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>");
             }
 
             if (document.getElementById("estado").value == "SC") {
@@ -137,7 +136,7 @@
             if (document.getElementById("cidade").value == "") {
                 document.getElementById("bairro").innerHTML = "";
 
-                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>")
+                document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>")
             }
 
             if (document.getElementById("cidade").value == "Blumenau") {
@@ -151,7 +150,7 @@
             if (document.getElementById("bairro").value == "") {
                 document.getElementById("rua").innerHTML = "";
 
-                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option id='removeBairro'>Antes de selecionar a rua, selecione o bairro!</option>")
+                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar a rua, selecione o bairro!</option>")
             }
 
             if (document.getElementById("bairro").value == "Itoupava Norte") {
@@ -159,7 +158,29 @@
 
                 document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua 25 de Agosto'>Rua 25 de Agosto</option><option value='Rua 2 de Setembro'>Rua 2 de Setembro</option>")
             }
+
+            if (document.getElementById("bairro").value == "Itoupava Seca") {
+                document.getElementById("rua").innerHTML = "";
+
+                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua Almirante Barroso'>Rua Almirante Barroso</option><option value='Rua Alagoas'>Rua Alagoas</option>")
+            }
+
+            if (document.getElementById("bairro").value == "Itoupava Central") {
+                document.getElementById("rua").innerHTML = "";
+
+                document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua 10 de Abril'>Rua 10 de Abril</option><option value='Rua Adelaide Starke'>Rua Adelaide Starke</option>")
+            }
         }
+
+        async function carregar() {
+            console.log("carregou")
+
+            await cidades();
+            await bairros();
+            await ruas();
+        }
+
+        window.onload = carregar;
 
         function limparCampos() {
             for (i = 0; i < document.getElementsByTagName("input").length; i++) {
@@ -211,8 +232,8 @@
             }
             else {
                 document.getElementById("estado").innerHTML = `<option id="padraoE" value="vazio"></option>
-                                        <option onclick="cidades()" value="SC">SC</option>
-                                        <option onclick="cidades()" value="SP">SP</option>`
+                                                <option onclick="cidades()" value="SC">SC</option>
+                                                <option onclick="cidades()" value="SP">SP</option>`
 
                 cidades();
 

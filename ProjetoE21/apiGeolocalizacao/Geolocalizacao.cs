@@ -59,10 +59,10 @@ namespace ProjetoE21.apiGeolocalizacao
                 i.MostrarD = $"{Math.Round(distancia * 100) / 100}km";
             }
 
-            Listas.empregos.OrderBy(emprego => emprego.Distancia);
+            Listas.servicos.OrderBy(servico => servico.Distancia);
         }
 
-        public async Task GeocodingAsync()
+        public async Task GeocodingAsyncEmpregos()
         {
             var ruaJovem = Usuario.LogadoJ.Local.Rua;
             var cidadeJovem = Usuario.LogadoJ.Local.Cidade;

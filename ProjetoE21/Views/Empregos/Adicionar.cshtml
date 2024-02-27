@@ -5,54 +5,144 @@
 <form asp-action="Adicionar">
     <div>
         <label asp-for="Descricao">Insira a descrição do emprego:</label>
-        <input asp-for="Descricao"></input>
+        <input asp-for="Descricao" class="form-control w-100"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Descricao)</span>
     </div>
-    <div>
-        <label asp-for="Local.Estado">Insira o estado do local emprego:</label>
-        <input asp-for="Local.Estado"></input>
+    <div style="display: flex; flex-direction: column;">
+        <label asp-for="Local.Estado">Insira o estado da empresa:</label>
+        <select oninput="cidades()" class="form-select w-100" asp-for="Local.Estado" id="estado">
+            <option value="" id="padraoE"></option>
+            <option onclick="cidades()" value="SC">SC</option>
+            <option onclick="cidades()" value="SP">SP</option>
+        </select>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Estado)</span>
     </div>
-    <div>
-        <label asp-for="Local.Cidade">Insira a cidade do emprego:</label>
-        <input asp-for="Local.Cidade"></input>
+    <div style="display: flex; flex-direction: column;">
+        <label asp-for="Local.Cidade">Insira a cidade da empresa:</label>
+        <select oninput="bairros()" class="form-select w-100" asp-for="Local.Cidade" id="cidade">
+            <option value="" id="removeCidade">Antes de selecionar a cidade, selecione o estado!</option>
+        </select>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Cidade)</span>
     </div>
-    <div>
-        <label asp-for="Local.Bairro">Insira o bairro do emprego:</label>
-        <input asp-for="Local.Bairro"></input>
+    <div style="display: flex; flex-direction: column;">
+        <label asp-for="Local.Bairro">Insira o bairro da empresa:</label>
+        <select oninput="ruas()" class="form-select w-100" asp-for="Local.Bairro" id="bairro">
+            <option value="" id="removeBairro">Antes de selecionar o bairro, selecione a cidade!</option>
+        </select>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Bairro)</span>
     </div>
-    <div>
-        <label asp-for="Local.Rua">Insira a rua do emprego:</label>
-        <input asp-for="Local.Rua"></input>
+    <div style="display: flex; flex-direction: column;">
+        <label asp-for="Local.Rua">Insira a rua da empresa:</label>
+        <select class="form-select w-100" asp-for="Local.Rua" id="rua">
+            <option value="" id="removeRua">Antes de selecionar a rua, selecione o bairro!</option>
+        </select>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Rua)</span>
     </div>
     <div>
         <label asp-for="Local.Numero">Insira o número do local do emprego:</label>
-        <input asp-for="Local.Numero"></input>
+        <input class="form-control w-100" asp-for="Local.Numero"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Local.Numero)</span>
     </div>
     <div>
         <label asp-for="HoraDeInicio">Insira o horário de início do emprego:</label>
-        <input asp-for="HoraDeInicio" type="time"></input>
+        <input class="form-control" style="width: 30%" asp-for="HoraDeInicio" type="time"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.HoraDeInicio)</span>
     </div>
     <div>
         <label asp-for="HoraDeFim">Insira o horário de término do emprego:</label>
-        <input asp-for="HoraDeFim" type="time"></input>
+        <input class="form-control" style="width: 30%" asp-for="HoraDeFim" type="time"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.HoraDeFim)</span>
     </div>
     <div>
         <label asp-for="DiasTrabalhados">Insira os dias trabalhados por semana no emprego:</label>
-        <input asp-for="DiasTrabalhados"></input>
+        <input class="form-control w-100" asp-for="DiasTrabalhados"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.DiasTrabalhados)</span>
     </div>
     <div>
         <label asp-for="Salario">Insira o salário mensal do emprego:</label>
-        <input asp-for="Salario"></input>
+        <input class="form-control w-100" asp-for="Salario"></input>
         <span class="text-danger">@Html.ValidationMessageFor(model => model.Salario)</span>
     </div>
 
     <button asp-action="Adicionar">Adicionar</button>
 </form>
+
+<script>
+    function cidades() {
+        if (document.getElementById("estado").value == "") {
+            document.getElementById("cidade").innerHTML = "";
+
+            document.getElementById("bairro").innerHTML = "";
+
+            document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option value='' id='removeCidade'>Antes de selecionar a cidade, selecione o estado!</option>");
+
+            document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>");
+        }
+
+        if (document.getElementById("estado").value == "SC") {
+            document.getElementById("cidade").innerHTML = "";
+
+            document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option></option><option onclick='bairros()' value='Blumenau'>Blumenau</option><option onclick='bairros()' value='Itajaí'>Itajaí</option><option onclick='bairros()' value='Florianópolis'>Florianópolis</option>")
+
+            document.getElementById("removeCidade").remove();
+        }
+
+        if (document.getElementById("estado").value == "SP") {
+            document.getElementById("cidade").innerHTML = "";
+
+            document.getElementById("cidade").insertAdjacentHTML("beforeend", "<option></option><option onclick='bairros()' value='São Paulo'>São Paulo</option><option onclick='bairros()' value='Itú'>Itú</option><option onclick='bairros()' value='Santos'>Santos</option>")
+
+            document.getElementById("removeCidade").remove();
+        }
+    }
+
+    function bairros() {
+        if (document.getElementById("cidade").value == "") {
+            document.getElementById("bairro").innerHTML = "";
+
+            document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar o bairro, selecione a cidade!</option>")
+        }
+
+        if (document.getElementById("cidade").value == "Blumenau") {
+            document.getElementById("bairro").innerHTML = "";
+
+            document.getElementById("bairro").insertAdjacentHTML("beforeend", "<option></option><option value='Itoupava Norte'>Itoupava Norte</option><option value='Itoupava Seca'>Itoupava Seca</option><option value='Itoupava Central'>Itoupava Central</option>")
+        }
+    }
+
+    function ruas() {
+        if (document.getElementById("bairro").value == "") {
+            document.getElementById("rua").innerHTML = "";
+
+            document.getElementById("rua").insertAdjacentHTML("beforeend", "<option value='' id='removeBairro'>Antes de selecionar a rua, selecione o bairro!</option>")
+        }
+
+        if (document.getElementById("bairro").value == "Itoupava Norte") {
+            document.getElementById("rua").innerHTML = "";
+
+            document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua 25 de Agosto'>Rua 25 de Agosto</option><option value='Rua 2 de Setembro'>Rua 2 de Setembro</option>")
+        }
+
+        if (document.getElementById("bairro").value == "Itoupava Seca") {
+            document.getElementById("rua").innerHTML = "";
+
+            document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua Almirante Barroso'>Rua Almirante Barroso</option><option value='Rua Alagoas'>Rua Alagoas</option>")
+        }
+
+        if (document.getElementById("bairro").value == "Itoupava Central") {
+            document.getElementById("rua").innerHTML = "";
+
+            document.getElementById("rua").insertAdjacentHTML("beforeend", "<option></option><option value='Rua 10 de Abril'>Rua 10 de Abril</option><option value='Rua Adelaide Starke'>Rua Adelaide Starke</option>")
+        }
+    }
+
+    async function carregar() {
+        console.log("carregou")
+
+        await cidades();
+        await bairros();
+        await ruas();
+    }
+
+    window.onload = carregar;
+</script>
