@@ -2,54 +2,18 @@
 
 @model Curriculo;
 
-@if (Usuario.LogadoJ.Curriculo != null)
-{
-    <h1>Editar currículo</h1>
-}
-else
-{
-    <h1>Adicionar currículo</h1>
-}
-
-@* <div class="justify-content-center d-flex">
-    <form asp-action="Curriculo" style="width: 35%; height: 70%; backdrop-color: white">
-
-
-                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(255, 255, 255); resize: none;"
-                          asp-for="Experiencia" id="Curriculo-experiencia" rows="25" placeholder="experiencia"></textarea>
-
-                <textarea asp-for="Objetivo"
-                          style="text-align:center; border: 0px; border-radius: 8px; width: 80%; background-color: rgb(241, 241, 241); resize: none;"
-                          id="Curriculo-objetivo" rows="5" cols="50" placeholder="objetivo"></textarea>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.Objetivo)</span>
-
-
-                    <textarea class="m-2"
-                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
-                              asp-for="Escola" id="Curriculo-escola" placeholder="escola"></textarea>
-                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Escola)</span>
-                    <textarea class="m-2"
-                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
-                              asp-for="Idiomas" id="Curriculo-idiomas" placeholder="idiomas"></textarea>
-                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Idiomas)</span>
-                    <textarea class="m-2"
-                              style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" rows="4"
-                              asp-for="Cursos" id="Curriculo-cursos" placeholder="cursos"></textarea>
-                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Cursos)</span>
-
-                <textarea style="text-align:center; border: 0px; border-radius: 8px; width: 96%; background-color: rgb(241, 241, 241); resize: none;" asp-for="RedeSocial" rows="2"
-                          id="Curriculo-redesocial" placeholder="rede social"></textarea>
-                <span class="text-danger">@Html.ValidationMessageFor(model => model.RedeSocial)</span>
-
-        <button type="submit" asp-action="Curriculo" style="width: 100%; border: 0; background-color: #a3d693; margin-top: 8px; border-radius: 8px;">Salvar</button>
-    </form>
-</div> *@
 
 
 
-@* ============================================================================ *@
-
-<div style="font-family: Arial, Helvetica, sans-serif;" class="justify-content-center d-flex">
+<div style="font-family: Arial, Helvetica, sans-serif; display:flex; flex-direction:column;" class="justify-content-center d-flex">
+    @if (Usuario.LogadoJ.Curriculo != null)
+    {
+        <h1 style="margin:auto;">Editar currículo</h1>
+    }
+    else
+    {
+        <h1 style="margin:auto;" >Adicionar currículo</h1>
+    }
     <form asp-action="Curriculo" style="width: 35%; height: 70%; background-color: white;">
         <h1>Currículo</h1>
 

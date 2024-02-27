@@ -33,30 +33,89 @@
             filter: invert(80%);
         }
 
+        #homedanav:hover {
+           
+            font-weight: bold;
+        }
+        #servicodanav:hover {
+           
+            font-weight: bold;
+        }
+        #empregodanav:hover {
+           
+            font-weight: bold;
+        }
+
+        #jovensdanav:hover {
+            font-weight: bold;
+        }
+
+        @@media only all and (max-width: 900px) {
+           /*  #pagesul{
+                display: flex;
+                flex-direction: column;
+            }
+
+            #pagesdiv{
+                display: flex;
+                flex-direction: column-reverse;
+            } */
+        }
+
+
         @@media only all and (max-width: 600px) {
+            body{
+                font-size: 1.5em;
+            }
             #navlayout {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 3vh;
-                height: 45vh;
+                height: 25vh;
+
             }
 
             #divdanav {
-                height: 45vh;
+                margin-top:-4px;
+                height: 25vh;
                 justify-content: space-between;
             }
+
+            #nomedousuario{
+                font-size: 0.9em !important;
+            }
+            #linkdoperfil{
+                
+                flex-direction:column;
+                width: 10% !important;
+                margin: -41px 8px auto 2px !important;
+                
+            }
+            
+            #pagesul {
+                
+                flex-direction: column;
+            }
+
+            #pagesdiv {
+                margin-top: -41px !important;
+                flex-direction: column-reverse !important;
+            }
+
+            
         }
 
+        
     </style>
 </head>
 
 <body style="background-color:rgb(246, 245, 252);">
     <header>
         <nav id="navlayout" style="display:flex; justify-content:space-between; margin-bottom:3vh;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
-            <div id="divdanav" class="container-fluid" style="height: 3rem; justify-content:space-between;">
-                <a style="color:black; text-decoration:none; width: 20%; margin:auto 8px auto auto; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
-                    <img src="~/css/Imagens/Perfil.png" width="45vh" class="m-1"></img>
-                    <p style="text-decoration:none; font-weight:bold; margin-top: 1rem">
+            <div id="divdanav" class="container-fluid" style="height: 4rem; justify-content:space-between;">
+                <a id="linkdoperfil" style="color:black; text-decoration:none; width: 20%; margin:auto 8px auto 2px; display: flex; align-items: center" asp-controller="Perfil" asp-action="Index">
+                    <img style="margin-left:8px;" src="~/css/Imagens/Perfil.png" width="45vh" class="m-1"></img>
+                    <p id="nomedousuario" style="text-decoration:none; font-weight:bold;">
 
                         @if (Usuario.LogadoE == null)
                         {
@@ -77,45 +136,38 @@
                     <p id="teen" style="color: #A378FF">teen</p>
                     <p id="ity" style="color: #E21EAD">ity</p>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-
-
-
+                
+                <div id="pagesdiv" style=" display:flex;  justify-content:space-between;">
+                    <ul id="pagesul" class="navbar-nav flex-grow-1">
 
                         @if (Usuario.LogadoE == null)
                         {
-
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <li class="nav-item" id="firstLi">
+                                <a style="margin-top:2px; margin-bottom:2px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <li class="nav-item" id="firstLi">
+                                <a style="margin-top:2px; margin-bottom:2px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
+                                <a style="display:block;  margin-top:2px; margin-bottom:2px;" id="servicodanav" class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
+                                <a style="display:none; margin-top:2px; margin-bottom:2px;" id="empregodanav" class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisar" asp-action="Index">Jovens</a>
+                                <a style="display:none; margin-top:2px; margin-bottom:2px;" id="jovensdanav" class="nav-link text-dark" asp-area="" asp-controller="Pesquisar" asp-action="Index">Jovens</a>
                             </li>
                         }
 
                     </ul>
+
                     <div class="d-flex me-5 mt-0">
-                        <button onclick="aside()" class="btn btn-secondary w-100" type="button" id="config">
+                        <button onclick="aside()" class="btn btn-secondary " type="button" id="config">
                             Configurações
                         </button>
                     </div>
@@ -134,6 +186,9 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
+       
+
+
         if (localStorage.getItem("dm") == "yes") {
             document.getElementsByTagName("html")[0].classList.add("dark-mode2");
             document.getElementById("oppor").style.color = "#cda6a3";
