@@ -137,30 +137,30 @@
                     <p id="ity" style="color: #E21EAD">ity</p>
                 </a>
                 
-                <div id="pagesdiv" style=" display:flex;  justify-content:space-between;">
+                <div id="pagesdiv" style=" display:flex; flex-wrap:wrap; justify-content:space-between;">
                     <ul id="pagesul" class="navbar-nav flex-grow-1">
 
                         @if (Usuario.LogadoE == null)
                         {
                             <li class="nav-item" id="firstLi">
-                                <a style="margin-top:2px; margin-bottom:2px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a style="margin-top:-12px; margin-bottom:-12px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item" id="firstLi">
-                                <a style="margin-top:2px; margin-bottom:2px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a style="margin-top:-12px; margin-bottom:-12px;" id="homedanav" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a style="display:block;  margin-top:2px; margin-bottom:2px;" id="servicodanav" class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
+                                <a style="margin-top:-12px; margin-bottom:-12px;" id="servicodanav" class="nav-link text-dark" asp-area="" asp-controller="Serviços" asp-action="Index">Serviços</a>
                             </li>
 
                             <li class="nav-item">
-                                <a style="display:none; margin-top:2px; margin-bottom:2px;" id="empregodanav" class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
+                                <a style="margin-top:-12px; margin-bottom:-12px;" id="empregodanav" class="nav-link text-dark" asp-area="" asp-controller="Empregos" asp-action="Index">Empregos</a>
                             </li>
                             <li class="nav-item">
-                                <a style="display:none; margin-top:2px; margin-bottom:2px;" id="jovensdanav" class="nav-link text-dark" asp-area="" asp-controller="Pesquisar" asp-action="Index">Jovens</a>
+                                <a style="margin-top:-12px; margin-bottom:-8px;" id="jovensdanav" class="nav-link text-dark" asp-area="" asp-controller="Pesquisar" asp-action="Index">Jovens</a>
                             </li>
                         }
 

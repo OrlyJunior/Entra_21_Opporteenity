@@ -1787,3 +1787,6 @@ C:\Users\User\Desktop\versao final do css\ProjetoE21\obj\Debug\net6.0\refint\Pro
 C:\Users\User\Desktop\versao final do css\ProjetoE21\obj\Debug\net6.0\ProjetoE21.pdb
 C:\Users\User\Desktop\versao final do css\ProjetoE21\obj\Debug\net6.0\ProjetoE21.genruntimeconfig.cache
 C:\Users\User\Desktop\versao final do css\ProjetoE21\obj\Debug\net6.0\ref\ProjetoE21.dll
+C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\MMLib.Core.dll
+C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\MMLib.Extensions.dll
+C:\Users\patrick.kremer\Desktop\Nova pasta (2)\ProjetoE21\bin\Debug\net6.0\Newtonsoft.Json.dll
